@@ -12,8 +12,8 @@ export type ToguruClientConfig = {
 }
 
 export type ToguruClient = {
-    isToggleEnabled: (toggle: Toggle, user: UserInfo) => boolean
-    togglesForService: (service: string, user: UserInfo) => Toggles
+    isToggleEnabled: (user: UserInfo) => (toggle: Toggle) => boolean
+    togglesForService: (user: UserInfo) => (service: string) => Toggles
 }
 
 export default (config: ToguruClientConfig): ToguruClient => {
@@ -36,10 +36,10 @@ export default (config: ToguruClientConfig): ToguruClient => {
     }, refreshIntervalMs)
 
     return {
-        isToggleEnabled: (toggle: Toggle, user: UserInfo): boolean => {
+        isToggleEnabled: (user: UserInfo) =>(toggle: Toggle): boolean => {
             return isToggleEnabledForUser(toguruData, toggle, user)
         },
-        togglesForService: (service: string, user: UserInfo): Toggles => {
+        togglesForService: (user: UserInfo) => (service: string): Toggles => {
             const toggleIds = findToggleListForService(toguruData, service)
             const togglesState = toggleIds.reduce((toggles, id) => {
                 toggles.push({ id, enabled: isToggleEnabledForUser(toguruData, { id, default: false }, user) })

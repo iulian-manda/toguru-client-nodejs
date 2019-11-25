@@ -91,8 +91,8 @@ export default (config: ToguruExpressMiddlewareConfig) => {
             }
 
             req.toguru = {
-                isToggleEnabled: (toggle: Toggle) => client.isToggleEnabled(toggle, user),
-                togglesForService: (service: string) => client.togglesForService(service, user),
+                isToggleEnabled: (toggle: Toggle) => client.isToggleEnabled(user)(toggle),
+                togglesForService: (service: string) => client.togglesForService(user)(service),
             }
         } catch (ex) {
             req.toguru = {

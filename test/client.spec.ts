@@ -35,54 +35,51 @@ describe('Toguru Client', () => {
         waitForDataLoading()
 
         test('given a toggle that is not defined on the backend, should return the default value defined', () => {
-            expect(client.isToggleEnabled({ id: 'not-defined', default: true }, userInBucket22CultureDE)).toBe(true)
+            expect(client.isToggleEnabled(userInBucket22CultureDE)({ id: 'not-defined', default: true })).toBe(true)
         })
 
         test('given a forced toggle, should return the forced value', () => {
             expect(
-                client.isToggleEnabled(
-                    { id: 'rolled-out-to-noone', default: false },
-                    {
-                        ...userInBucket22CultureDE,
-                        forcedToggles: { 'rolled-out-to-noone': true },
-                    },
-                ),
+                client.isToggleEnabled({
+                    ...userInBucket22CultureDE,
+                    forcedToggles: { 'rolled-out-to-noone': true },
+                })({ id: 'rolled-out-to-noone', default: false }),
             ).toBe(true)
         })
 
         test('given a toggle with rollout percentage 100 and no culture, should return true for everyone', () => {
             expect(
-                client.isToggleEnabled({ id: 'rolled-out-to-everyone', default: false }, userInBucketb76CultureDE),
+                client.isToggleEnabled(userInBucketb76CultureDE)({ id: 'rolled-out-to-everyone', default: false }),
             ).toBe(true)
             expect(
-                client.isToggleEnabled({ id: 'rolled-out-to-everyone', default: false }, userInBucket22NoCulture),
+                client.isToggleEnabled(userInBucket22NoCulture)({ id: 'rolled-out-to-everyone', default: false }),
             ).toBe(true)
         })
 
         test('given a toggle rolled out 100 in de, should return false for a user with a different culture or no culture', () => {
             expect(
-                client.isToggleEnabled({ id: 'rolled-out-only-in-de', default: true }, userInBucket22CultureIT),
+                client.isToggleEnabled(userInBucket22CultureIT)({ id: 'rolled-out-only-in-de', default: true }),
             ).toBe(false)
             expect(
-                client.isToggleEnabled({ id: 'rolled-out-only-in-de', default: true }, userInBucket22NoCulture),
+                client.isToggleEnabled(userInBucket22NoCulture)({ id: 'rolled-out-only-in-de', default: true }),
             ).toBe(false)
         })
 
         test('given a toggle rolled out at 50% in de, should return true for a de user in a bucket lower than 50', () => {
             expect(
-                client.isToggleEnabled(
-                    { id: 'rolled-out-to-half-in-de-only', default: false },
-                    userInBucket22CultureDE,
-                ),
+                client.isToggleEnabled(userInBucket22CultureDE)({
+                    id: 'rolled-out-to-half-in-de-only',
+                    default: false,
+                }),
             ).toBe(true)
         })
 
         test('given a toggle rolled out at 50% in de, should return true for a de user in a bucket higher than 50', () => {
             expect(
-                client.isToggleEnabled(
-                    { id: 'rolled-out-to-half-in-de-only', default: false },
-                    userInBucketb76CultureDE,
-                ),
+                client.isToggleEnabled(userInBucketb76CultureDE)({
+                    id: 'rolled-out-to-half-in-de-only',
+                    default: false,
+                }),
             ).toBe(false)
         })
     })
@@ -96,7 +93,7 @@ describe('Toguru Client', () => {
         waitForDataLoading()
 
         test('toggleForService, should return the Toggles objet for the correct service', () => {
-            expect(client.togglesForService('service2', userInBucket22CultureDE)).toEqual(
+            expect(client.togglesForService(userInBucket22CultureDE)('service2')).toEqual(
                 new Toggles([
                     { id: 'rolled-out-to-half-in-de-only', enabled: true },
                     { id: 'rolled-out-to-noone', enabled: false },
