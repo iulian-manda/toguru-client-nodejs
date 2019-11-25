@@ -7,12 +7,25 @@ import { Toggles } from './models/Toggles'
 import { ToggleState } from './models/ToggleState'
 
 export type ToguruClientConfig = {
+    /**
+     * The toguru backend endpoint
+     */
     endpoint: string
+    /**
+     * How often to pull toguru information from the backend
+     */
     refreshIntervalMs?: number
 }
 
 export type ToguruClient = {
+    /**
+     * Determine if the toggle is enabled based on user information
+     */
     isToggleEnabled: (user: UserInfo) => (toggle: Toggle) => boolean
+
+    /**
+     * List of toggles that are enabled for a given service (special tag)
+     */
     togglesForService: (user: UserInfo) => (service: string) => Toggles
 }
 
@@ -22,29 +35,27 @@ export default (config: ToguruClientConfig): ToguruClient => {
 
     const refreshToguruData = () =>
         fetchToguruData(endpoint)
+            .then((td) => (toguruData = td))
             .catch((e) => console.warn(`Unable to refresh toguru data: ${e}`))
-            .then((td) => {
-                if (td) {
-                    toguruData = td
-                }
-            })
 
     refreshToguruData()
 
-    setInterval(() => {
-        refreshToguruData()
-    }, refreshIntervalMs)
+    setInterval(() => refreshToguruData(), refreshIntervalMs)
 
     return {
-        isToggleEnabled: (user: UserInfo) =>(toggle: Toggle): boolean => {
-            return isToggleEnabledForUser(toguruData, toggle, user)
-        },
+        isToggleEnabled: (user: UserInfo) => (toggle: Toggle): boolean =>
+            isToggleEnabledForUser(toguruData, toggle, user),
+
         togglesForService: (user: UserInfo) => (service: string): Toggles => {
             const toggleIds = findToggleListForService(toguruData, service)
-            const togglesState = toggleIds.reduce((toggles, id) => {
-                toggles.push({ id, enabled: isToggleEnabledForUser(toguruData, { id, default: false }, user) })
-                return toggles
-            }, [] as ToggleState[])
+            const togglesState = toggleIds.reduce<ToggleState[]>(
+                (toggles, id) => [
+                    ...toggles,
+                    { id, enabled: isToggleEnabledForUser(toguruData, { id, default: false }, user) },
+                ],
+                [],
+            )
+
             return new Toggles(togglesState)
         },
     }
