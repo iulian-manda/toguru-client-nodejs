@@ -1,10 +1,10 @@
 import fetchToguruData from './services/fetchToguruData'
 import findToggleListForService from './services/toggleListForService'
 import isToggleEnabledForUser from './services/isToggleEnabled'
-import { UserInfo, ToguruData } from './types/toguru'
-import { Toggle } from './types/Toggle'
-import { Toggles } from './types/Toggles'
-import { ToggleState } from './types/ToggleState'
+import { UserInfo, ToguruData } from './models/toguru'
+import { Toggle } from './models/Toggle'
+import { Toggles } from './models/Toggles'
+import { ToggleState } from './models/ToggleState'
 
 export type ToguruClientConfig = {
     endpoint: string

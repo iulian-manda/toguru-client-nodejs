@@ -1,8 +1,8 @@
 import Client, { ToguruClientConfig } from './client'
 import { Response, Request, NextFunction } from 'express'
-import { Toggle } from './types/Toggle'
-import { UserInfo } from './types/toguru'
-import { Toggles } from './types/Toggles'
+import { Toggle } from './models/Toggle'
+import { UserInfo } from './models/toguru'
+import { Toggles } from './models/Toggles'
 
 type Extractor<T> = (r: Request) => T | undefined
 type AttributeExtractor = { attribute: string; extractor: Extractor<string> }

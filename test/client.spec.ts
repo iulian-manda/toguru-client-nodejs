@@ -1,6 +1,6 @@
 import Client from '../src/client'
 import mockedTogglestate from './togglestate.fixture.json'
-import { Toggles } from '../src/types/Toggles'
+import { Toggles } from '../src/models/Toggles'
 
 const userInBucket22CultureDE = {
     attributes: { culture: 'de-DE' },

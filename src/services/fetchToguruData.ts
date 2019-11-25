@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { ToguruData } from '../types/toguru'
+import { ToguruData } from '../models/toguru'
 
 export default (endpoint: string): Promise<ToguruData> =>
     axios(endpoint, {

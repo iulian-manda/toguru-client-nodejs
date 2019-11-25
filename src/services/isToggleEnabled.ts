@@ -1,6 +1,6 @@
 import calculateBucket from './calculateBuckets'
-import { ToguruData, UserInfo } from '../types/toguru'
-import { Toggle } from '../types/Toggle'
+import { ToguruData, UserInfo } from '../models/toguru'
+import { Toggle } from '../models/Toggle'
 
 export default (toguruData: ToguruData, toggle: Toggle, { uuid, attributes, forcedToggles }: UserInfo): boolean => {
     if (forcedToggles && toggle.id in forcedToggles) {

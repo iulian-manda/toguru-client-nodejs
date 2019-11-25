@@ -1,5 +1,5 @@
 import isEnabled from '../src/services/isToggleEnabled'
-import { ToguruData, UserInfo } from '../src/types/toguru'
+import { ToguruData, UserInfo } from '../src/models/toguru'
 import toggleState from './togglestate.fixture.json'
 
 const userInBucket22CultureDE = {
