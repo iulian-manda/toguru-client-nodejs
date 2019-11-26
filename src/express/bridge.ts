@@ -1,13 +1,8 @@
-import { ToguruClient, ToguruClientFromUserInfo } from './client'
+import { ToguruClient, ToguruClientFromUserInfo } from '../client'
 import { Response, Request, NextFunction } from 'express'
-import { Toggle } from './models/Toggle'
-import { UserInfo } from './models/toguru'
-import {
-    Extractor,
-    ForcedToggleExtractor,
-    cookieValue,
-    defaultForcedTogglesExtractor,
-} from './expressMiddleware/extractors'
+import { Toggle } from '../models/Toggle'
+import { UserInfo } from '../models/toguru'
+import { Extractor, ForcedToggleExtractor, cookieValue, defaultForcedTogglesExtractor } from './extractors'
 
 type ExpressConfig = {
     client: ToguruClientFromUserInfo

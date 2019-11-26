@@ -1,10 +1,10 @@
 import { Request, NextFunction, Response } from 'express'
-import { middleware } from '../src/express-middleware'
-import client from '../src/client'
-import mockedTogglestate from './togglestate.fixture.json'
-import { cookieValue, defaultForcedTogglesExtractor } from '../src/expressMiddleware/extractors'
-import { Toggle } from '../src/models/Toggle'
-import { Toggles } from '../src/models/Toggles'
+import { middleware } from '../../src/express/bridge'
+import client from '../../src/client'
+import mockedTogglestate from '../togglestate.fixture.json'
+import { cookieValue, defaultForcedTogglesExtractor } from '../../src/express/extractors'
+import { Toggle } from '../../src/models/Toggle'
+import { Toggles } from '../../src/models/Toggles'
 
 let clientRefreshRes: (_: void) => void
 jest.mock('axios', () => {
