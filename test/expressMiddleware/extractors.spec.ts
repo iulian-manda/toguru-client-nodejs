@@ -32,16 +32,14 @@ describe('Extractors', () => {
                 expect(cookieValue).toEqual('cookieValue')
             })
             it('if present with a name capitalized differently, with the caseInsensitiveOption', () => {
-                const cookieValue = fromCookie(cookieName, { caseInsensitive: true })(
-                    fakeRequestWithCookie('CooKieName'),
-                )
+                const cookieValue = fromCookie(cookieName)(fakeRequestWithCookie('CooKieName'))
                 expect(cookieValue).toEqual('cookieValue')
             })
         })
 
-        it('should return undefined, if the cookie is not present', () => {
+        it('should return null, if the cookie is not present', () => {
             const cookieValue = fromCookie('anotherCookieName')(fakeRequestWithCookie('cookieName'))
-            expect(cookieValue).toEqual(undefined)
+            expect(cookieValue).toBeNull()
         })
     })
 
@@ -52,16 +50,14 @@ describe('Extractors', () => {
                 expect(cookieValue).toEqual('headerValue')
             })
             it('if present with a name capitalized differently, with the caseInsensitiveOption', () => {
-                const cookieValue = fromHeader('headerName', { caseInsensitive: true })(
-                    fakeRequestWithHeaders({ HeaderName: 'headerValue' }),
-                )
+                const cookieValue = fromHeader('headerName')(fakeRequestWithHeaders({ HeaderName: 'headerValue' }))
                 expect(cookieValue).toEqual('headerValue')
             })
         })
 
-        it('should return undefined, if not present', () => {
+        it('should return null, if not present', () => {
             const cookieValue = fromHeader('headerName')(fakeRequestWithHeaders({ otherHeaderName: 'headerValue' }))
-            expect(cookieValue).toEqual(undefined)
+            expect(cookieValue).toBeNull()
         })
     })
 
