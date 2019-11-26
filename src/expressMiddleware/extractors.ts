@@ -1,57 +1,71 @@
 import { Request } from 'express'
 import cookie from 'cookie'
 
-type Extractor = (request: Request) => string | undefined
-type ExtractorOption = { caseInsensitive: boolean }
+export type Extractor<T> = (request: Request) => T | null
+type ForcedToggleExtractor = (request: Request) => Record<string, boolean>
 
-const valueCaseInsensitiveKey = (name: string, obj: Record<string, string>) => {
-    const loweredCaseName = name.toLowerCase()
-    const key = Object.keys(obj).find((c) => c.toLowerCase() == loweredCaseName)
-    return key ? obj[key] : undefined
+/**
+ * Fetches object key value ignoring case-sensitivity
+ */
+const valueCaseInsensitiveKey = <T>(key: string, obj: Record<string, T>): T | null => {
+    const keyLowerCased = key.toLowerCase()
+    const keyMatch = Object.keys(obj || {}).find((c) => c.toLowerCase() == keyLowerCased)
+    return keyMatch ? obj[keyMatch] : null
 }
 
-export const fromCookie = (name: string, option?: ExtractorOption) => (request: Request): string | undefined => {
-    const cookieStr = request.headers?.cookie
-    if (!cookieStr) return undefined
-    const parsedCookies = cookie.parse(cookieStr)
-    if (option) return valueCaseInsensitiveKey(name, parsedCookies)
-    return parsedCookies[name]
+/**
+ * Converts a string of the form <key1>=true|<key2>=false|... into a record
+ */
+const deserializeToguruValue = (s: string, separator: string = '|'): Record<string, boolean> =>
+    s
+        .split(separator)
+        .filter((toggleKeyValue) => {
+            const equals = toggleKeyValue.trim().indexOf('=')
+            return equals !== -1 && equals !== 0 && equals !== toggleKeyValue.trim().length - 1
+        })
+        .reduce<Record<string, boolean>>((toggles, toggleKeyValue) => {
+            const kv = toggleKeyValue.split('=')
+            return { ...toggles, [kv[0]]: kv[1] === 'true' }
+        }, {})
+
+export const cookieValue = (name: string): Extractor<string> => (request) => {
+    const rawCookie = request.headers?.cookie
+
+    return rawCookie ? valueCaseInsensitiveKey(name, cookie.parse(rawCookie)) : null
 }
 
-export const fromHeader = (name: string, option?: ExtractorOption) => (request: Request): string | undefined => {
-    const value = option?.caseInsensitive
-        ? valueCaseInsensitiveKey(name, request.headers ? (request.headers as Record<string, string>) : {})
-        : request.headers[name]
-    if (value instanceof Array) return value[0]
-    return value
+export const fromCookie = (name: string): ForcedToggleExtractor => (request) => {
+    const value = cookieValue(name)(request)
+
+    return value ? deserializeToguruValue(value) : {}
 }
 
-export const togglesStringParser = (togglesString: string): Record<string, boolean> =>
-    togglesString.split('|').reduce((toggles, toggleStr) => {
-        if (toggleStr.length > 0) {
-            const [key, value, ...others] = toggleStr.split('=')
-            if (others.length < 1) toggles[key] = value == 'true'
-        }
-        return toggles
-    }, {} as Record<string, boolean>)
+export const fromHeader = (name: string): ForcedToggleExtractor => (request) => {
+    const value = valueCaseInsensitiveKey(name, request.headers)
 
-const extractAndParse = (ex: Extractor) => (request: Request): Record<string, boolean> | undefined => {
-    const extracted = ex(request)
-    return extracted ? togglesStringParser(extracted) : undefined
+    return value instanceof Array
+        ? value.map((v) => deserializeToguruValue(v)).reduce((acc, c) => ({ ...acc, ...c }))
+        : value
+        ? deserializeToguruValue(value)
+        : {}
 }
 
-export const defaultForcedTogglesExtractor = (request: Request): Record<string, boolean> => {
-    const togglesFromHeader = () => {
-        const xToguru = extractAndParse(fromHeader('x-toguru', { caseInsensitive: true }))(request)
-        return xToguru ?? extractAndParse(fromHeader('toguru', { caseInsensitive: true }))(request)
-    }
+export const fromQueryParam = (name: string): ForcedToggleExtractor => (request) => {
+    const value = valueCaseInsensitiveKey(name, (request.query as Record<string, string | string[]>) ?? {})
 
-    const togglesFromCookie = () => extractAndParse(fromCookie('toguru', { caseInsensitive: true }))(request)
-
-    const togglesFromQueryParam = () => {
-        const toguruQuery = valueCaseInsensitiveKey('toguru', request.query ?? {})
-        return toguruQuery ? togglesStringParser(toguruQuery) : undefined
-    }
-
-    return togglesFromHeader() ?? togglesFromCookie() ?? togglesFromQueryParam() ?? {}
+    return value instanceof Array
+        ? value.map((v) => deserializeToguruValue(v)).reduce((acc, c) => ({ ...acc, ...c }))
+        : value
+        ? deserializeToguruValue(value)
+        : {}
 }
+
+/**
+ * Fetches forced toggles from a request based on defaults
+ */
+export const defaultForcedTogglesExtractor: ForcedToggleExtractor = (request: Request): Record<string, boolean> => ({
+    ...fromCookie('toguru')(request),
+    ...fromHeader('x-toguru')(request),
+    ...fromHeader('toguru')(request),
+    ...fromQueryParam('toguru')(request),
+})

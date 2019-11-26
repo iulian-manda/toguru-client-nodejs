@@ -6,45 +6,57 @@ import { Toggle } from './models/Toggle'
 import { Toggles } from './models/Toggles'
 import { ToggleState } from './models/ToggleState'
 
+const refreshIntervalMsDefault = 60000
+
 export type ToguruClientConfig = {
+    /**
+     * The toguru backend endpoint
+     */
     endpoint: string
+    /**
+     * How often to pull toguru information from the backend. Defaults to 60 secs
+     */
     refreshIntervalMs?: number
 }
-
+// (req: Request) => UserInfo = defaultExtractor
 export type ToguruClient = {
-    isToggleEnabled: (toggle: Toggle, user: UserInfo) => boolean
-    togglesForService: (service: string, user: UserInfo) => Toggles
+    /**
+     * Determine if the toggle is enabled based on user information
+     */
+    isToggleEnabled(user: UserInfo): (toggle: Toggle) => boolean
+
+    /**
+     * List of toggles that are enabled for a given service (special tag)
+     */
+    togglesForService: (user: UserInfo) => (service: string) => Toggles
 }
 
 export default (config: ToguruClientConfig): ToguruClient => {
-    const { endpoint, refreshIntervalMs = 60000 } = config
+    const { endpoint, refreshIntervalMs = refreshIntervalMsDefault } = config
     let toguruData: ToguruData = { sequenceNo: 0, toggles: [] }
 
     const refreshToguruData = () =>
         fetchToguruData(endpoint)
+            .then((td) => (toguruData = td))
             .catch((e) => console.warn(`Unable to refresh toguru data: ${e}`))
-            .then((td) => {
-                if (td) {
-                    toguruData = td
-                }
-            })
 
+    // Schedule refreshes
     refreshToguruData()
-
-    setInterval(() => {
-        refreshToguruData()
-    }, refreshIntervalMs)
+    setInterval(() => refreshToguruData(), refreshIntervalMs)
 
     return {
-        isToggleEnabled: (toggle: Toggle, user: UserInfo): boolean => {
-            return isToggleEnabledForUser(toguruData, toggle, user)
-        },
-        togglesForService: (service: string, user: UserInfo): Toggles => {
+        isToggleEnabled: (user: UserInfo) => (toggle: Toggle): boolean =>
+            isToggleEnabledForUser(toguruData, toggle, user),
+        togglesForService: (user: UserInfo) => (service: string): Toggles => {
             const toggleIds = findToggleListForService(toguruData, service)
-            const togglesState = toggleIds.reduce((toggles, id) => {
-                toggles.push({ id, enabled: isToggleEnabledForUser(toguruData, { id, default: false }, user) })
-                return toggles
-            }, [] as ToggleState[])
+            const togglesState = toggleIds.reduce<ToggleState[]>(
+                (toggles, id) => [
+                    ...toggles,
+                    { id, enabled: isToggleEnabledForUser(toguruData, { id, default: false }, user) },
+                ],
+                [],
+            )
+
             return new Toggles(togglesState)
         },
     }
