@@ -51,6 +51,9 @@ declare global {
     }
 }
 
+/**
+ * An Express-middleware that provides toggle computation based on the Request information
+ */
 export const middleware = (config: ExpressConfig) => (req: Request, _: Response, next: NextFunction) => {
     req.toguru = expressClient(config)(req)
 
