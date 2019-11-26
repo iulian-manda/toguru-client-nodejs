@@ -61,6 +61,7 @@
         "eslint-config-prettier": "^6.5.0",
         "eslint-plugin-prettier": "^3.1.0",
         "express": "^4.17.1",
+        "node-mocks-http": "^1.8.0",
         "prettier": "^1.19.1",
         "semantic-release": "^12.4.1",
         "ts-jest": "^24.1.0",
