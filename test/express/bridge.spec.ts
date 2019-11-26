@@ -1,18 +1,20 @@
-import { Request, NextFunction, Response } from 'express'
-import { middleware } from '../../src/express/bridge'
+import { Request, NextFunction } from 'express'
+import { middleware as expressMiddleware } from '../../src/express/bridge'
 import client from '../../src/client'
 import mockedTogglestate from '../togglestate.fixture.json'
 import { cookieValue, defaultForcedTogglesExtractor } from '../../src/express/extractors'
 import { Toggle } from '../../src/models/Toggle'
 import { Toggles } from '../../src/models/Toggles'
+import httpMocks from 'node-mocks-http'
 
 let clientRefreshRes: (_: void) => void
-jest.mock('axios', () => {
-    return jest.fn().mockImplementation(() => {
+
+jest.mock('axios', () =>
+    jest.fn().mockImplementation(() => {
         clientRefreshRes()
         return Promise.resolve({ data: mockedTogglestate })
-    })
-})
+    }),
+)
 
 const sendRequest = async ({
     uuid,
@@ -23,12 +25,12 @@ const sendRequest = async ({
     culture: string
     query: Record<string, string>
 }) => {
-    const fakeRequest: Request = {
+    const fakeRequest: Request = httpMocks.createRequest({
         headers: {
             cookie: `uid=${uuid};culture=${culture}`,
         },
         query: query || {},
-    } as Request
+    })
 
     const fakeNext = jest.fn<NextFunction, []>()
 
@@ -36,7 +38,7 @@ const sendRequest = async ({
         clientRefreshRes = res
     })
 
-    const middleWare = middleware({
+    const middleware = expressMiddleware({
         client: client({ endpoint: 'endpoint', refreshIntervalMs: 100000 }),
         extractors: {
             uuid: cookieValue('uid'),
@@ -47,7 +49,7 @@ const sendRequest = async ({
 
     await clientReady
 
-    await middleWare(fakeRequest, {} as Response, fakeNext)
+    await middleware(fakeRequest, httpMocks.createResponse(), fakeNext)
 
     return fakeRequest
 }
@@ -77,68 +79,62 @@ const userInBucket22CultureIT = {
 describe('Express middleware', () => {
     it('userInBucket22CultureDE', async () => {
         const req = await sendRequest(userInBucket22CultureDE)
+
         expect(req.toguru).toBeDefined()
-        if (req.toguru) {
-            expect(req.toguru.isToggleEnabled(toggles.rolledOutToEveryone)).toBe(true)
-            expect(req.toguru.isToggleEnabled(toggles.rolledOutToHalfInDeOnly)).toBe(true)
-        }
+        expect(req.toguru?.isToggleEnabled(toggles.rolledOutToEveryone)).toBeTruthy()
+        expect(req.toguru?.isToggleEnabled(toggles.rolledOutToHalfInDeOnly)).toBeTruthy()
     })
 
     it('userInBucketb76CultureDE', async () => {
         const req = await sendRequest(userInBucketb76CultureDE)
+
         expect(req.toguru).toBeDefined()
-        if (req.toguru) {
-            expect(req.toguru.isToggleEnabled(toggles.rolledOutToNone)).toBe(false)
-            expect(req.toguru.isToggleEnabled(toggles.rolledOutToHalfInDeOnly)).toBe(false)
-        }
+        expect(req.toguru?.isToggleEnabled(toggles.rolledOutToNone)).toBeFalsy()
+        expect(req.toguru?.isToggleEnabled(toggles.rolledOutToHalfInDeOnly)).toBeFalsy()
     })
 
     it('togglesForService 1', async () => {
         const req = await sendRequest(userInBucket22CultureDE)
+
         expect(req.toguru).toBeDefined()
-        if (req.toguru) {
-            expect(req.toguru.togglesForService('service2')).toEqual(
-                new Toggles([
-                    {
-                        id: 'rolled-out-to-half-in-de-only',
-                        enabled: true,
-                    },
-                    {
-                        id: 'rolled-out-to-noone',
-                        enabled: false,
-                    },
-                ]),
-            )
-        }
+        expect(req.toguru?.togglesForService('service2')).toEqual(
+            new Toggles([
+                {
+                    id: 'rolled-out-to-half-in-de-only',
+                    enabled: true,
+                },
+                {
+                    id: 'rolled-out-to-noone',
+                    enabled: false,
+                },
+            ]),
+        )
     })
 
     it('togglesForService 2', async () => {
         const req = await sendRequest(userInBucket22CultureIT)
-        expect(req.toguru).toBeDefined()
-        if (req.toguru) {
-            expect(req.toguru.togglesForService('service2')).toEqual(
-                new Toggles([
-                    {
-                        id: 'rolled-out-to-half-in-de-only',
-                        enabled: false,
-                    },
-                    {
-                        id: 'rolled-out-to-noone',
-                        enabled: false,
-                    },
-                ]),
-            )
-        }
+
+        expect(req.toguru?.togglesForService('service2')).toEqual(
+            new Toggles([
+                {
+                    id: 'rolled-out-to-half-in-de-only',
+                    enabled: false,
+                },
+                {
+                    id: 'rolled-out-to-noone',
+                    enabled: false,
+                },
+            ]),
+        )
     })
 
     it('toggleStringForService', async () => {
         const req = await sendRequest(userInBucket22CultureIT)
+
         expect(req.toguru).toBeDefined()
-        if (req.toguru) {
-            expect(req.toguru.togglesForService('service2').queryString()).toEqual(
-                'toguru=rolled-out-to-half-in-de-only%3Dfalse%7Crolled-out-to-noone%3Dfalse',
-            )
-        }
+        expect(req.toguru?.togglesForService('service2').queryString()).toEqual(
+            'toguru=rolled-out-to-half-in-de-only%3Dfalse%7Crolled-out-to-noone%3Dfalse',
+        )
     })
 
     it('Forced toggles', async () => {
@@ -148,10 +144,9 @@ describe('Express middleware', () => {
                 toguru: 'rolled-out-to-noone=true|rolled-out-to-half-in-de-only=true',
             },
         })
+
         expect(req.toguru).toBeDefined()
-        if (req.toguru) {
-            expect(req.toguru.isToggleEnabled(toggles.rolledOutToNone)).toBe(true)
-            expect(req.toguru.isToggleEnabled(toggles.rolledOutToHalfInDeOnly)).toBe(true)
-        }
+        expect(req.toguru?.isToggleEnabled(toggles.rolledOutToNone)).toBeTruthy()
+        expect(req.toguru?.isToggleEnabled(toggles.rolledOutToHalfInDeOnly)).toBeTruthy()
     })
 })
