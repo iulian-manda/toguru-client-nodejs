@@ -3,8 +3,8 @@ import { Response, Request, NextFunction } from 'express'
 import { Toggle } from './models/Toggle'
 import { UserInfo } from './models/toguru'
 import { Toggles } from './models/Toggles'
+import { Extractor } from './expressMiddleware/extractors'
 
-type Extractor<T> = (r: Request) => T | undefined
 type AttributeExtractor = { attribute: string; extractor: Extractor<string> }
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -68,21 +68,14 @@ declare global {
     }
 }
 
-/**
- * @param endpoint - endpoint to the list of toggle states
- * @param refreshInterval - interval time to fetch and update toggle state list (in ms)
- * @param cookieName - name of the cookie containing the uuid for bucketing the user
- * @param cultureCookieName - name of the cookie containing the user culture value
- */
-
 export default (config: ToguruExpressMiddlewareConfig) => {
     const client = Client(config.client)
 
     return async (req: Request, _: Response, next: NextFunction) => {
         try {
             const user: UserInfo = {
-                uuid: config.uuidExtractor(req),
-                forcedToggles: config.forceTogglesExtractor(req),
+                uuid: config.uuidExtractor(req) || undefined,
+                forcedToggles: config.forceTogglesExtractor(req) || undefined,
                 attributes: config.attributeExtractors.reduce((acc, ax) => {
                     const value = ax.extractor(req)
                     if (value) acc[ax.attribute] = value

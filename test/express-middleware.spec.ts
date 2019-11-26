@@ -1,7 +1,7 @@
 import { Request, NextFunction, Response } from 'express'
 import expressMiddleware from '../src/express-middleware'
 import mockedTogglestate from './togglestate.fixture.json'
-import { fromCookie, defaultForcedTogglesExtractor } from '../src/expressMiddleware/extractors'
+import { cookieValue, defaultForcedTogglesExtractor } from '../src/expressMiddleware/extractors'
 import { Toggle } from '../src/models/Toggle'
 import { Toggles } from '../src/models/Toggles'
 
@@ -37,8 +37,8 @@ const sendRequest = async ({
 
     const middleWare = expressMiddleware({
         client: { endpoint: 'endpoint', refreshIntervalMs: 100000 },
-        uuidExtractor: fromCookie('uid'),
-        attributeExtractors: [{ attribute: 'culture', extractor: fromCookie('culture') }],
+        uuidExtractor: cookieValue('uid'),
+        attributeExtractors: [{ attribute: 'culture', extractor: cookieValue('culture') }],
         forceTogglesExtractor: defaultForcedTogglesExtractor,
     })
 

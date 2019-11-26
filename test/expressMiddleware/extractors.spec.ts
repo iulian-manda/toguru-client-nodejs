@@ -1,75 +1,58 @@
-import {
-    fromCookie,
-    fromHeader,
-    togglesStringParser,
-    defaultForcedTogglesExtractor,
-} from '../../src/expressMiddleware/extractors'
+import { fromCookie, fromHeader, defaultForcedTogglesExtractor } from '../../src/expressMiddleware/extractors'
 import { Request } from 'express'
+import httpMocks from 'node-mocks-http'
 
-const fakeRequestWithCookie = (name: string, value = 'cookieValue'): Request =>
-    ({
+const fakeRequestWithCookie = (name: string, value: string): Request =>
+    httpMocks.createRequest({
         headers: {
             cookie: `${name}=${value}`,
         },
-    } as Request)
+    })
 
 const fakeRequestWithHeaders = (headers: Record<string, string>): Request =>
-    ({
+    httpMocks.createRequest({
         headers: { ...headers },
-    } as Request)
+    })
 
 const fakeRequestWithQueryParams = (query: Record<string, string>): Request =>
-    ({
+    httpMocks.createRequest({
         query,
-    } as Request)
+    })
 
 describe('Extractors', () => {
     describe('fromCookie', () => {
-        describe('should be able to extract the value', () => {
-            const cookieName = 'cookieName'
-            it('if present', () => {
-                const cookieValue = fromCookie(cookieName)(fakeRequestWithCookie(cookieName))
-                expect(cookieValue).toEqual('cookieValue')
-            })
-            it('if present with a name capitalized differently, with the caseInsensitiveOption', () => {
-                const cookieValue = fromCookie(cookieName)(fakeRequestWithCookie('CooKieName'))
-                expect(cookieValue).toEqual('cookieValue')
-            })
+        const cookieName = 'cookieName'
+
+        it('extracts value if present', () => {
+            const cookieValue = fromCookie('cookieName')(fakeRequestWithCookie(cookieName, 'toggleName=true'))
+            expect(cookieValue).toEqual({ toggleName: true })
+        })
+        it('extracts value if present with a name capitalized differently', () => {
+            const cookieValue = fromCookie(cookieName.toUpperCase())(
+                fakeRequestWithCookie(cookieName.toLowerCase(), 'toggleName=false'),
+            )
+            expect(cookieValue).toEqual({ toggleName: false })
         })
 
-        it('should return null, if the cookie is not present', () => {
-            const cookieValue = fromCookie('anotherCookieName')(fakeRequestWithCookie('cookieName'))
-            expect(cookieValue).toBeNull()
+        it('doesnt extract a value, if the cookie is not present', () => {
+            const cookieValue = fromCookie('anotherCookieName')(fakeRequestWithCookie('cookieName', 'k=v'))
+            expect(cookieValue).toEqual({})
         })
     })
 
     describe('fromHeader', () => {
-        describe('should be able to extract the value', () => {
-            it('if present', () => {
-                const cookieValue = fromHeader('headerName')(fakeRequestWithHeaders({ headerName: 'headerValue' }))
-                expect(cookieValue).toEqual('headerValue')
-            })
-            it('if present with a name capitalized differently, with the caseInsensitiveOption', () => {
-                const cookieValue = fromHeader('headerName')(fakeRequestWithHeaders({ HeaderName: 'headerValue' }))
-                expect(cookieValue).toEqual('headerValue')
-            })
+        it('it extracts value if present', () => {
+            const value = fromHeader('foo')(fakeRequestWithHeaders({ foo: 'bar=true|baz=false' }))
+            expect(value).toEqual({ bar: true, baz: false })
+        })
+        it('it extracts value if present with a name capitalized differently', () => {
+            const value = fromHeader('foo')(fakeRequestWithHeaders({ foo: 'bar=false|x=true' }))
+            expect(value).toEqual({ bar: false, x: true })
         })
 
-        it('should return null, if not present', () => {
-            const cookieValue = fromHeader('headerName')(fakeRequestWithHeaders({ otherHeaderName: 'headerValue' }))
-            expect(cookieValue).toBeNull()
-        })
-    })
-
-    describe('togglesStringParser', () => {
-        it('should parse the toguru string', () => {
-            const togglesString = 'toggle-1=true|toggle-2=false'
-            expect(togglesStringParser(togglesString)).toEqual({
-                'toggle-1': true,
-                'toggle-2': false,
-            })
-
-            expect(togglesStringParser('')).toEqual({})
+        it('doesnt extract a value, if header not present', () => {
+            const value = fromHeader('foo')(fakeRequestWithHeaders({ otherHeaderName: 'baz=true' }))
+            expect(value).toEqual({})
         })
     })
 
@@ -88,7 +71,7 @@ describe('Extractors', () => {
         })
 
         it('no toguru cookie defined', () => {
-            const res = defaultForcedTogglesExtractor(fakeRequestWithCookie('cookieName'))
+            const res = defaultForcedTogglesExtractor(fakeRequestWithCookie('cookieName', ''))
             expect(res).toEqual({})
         })
 
@@ -105,6 +88,27 @@ describe('Extractors', () => {
         it('toguru query param defined', () => {
             const res = defaultForcedTogglesExtractor(fakeRequestWithQueryParams({ toguru: 'toggle-1=true' }))
             expect(res).toEqual({ 'toggle-1': true })
+        })
+
+        it('combines overrides from different channels and prioritizes them according to `QueryParam -> Header -> Cookie`', () => {
+            const requestWithCookieHeaderAndQueryParamOverrides = httpMocks.createRequest({
+                headers: {
+                    cookie: `toguru=bar=true|foo=true`,
+                    toguru: 'bar=false|j=true',
+                },
+                query: {
+                    toguru: 'foo=false|bar=true|k=false',
+                },
+            })
+
+            const res = defaultForcedTogglesExtractor(requestWithCookieHeaderAndQueryParamOverrides)
+
+            expect(res).toEqual({
+                foo: false,
+                bar: true,
+                k: false,
+                j: true,
+            })
         })
     })
 })
