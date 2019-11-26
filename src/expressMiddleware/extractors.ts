@@ -2,7 +2,8 @@ import { Request } from 'express'
 import cookie from 'cookie'
 
 export type Extractor<T> = (request: Request) => T | null
-type ForcedToggleExtractor = (request: Request) => Record<string, boolean>
+
+export type ForcedToggleExtractor = (request: Request) => Record<string, boolean>
 
 /**
  * Fetches object key value ignoring case-sensitivity

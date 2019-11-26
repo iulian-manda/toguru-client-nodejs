@@ -18,7 +18,7 @@ export type ToguruClientConfig = {
      */
     refreshIntervalMs?: number
 }
-// (req: Request) => UserInfo = defaultExtractor
+
 export type ToguruClient = {
     /**
      * Determine if the toggle is enabled based on user information
