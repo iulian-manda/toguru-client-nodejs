@@ -1,4 +1,4 @@
-import { fromCookie, fromHeader, defaultForcedTogglesExtractor } from '../../src/expressMiddleware/extractors'
+import { fromCookie, fromHeader, defaultForcedTogglesExtractor } from '../../src/express/extractors'
 import { Request } from 'express'
 import httpMocks from 'node-mocks-http'
 

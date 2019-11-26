@@ -1,20 +1,21 @@
 import Client from '../src/client'
 import mockedTogglestate from './togglestate.fixture.json'
 import { Toggles } from '../src/models/Toggles'
+import { UserInfo } from '../src/models/toguru'
 
-const userInBucket22CultureDE = {
+const userInBucket22CultureDE: UserInfo = {
     attributes: { culture: 'de-DE' },
     uuid: '88248687-6dce-4759-a5c0-3945eedc2b48',
 } // bucket: 22
-const userInBucketb76CultureDE = {
+const userInBucketb76CultureDE: UserInfo = {
     attributes: { culture: 'de-DE' },
     uuid: '721f87e2-cec9-4753-b3bb-d2ebe20dd317',
 } // bucket: 76
-const userInBucket22CultureIT = {
+const userInBucket22CultureIT: UserInfo = {
     attributes: { culture: 'it-IT' },
     uuid: '88248687-6dce-4759-a5c0-3945eedc2b48',
 } // bucket: 22
-const userInBucket22NoCulture = {
+const userInBucket22NoCulture: UserInfo = {
     uuid: '88248687-6dce-4759-a5c0-3945eedc2b48',
 } // bucket: 22
 
@@ -35,39 +36,39 @@ describe('Toguru Client', () => {
         waitForDataLoading()
 
         test('given a toggle that is not defined on the backend, should return the default value defined', () => {
-            expect(client.isToggleEnabled(userInBucket22CultureDE)({ id: 'not-defined', default: true })).toBe(true)
+            expect(client(userInBucket22CultureDE).isToggleEnabled({ id: 'not-defined', default: true })).toBe(true)
         })
 
         test('given a forced toggle, should return the forced value', () => {
             expect(
-                client.isToggleEnabled({
+                client({
                     ...userInBucket22CultureDE,
                     forcedToggles: { 'rolled-out-to-noone': true },
-                })({ id: 'rolled-out-to-noone', default: false }),
+                }).isToggleEnabled({ id: 'rolled-out-to-noone', default: false }),
             ).toBe(true)
         })
 
         test('given a toggle with rollout percentage 100 and no culture, should return true for everyone', () => {
             expect(
-                client.isToggleEnabled(userInBucketb76CultureDE)({ id: 'rolled-out-to-everyone', default: false }),
+                client(userInBucketb76CultureDE).isToggleEnabled({ id: 'rolled-out-to-everyone', default: false }),
             ).toBe(true)
             expect(
-                client.isToggleEnabled(userInBucket22NoCulture)({ id: 'rolled-out-to-everyone', default: false }),
+                client(userInBucket22NoCulture).isToggleEnabled({ id: 'rolled-out-to-everyone', default: false }),
             ).toBe(true)
         })
 
         test('given a toggle rolled out 100 in de, should return false for a user with a different culture or no culture', () => {
             expect(
-                client.isToggleEnabled(userInBucket22CultureIT)({ id: 'rolled-out-only-in-de', default: true }),
+                client(userInBucket22CultureIT).isToggleEnabled({ id: 'rolled-out-only-in-de', default: true }),
             ).toBe(false)
             expect(
-                client.isToggleEnabled(userInBucket22NoCulture)({ id: 'rolled-out-only-in-de', default: true }),
+                client(userInBucket22NoCulture).isToggleEnabled({ id: 'rolled-out-only-in-de', default: true }),
             ).toBe(false)
         })
 
         test('given a toggle rolled out at 50% in de, should return true for a de user in a bucket lower than 50', () => {
             expect(
-                client.isToggleEnabled(userInBucket22CultureDE)({
+                client(userInBucket22CultureDE).isToggleEnabled({
                     id: 'rolled-out-to-half-in-de-only',
                     default: false,
                 }),
@@ -76,7 +77,7 @@ describe('Toguru Client', () => {
 
         test('given a toggle rolled out at 50% in de, should return true for a de user in a bucket higher than 50', () => {
             expect(
-                client.isToggleEnabled(userInBucketb76CultureDE)({
+                client(userInBucketb76CultureDE).isToggleEnabled({
                     id: 'rolled-out-to-half-in-de-only',
                     default: false,
                 }),
@@ -93,7 +94,7 @@ describe('Toguru Client', () => {
         waitForDataLoading()
 
         test('toggleForService, should return the Toggles objet for the correct service', () => {
-            expect(client.togglesForService(userInBucket22CultureDE)('service2')).toEqual(
+            expect(client(userInBucket22CultureDE).togglesForService('service2')).toEqual(
                 new Toggles([
                     { id: 'rolled-out-to-half-in-de-only', enabled: true },
                     { id: 'rolled-out-to-noone', enabled: false },
