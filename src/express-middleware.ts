@@ -1,8 +1,7 @@
-import { ToguruClient } from './client'
+import { ToguruClient, ToguruClientFromUserInfo } from './client'
 import { Response, Request, NextFunction } from 'express'
 import { Toggle } from './models/Toggle'
 import { UserInfo } from './models/toguru'
-import { Toggles } from './models/Toggles'
 import {
     Extractor,
     ForcedToggleExtractor,
@@ -11,7 +10,7 @@ import {
 } from './expressMiddleware/extractors'
 
 type ExpressConfig = {
-    client: ToguruClient
+    client: ToguruClientFromUserInfo
 
     /**
      * Customize request extractors
@@ -52,16 +51,13 @@ declare global {
     // eslint-disable-next-line @typescript-eslint/no-namespace
     namespace Express {
         interface Request {
-            toguru?: {
-                isToggleEnabled: (toggle: Toggle) => boolean
-                togglesForService: (service: string) => Toggles
-            }
+            toguru?: ToguruClient
         }
     }
 }
 
 export const middleware = (config: ExpressConfig) => (req: Request, _: Response, next: NextFunction) => {
-    req.toguru = client(config)(req)
+    req.toguru = expressClient(config)(req)
 
     next()
 }
@@ -69,7 +65,7 @@ export const middleware = (config: ExpressConfig) => (req: Request, _: Response,
 /**
  * A refinement of the base toguru client that extracts user information from the request
  */
-export const client = (config: ExpressConfig) => (req: Request) => {
+export const expressClient = (config: ExpressConfig) => (req: Request): ToguruClient => {
     const extractors = { ...defaultExtractors, ...(config.extractors ? config.extractors : {}) }
 
     const user: UserInfo = {
@@ -82,7 +78,7 @@ export const client = (config: ExpressConfig) => (req: Request) => {
     }
 
     return {
-        isToggleEnabled: (toggle: Toggle) => config.client.isToggleEnabled(user)(toggle),
-        togglesForService: (service: string) => config.client.togglesForService(user)(service),
+        isToggleEnabled: (toggle: Toggle) => config.client(user).isToggleEnabled(toggle),
+        togglesForService: (service: string) => config.client(user).togglesForService(service),
     }
 }
