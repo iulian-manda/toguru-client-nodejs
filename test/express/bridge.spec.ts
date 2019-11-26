@@ -132,7 +132,7 @@ describe('Express middleware', () => {
         const req = await sendRequest(userInBucket22CultureIT)
 
         expect(req.toguru).toBeDefined()
-        expect(req.toguru?.togglesForService('service2').queryString()).toEqual(
+        expect(req.toguru?.togglesForService('service2').queryString).toEqual(
             'toguru=rolled-out-to-half-in-de-only%3Dfalse%7Crolled-out-to-noone%3Dfalse',
         )
     })
