@@ -1,8 +1,12 @@
 import calculateBucket from './calculateBuckets'
-import { ToguruData, UserInfo } from '../models/toguru'
+import { ToguruData, ActivationContext } from '../models/toguru'
 import { Toggle } from '../models/Toggle'
 
-export default (toguruData: ToguruData, toggle: Toggle, { uuid, attributes, forcedToggles }: UserInfo): boolean => {
+export default (
+    toguruData: ToguruData,
+    toggle: Toggle,
+    { uuid, attributes, forcedToggles }: ActivationContext,
+): boolean => {
     if (forcedToggles && toggle.id in forcedToggles) {
         return forcedToggles[toggle.id]
     }
@@ -17,7 +21,7 @@ export default (toguruData: ToguruData, toggle: Toggle, { uuid, attributes, forc
     const bucket = uuid ? calculateBucket(uuid, toggle.default ? 100 : 0) : 100
     const rolloutAttributes: Record<string, string[]> = toggleData?.activations[0]?.attributes || {}
 
-    // Attributes are present in the toggle toguru data, but not present in the userinfo
+    // Attributes are present in the toggle toguru data, but not present in the activation context
     if (rolloutAttributes && Object.keys(rolloutAttributes).length > 0 && !attributes) return false
 
     for (const rolloutAttributeName in rolloutAttributes) {
