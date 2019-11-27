@@ -37,9 +37,9 @@ The client is fully written in `TypeScript` and comes with types out of the box.
 The library provides a base `Toguru` client that is independent of the framework or environment used, and can be used for `AWS lambdas`, `Kafka` streams, generic scripts, etc where toggling functionality might be needed. It allows computing toggle activations based on an activation context. For `web` application contexts, we recommend using the more specialized `Express` bridge, see below.
 
 ```typescript
-import { toguruClient } from '@autoscout24/toguru-client'
+import { toguruClient, TogglingApiByActivationContext } from '@autoscout24/toguru-client'
 
-const client = toguruClient({
+const client: TogglingApiByActivationContext = toguruClient({
     endpoint: 'https://example.com/togglestate',
     refreshIntervalMs: 60 * 1000, // 1 minute
 })

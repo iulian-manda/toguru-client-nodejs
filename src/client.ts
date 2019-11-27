@@ -19,7 +19,7 @@ export type ToguruClientConfig = {
     refreshIntervalMs?: number
 }
 
-export type ToguruClient = {
+export type TogglingApi = {
     /**
      * Determine if the toggle is enabled
      */
@@ -31,9 +31,9 @@ export type ToguruClient = {
     togglesForService: (service: string) => Toggles
 }
 
-export type ToguruClientFromActivationContext = (context: ActivationContext) => ToguruClient
+export type TogglingApiByActivationContext = (context: ActivationContext) => TogglingApi
 
-export default (config: ToguruClientConfig): ToguruClientFromActivationContext => {
+export default (config: ToguruClientConfig): TogglingApiByActivationContext => {
     const { endpoint, refreshIntervalMs = refreshIntervalMsDefault } = config
     let toguruData: ToguruData = { sequenceNo: 0, toggles: [] }
 
@@ -46,7 +46,7 @@ export default (config: ToguruClientConfig): ToguruClientFromActivationContext =
     refreshToguruData()
     setInterval(() => refreshToguruData(), refreshIntervalMs)
 
-    return (context: ActivationContext) => ({
+    return (context) => ({
         isToggleEnabled: (toggle) => isToggleEnabledForUser(toguruData, toggle, context),
         togglesForService: (service) => {
             const toggleIds = findToggleListForService(toguruData, service)
