@@ -1,4 +1,4 @@
-import { Toggles } from '../src/models/Toggles'
+import { Toggles } from '../../src/models/Toggles'
 
 describe('Toggles class', () => {
     describe('queryString', () => {

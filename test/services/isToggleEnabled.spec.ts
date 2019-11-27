@@ -1,6 +1,6 @@
-import isEnabled from '../src/services/isToggleEnabled'
-import { ToguruData, ActivationContext } from '../src/models/toguru'
-import toggleState from './togglestate.fixture.json'
+import isEnabled from '../../src/services/isToggleEnabled'
+import { ToguruData, ActivationContext } from '../../src/models/toguru'
+import toggleState from '../mocks/togglestate.fixture.json'
 
 const userInBucket22CultureDE = {
     attributes: { culture: 'de-DE' },

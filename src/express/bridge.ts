@@ -1,11 +1,11 @@
-import { ToguruClient, ToguruClientFromActivationContext } from '../client'
+import { TogglingApi, TogglingApiByActivationContext } from '../client'
 import { Response, Request, NextFunction } from 'express'
 import { Toggle } from '../models/Toggle'
 import { ActivationContext } from '../models/toguru'
 import { Extractor, ForcedToggleExtractor, cookieValue, defaultForcedTogglesExtractor } from './extractors'
 
-type ExpressConfig = {
-    client: ToguruClientFromActivationContext
+export type ExpressConfig = {
+    client: TogglingApiByActivationContext
 
     /**
      * Customize request extractors
@@ -54,7 +54,7 @@ export const middleware = (config: ExpressConfig) => (req: Request, _: Response,
 /**
  * A refinement of the base toguru client that extracts activation information from the request
  */
-export const expressClient = (config: ExpressConfig) => (req: Request): ToguruClient => {
+export const expressClient = (config: ExpressConfig) => (req: Request): TogglingApi => {
     const extractors = { ...defaultExtractors, ...(config.extractors ? config.extractors : {}) }
 
     const context: ActivationContext = {

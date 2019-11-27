@@ -1,7 +1,7 @@
 import { Request, NextFunction } from 'express'
 import { middleware as expressMiddleware } from '../../src/express/bridge'
 import client from '../../src/client'
-import mockedTogglestate from '../togglestate.fixture.json'
+import mockedTogglestate from '../mocks/togglestate.fixture.json'
 import { cookieValue, defaultForcedTogglesExtractor } from '../../src/express/extractors'
 import { Toggle } from '../../src/models/Toggle'
 import { Toggles } from '../../src/models/Toggles'

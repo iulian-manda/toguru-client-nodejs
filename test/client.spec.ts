@@ -1,5 +1,5 @@
 import Client from '../src/client'
-import mockedTogglestate from './togglestate.fixture.json'
+import mockedTogglestate from './mocks/togglestate.fixture.json'
 import { Toggles } from '../src/models/Toggles'
 import { ActivationContext } from '../src/models/toguru'
 
