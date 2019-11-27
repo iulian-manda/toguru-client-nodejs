@@ -1,12 +1,20 @@
-import _client, { ToguruClient } from './src/client'
+import _client, { TogglingApi } from './src/client'
 import * as _expressBridge from './src/express/bridge'
 import * as extractors from './src/express/extractors'
+
+// Type exports
+export { Toggle } from './src/models/Toggle'
+export { ToggleState } from './src/models/ToggleState'
+export { Toggles } from './src/models/Toggles'
+export { ActivationContext } from './src/models/toguru'
+export { ToguruClientConfig, TogglingApi, TogglingApiByActivationContext } from './src/client'
+export { ExpressConfig } from './src/express/bridge'
 
 declare global {
     // eslint-disable-next-line @typescript-eslint/no-namespace
     namespace Express {
         interface Request {
-            toguru?: ToguruClient
+            toguru?: TogglingApi
         }
     }
 }
