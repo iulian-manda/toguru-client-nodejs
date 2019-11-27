@@ -1,7 +1,7 @@
 import fetchToguruData from './services/fetchToguruData'
 import findToggleListForService from './services/toggleListForService'
 import isToggleEnabledForUser from './services/isToggleEnabled'
-import { UserInfo, ToguruData } from './models/toguru'
+import { ActivationContext, ToguruData } from './models/toguru'
 import { Toggle } from './models/Toggle'
 import { Toggles } from './models/Toggles'
 import { ToggleState } from './models/ToggleState'
@@ -21,7 +21,7 @@ export type ToguruClientConfig = {
 
 export type ToguruClient = {
     /**
-     * Determine if the toggle is enabled based on user information
+     * Determine if the toggle is enabled
      */
     isToggleEnabled: (toggle: Toggle) => boolean
 
@@ -31,9 +31,9 @@ export type ToguruClient = {
     togglesForService: (service: string) => Toggles
 }
 
-export type ToguruClientFromUserInfo = (user: UserInfo) => ToguruClient
+export type ToguruClientFromActivationContext = (context: ActivationContext) => ToguruClient
 
-export default (config: ToguruClientConfig): ToguruClientFromUserInfo => {
+export default (config: ToguruClientConfig): ToguruClientFromActivationContext => {
     const { endpoint, refreshIntervalMs = refreshIntervalMsDefault } = config
     let toguruData: ToguruData = { sequenceNo: 0, toggles: [] }
 
@@ -46,14 +46,14 @@ export default (config: ToguruClientConfig): ToguruClientFromUserInfo => {
     refreshToguruData()
     setInterval(() => refreshToguruData(), refreshIntervalMs)
 
-    return (user: UserInfo) => ({
-        isToggleEnabled: (toggle) => isToggleEnabledForUser(toguruData, toggle, user),
+    return (context: ActivationContext) => ({
+        isToggleEnabled: (toggle) => isToggleEnabledForUser(toguruData, toggle, context),
         togglesForService: (service) => {
             const toggleIds = findToggleListForService(toguruData, service)
             const togglesState = toggleIds.reduce<ToggleState[]>(
                 (toggles, id) => [
                     ...toggles,
-                    { id, enabled: isToggleEnabledForUser(toguruData, { id, default: false }, user) },
+                    { id, enabled: isToggleEnabledForUser(toguruData, { id, default: false }, context) },
                 ],
                 [],
             )

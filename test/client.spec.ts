@@ -1,21 +1,21 @@
 import Client from '../src/client'
 import mockedTogglestate from './togglestate.fixture.json'
 import { Toggles } from '../src/models/Toggles'
-import { UserInfo } from '../src/models/toguru'
+import { ActivationContext } from '../src/models/toguru'
 
-const userInBucket22CultureDE: UserInfo = {
+const userInBucket22CultureDE: ActivationContext = {
     attributes: { culture: 'de-DE' },
     uuid: '88248687-6dce-4759-a5c0-3945eedc2b48',
 } // bucket: 22
-const userInBucketb76CultureDE: UserInfo = {
+const userInBucketb76CultureDE: ActivationContext = {
     attributes: { culture: 'de-DE' },
     uuid: '721f87e2-cec9-4753-b3bb-d2ebe20dd317',
 } // bucket: 76
-const userInBucket22CultureIT: UserInfo = {
+const userInBucket22CultureIT: ActivationContext = {
     attributes: { culture: 'it-IT' },
     uuid: '88248687-6dce-4759-a5c0-3945eedc2b48',
 } // bucket: 22
-const userInBucket22NoCulture: UserInfo = {
+const userInBucket22NoCulture: ActivationContext = {
     uuid: '88248687-6dce-4759-a5c0-3945eedc2b48',
 } // bucket: 22
 

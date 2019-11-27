@@ -1,5 +1,5 @@
 import isEnabled from '../src/services/isToggleEnabled'
-import { ToguruData, UserInfo } from '../src/models/toguru'
+import { ToguruData, ActivationContext } from '../src/models/toguru'
 import toggleState from './togglestate.fixture.json'
 
 const userInBucket22CultureDE = {
@@ -14,7 +14,7 @@ const userInBucket22CultureIT = {
     attributes: { culture: 'it-IT' },
     uuid: '88248687-6dce-4759-a5c0-3945eedc2b48',
 } // bucket: 22
-const userInBucket76CultureIT: UserInfo = {
+const userInBucket76CultureIT: ActivationContext = {
     attributes: { culture: 'it-IT' },
     uuid: '721f87e2-cec9-4753-b3bb-d2ebe20dd317',
 } // bucket: 76

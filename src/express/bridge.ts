@@ -1,11 +1,11 @@
-import { ToguruClient, ToguruClientFromUserInfo } from '../client'
+import { ToguruClient, ToguruClientFromActivationContext } from '../client'
 import { Response, Request, NextFunction } from 'express'
 import { Toggle } from '../models/Toggle'
-import { UserInfo } from '../models/toguru'
+import { ActivationContext } from '../models/toguru'
 import { Extractor, ForcedToggleExtractor, cookieValue, defaultForcedTogglesExtractor } from './extractors'
 
 type ExpressConfig = {
-    client: ToguruClientFromUserInfo
+    client: ToguruClientFromActivationContext
 
     /**
      * Customize request extractors
@@ -52,12 +52,12 @@ export const middleware = (config: ExpressConfig) => (req: Request, _: Response,
 }
 
 /**
- * A refinement of the base toguru client that extracts user information from the request
+ * A refinement of the base toguru client that extracts activation information from the request
  */
 export const expressClient = (config: ExpressConfig) => (req: Request): ToguruClient => {
     const extractors = { ...defaultExtractors, ...(config.extractors ? config.extractors : {}) }
 
-    const user: UserInfo = {
+    const context: ActivationContext = {
         uuid: extractors.uuid(req) || undefined,
         forcedToggles: extractors.forcedToggles(req),
         attributes: extractors.attributes.reduce<Record<string, string>>((acc, ax) => {
@@ -67,7 +67,7 @@ export const expressClient = (config: ExpressConfig) => (req: Request): ToguruCl
     }
 
     return {
-        isToggleEnabled: (toggle: Toggle) => config.client(user).isToggleEnabled(toggle),
-        togglesForService: (service: string) => config.client(user).togglesForService(service),
+        isToggleEnabled: (toggle: Toggle) => config.client(context).isToggleEnabled(toggle),
+        togglesForService: (service: string) => config.client(context).togglesForService(service),
     }
 }

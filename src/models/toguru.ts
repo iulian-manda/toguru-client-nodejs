@@ -1,6 +1,6 @@
-export type UserInfo = {
+export type ActivationContext = {
     /**
-     * A unique identifier for the user. Is used to determine bucketing
+     * A unique identifier for the user. Used to determine bucketing
      */
     uuid?: string
 
