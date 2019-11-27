@@ -1,5 +1,7 @@
 # Toguru Client for Node.js
 
+> [![Actions Status](https://github.com/Scout24/toguru-client-nodejs/workflows/Build/badge.svg)](https://github.com/Scout24/toguru-client-nodejs/actions) ![npm](https://img.shields.io/npm/v/toguru-client)
+
 ```bash
 $ yarn add toguru-client
 ```
