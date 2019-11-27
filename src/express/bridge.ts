@@ -42,15 +42,6 @@ const defaultExtractors: NonNullable<Required<ExpressConfig['extractors']>> = {
     ],
 }
 
-declare global {
-    // eslint-disable-next-line @typescript-eslint/no-namespace
-    namespace Express {
-        interface Request {
-            toguru?: ToguruClient
-        }
-    }
-}
-
 /**
  * An Express-middleware that provides toggle computation based on the Request information
  */
