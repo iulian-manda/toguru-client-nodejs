@@ -10,9 +10,9 @@ declare global {
     }
 }
 
-export const client = _client
+export const toguruClient = _client
 
-export const express = {
+export const toguruExpressBridge = {
     middleware: _expressBridge.middleware,
     client: _expressBridge.expressClient,
 }
