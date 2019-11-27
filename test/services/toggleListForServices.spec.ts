@@ -1,4 +1,4 @@
-import findToggleListForService from '../src/services/toggleListForService'
+import findToggleListForService from '../../src/services/toggleListForService'
 
 const toggleWithTags = (id: string, tags: Record<string, string>) => {
     return { id, tags: { ...tags }, activations: [] }

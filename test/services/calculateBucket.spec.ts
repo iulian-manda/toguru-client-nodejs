@@ -1,4 +1,4 @@
-import calc from '../src/services/calculateBuckets'
+import calc from '../../src/services/calculateBuckets'
 
 describe('Calculate bucket from uuid', () => {
     it('Bucket is calculated correctly for ea', () => {
