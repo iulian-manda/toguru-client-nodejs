@@ -1,6 +1,7 @@
 import _client, { TogglingApi } from './src/client'
 import * as _expressBridge from './src/express/bridge'
 import * as extractors from './src/express/extractors'
+import { stubClient, stubMiddleware } from './src/express/testHelpers'
 
 // Type exports
 export { Toggle } from './src/models/Toggle'
@@ -20,6 +21,13 @@ declare global {
 }
 
 export const toguruClient = _client
+
+export const toguruTestHelpers = {
+    express: {
+        stubMiddleware,
+        stubClient,
+    },
+}
 
 export const toguruExpressBridge = {
     middleware: _expressBridge.middleware,

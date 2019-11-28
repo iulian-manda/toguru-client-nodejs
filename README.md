@@ -9,12 +9,13 @@
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
--   [Installation](#installation)
--   [Usage](#usage)
-    -   [Base Client](#base-client)
-    -   [Express Bridge](#express-bridge)
--   [Testing](#testing)
--   [Development](#development)
+
+- [Installation](#installation)
+- [Usage](#usage)
+  - [Base Client](#base-client)
+  - [Express Bridge](#express-bridge)
+- [Testing](#testing)
+  - [Express](#express)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -113,4 +114,21 @@ app.get('/some-route', toguruClientMiddleware, (req, res) => {
 
 In general, we recommend parametrizing your main application to take a toguru client interface, and instantiating the client itself at the very edge of your application (typically `index.ts`). This allows you to use different clients during tests that you can fully control without the need to introduce any mocking tools.
 
-## Development
+### Express
+
+Following the pattern align above, a typical `Express` application will look like 
+
+```ts
+const application = (
+    toguruMiddleware: Express.RequestHandler
+) => {
+  const app = express()
+  app.get('/toguru-test', toguruMiddleware,...)
+})
+```
+
+During tests, we can pass the `express.stubToguruMiddleware` or `express.stubClient`, depending on what the app is using, that easily allows you to instantiate the middleware/client with a given set of toggles, falling back to the toggle defaults for the rest.
+
+```ts
+stubToguruMiddleware([{ id: 'some-toggle', enabled: false }])
+```
