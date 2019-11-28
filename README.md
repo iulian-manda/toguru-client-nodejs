@@ -9,12 +9,13 @@
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
--   [Installation](#installation)
--   [Usage](#usage)
-    -   [Base Client](#base-client)
-    -   [Express Bridge](#express-bridge)
--   [Testing](#testing)
--   [Development](#development)
+
+- [Installation](#installation)
+- [Usage](#usage)
+  - [Base Client](#base-client)
+  - [Express Bridge](#express-bridge)
+- [Testing](#testing)
+  - [Express](#express)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
