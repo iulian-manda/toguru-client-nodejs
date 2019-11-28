@@ -1,7 +1,7 @@
 import _client, { TogglingApi } from './src/client'
 import * as _expressBridge from './src/express/bridge'
 import * as extractors from './src/express/extractors'
-import { stubToguruMiddleware } from './src/express/testHelpers'
+import { stubClient, stubMiddleware } from './src/express/testHelpers'
 
 // Type exports
 export { Toggle } from './src/models/Toggle'
@@ -24,7 +24,8 @@ export const toguruClient = _client
 
 export const toguruTestHelpers = {
     express: {
-        stubToguruMiddleware,
+        stubMiddleware,
+        stubClient,
     },
 }
 
