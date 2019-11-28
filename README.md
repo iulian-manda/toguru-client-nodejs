@@ -119,7 +119,7 @@ Following the pattern align above, a typical `Express` application will look lik
 
 ```ts
 const application = (
-  toguruMiddleware: (req: Request, resp: Response, next: NextFunction) => void
+    toguruMiddleware: Express.RequestHandler
 ) => {
   const app = express()
   app.get('/toguru-test', toguruMiddleware,...)
