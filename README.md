@@ -115,7 +115,7 @@ In general, we recommend parametrizing your main application to take a toguru cl
 
 ### Express
 
-If your express application follows the pattern described above your application should approsimatively look like this:
+Following the pattern align above, a typical `Express` application will look like 
 
 ```ts
 const application = (
@@ -126,7 +126,7 @@ const application = (
 })
 ```
 
-In tests we can pass the `stubToguruMiddleware`/`stubClient`, depending on what you chosed to use, that allows you to set the toggles state.
+During tests, we can pass the `express.stubToguruMiddleware` or `express.stubClient`, depending on what the app is using, that easily allows you to instantiate the middleware/client with a given set of toggles, falling back to the toggle defaults for the rest.
 
 ```ts
 stubToguruMiddleware([{ id: 'some-toggle', enabled: false }])
