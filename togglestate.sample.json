@@ -1,2444 +1,3169 @@
 {
     "sequenceNo": 4141,
-    "toggles": [{
-        "id": "arvato-carinfo-fake-data",
-        "tags": {
-            "team": "ConMon"
-        },
-        "activations": [{
-            "attributes": {},
-            "rollout": {
-                "percentage": 100
-            }
-        }]
-    }, {
-        "id": "as24-23505-search-mask-as-fragment",
-        "tags": {
-            "team": "Revolistion thatsclassified"
-        },
-        "activations": [{
-            "attributes": {},
-            "rollout": {
-                "percentage": 100
-            }
-        }]
-    }, {
-        "id": "as24-25496-price-evaulation-promo",
-        "tags": {
-            "team": "thatsclassified"
-        },
-        "activations": [{
-            "attributes": {},
-            "rollout": {
-                "percentage": 100
-            }
-        }]
-    }, {
-        "id": "as24-26303-price-auhority-nl",
-        "tags": {
-            "team": "thatsclassified"
-        },
-        "activations": [{
-            "attributes": {}
-        }]
-    }, {
-        "id": "as24-26704_app_brandbox",
-        "tags": {
-            "team": "thatsclassified"
-        },
-        "activations": [{
-            "attributes": {}
-        }]
-    }, {
-        "id": "as24-30780-brandbox-de",
-        "tags": {
-            "team": "thatsclassified"
-        },
-        "activations": [{
-            "attributes": {
-                "culture": ["de-DE", "DE"]
-            },
-            "rollout": {
-                "percentage": 100
-            }
-        }]
-    }, {
-        "id": "as24-30936-360-communication",
-        "tags": {
-            "team": "thatsclassified"
-        },
-        "activations": [{
-            "attributes": {
-                "culture": ["de-DE", "DE"]
-            },
-            "rollout": {
-                "percentage": 100
-            }
-        }]
-    }, {
-        "id": "awsdetailandroid",
-        "tags": {
-            "team": "Mobile Android"
-        },
-        "activations": [{
-            "attributes": {},
-            "rollout": {
-                "percentage": 100
-            }
-        }]
-    }, {
-        "id": "awssearchandroid",
-        "tags": {
-            "team": "Mobile Android"
-        },
-        "activations": [{
-            "attributes": {},
-            "rollout": {
-                "percentage": 100
-            }
-        }]
-    }, {
-        "id": "carhistory-reporter-pass-owner",
-        "tags": {
-            "team": "ConMon"
-        },
-        "activations": [{
-            "attributes": {}
-        }]
-    }, {
-        "id": "cats-categorizer-detailed-metrics",
-        "tags": {
-            "team": "AS24_FoundationServices",
-            "type": "OpsToggle"
-        },
-        "activations": [{
-            "attributes": {}
-        }]
-    }, {
-        "id": "cl-ads-inpager-test",
-        "tags": {
-            "team": "revolistion",
-            "stack": "classified-list",
-            "services": "classified-list"
-        },
-        "activations": [{
-            "attributes": {
-                "culture": ["de-DE", "DE"]
-            }
-        }]
-    }, {
-        "id": "cl-anonymous-search-subscriptions-in-tatsu",
-        "tags": {
-            "team": "as24-personalization"
-        },
-        "activations": [{
-            "attributes": {
-                "culture": ["nl-NL", "NL", "fr-LU", "LU", "fr-BE", "BE", "nl-BE"]
-            },
-            "rollout": {
-                "percentage": 100
-            }
-        }]
-    }, {
-        "id": "cl-anonymous-search-subscriptions-in-tatsu-de",
-        "tags": {
-            "team": "as24-personalization"
-        },
-        "activations": [{
-            "attributes": {
-                "culture": ["de-DE", "DE"]
-            },
-            "rollout": {
-                "percentage": 100
-            }
-        }]
-    }, {
-        "id": "cl-anonymous-search-subscriptions-in-tatsu-it",
-        "tags": {
-            "team": "Personalization"
-        },
-        "activations": [{
-            "attributes": {
-                "culture": ["it-IT", "IT"]
-            },
-            "rollout": {
-                "percentage": 100
-            }
-        }]
-    }, {
-        "id": "cl-anonymous-search-subscriptions-in-tatsu-privacy-consent",
-        "tags": {
-            "team": "as24-personalization"
-        },
-        "activations": [{
-            "attributes": {
-                "culture": ["de-DE", "DE", "nl-NL", "NL"]
-            },
-            "rollout": {
-                "percentage": 100
-            }
-        }]
-    }, {
-        "id": "cl-crossborder-home",
-        "tags": {
-            "team": "revolistion",
-            "stack": "classified-list",
-            "services": "classified-list"
-        },
-        "activations": [{
-            "attributes": {
-                "culture": ["de-DE", "DE", "de-AT", "AT", "it-IT", "IT", "es-ES", "ES", "en-GB", "GB", "en-US", "US", "ro-RO", "RO", "bg-BG", "BG", "cs-CZ", "CZ", "pl-PL", "PL", "hu-HU", "HU", "ru-RU", "RU", "hr-HR", "HR", "sv-SE", "SE", "tr-TR", "TR", "ua-UA", "UA"]
-            },
-            "rollout": {
-                "percentage": 100
-            }
-        }]
-    }, {
-        "id": "cl-crossborder-listpage",
-        "tags": {
-            "team": "revolistion",
-            "stack": "classified-list",
-            "services": "classified-list"
-        },
-        "activations": [{
-            "attributes": {
-                "culture": ["de-DE", "DE", "de-AT", "AT", "it-IT", "IT", "es-ES", "ES", "en-GB", "GB", "en-US", "US"]
-            },
-            "rollout": {
-                "percentage": 100
-            }
-        }]
-    }, {
-        "id": "cl-finance-rate-filter",
-        "tags": {
-            "team": "revolistion",
-            "stack": "classified-list",
-            "services": "classified-list"
-        },
-        "activations": [{
-            "attributes": {
-                "culture": ["de-DE"]
-            },
-            "rollout": {
-                "percentage": 50
-            }
-        }]
-    }, {
-        "id": "cl-finance-rate-filter-experiment",
-        "tags": {
-            "team": "revolistion",
-            "stack": "classified-list",
-            "services": "classified-list"
-        },
-        "activations": [{
-            "attributes": {
-                "culture": ["de-DE"]
-            },
-            "rollout": {
-                "percentage": 100
-            }
-        }]
-    }, {
-        "id": "cl-full-culture-fragment-on-home",
-        "tags": {
-            "team": "revolistion",
-            "stack": "classified-list",
-            "services": "classified-list"
-        },
-        "activations": [{
-            "attributes": {},
-            "rollout": {
-                "percentage": 100
-            }
-        }]
-    }, {
-        "id": "cl-home-tld-as-default-country",
-        "tags": {
-            "team": "revolistion",
-            "stack": "classified-list",
-            "services": "classified-list"
-        },
-        "activations": [{
-            "attributes": {
-                "culture": ["de-AT", "AT", "it-IT", "IT", "es-ES", "ES", "fr-BE", "nl-BE", "BE", "fr-FR", "FR", "fr-LU", "LU", "nl-NL", "NL"]
-            },
-            "rollout": {
-                "percentage": 100
-            }
-        }]
-    }, {
-        "id": "cl-react-bike-search-box-on-home",
-        "tags": {
-            "team": "Revolistion"
-        },
-        "activations": [{
-            "attributes": {},
-            "rollout": {
-                "percentage": 100
-            }
-        }]
-    }, {
-        "id": "cl-react-disabled-local-storage",
-        "tags": {
-            "team": "revolistion",
-            "stack": "classified-list",
-            "services": "classified-list"
-        },
-        "activations": [{
-            "attributes": {}
-        }]
-    }, {
-        "id": "cl-react-list-page",
-        "tags": {
-            "team": "revolistion",
-            "stack": "classified-list",
-            "services": "classified-list"
-        },
-        "activations": [{
-            "attributes": {
-                "culture": ["en-GB", "GB", "en-US", "US", "ro-RO", "RO", "bg-BG", "BG", "cs-CZ", "CZ", "pl-PL", "PL", "hu-HU", "HU", "ru-RU", "RU", "hr-HR", "HR", "sv-SE", "SE", "tr-TR", "TR", "uk-UA", "UA", "fr-BE", "nl-BE", "BE", "DE", "de-DE", "nl-NL", "NL", "IT", "it-IT", "FR", "fr-FR", "de-AT", "AT", "fr-LU", "LU", "es-ES", "ES"]
-            },
-            "rollout": {
-                "percentage": 100
-            }
-        }]
-    }, {
-        "id": "cl-react-refine-search-page",
-        "tags": {
-            "team": "revolistion",
-            "stack": "classified-list",
-            "services": "classified-list"
-        },
-        "activations": [{
-            "attributes": {},
-            "rollout": {
-                "percentage": 100
-            }
-        }]
-    }, {
-        "id": "cl-react-search-box-on-home",
-        "tags": {
-            "team": "revolistion",
-            "stack": "classified-list",
-            "services": "classified-list"
-        },
-        "activations": [{
-            "attributes": {},
-            "rollout": {
-                "percentage": 100
-            }
-        }]
-    }, {
-        "id": "cl-react-sfp-shadowtraffic",
-        "tags": {
-            "team": "revolistion",
-            "stack": "classified-list",
-            "services": "classified-list"
-        },
-        "activations": [{
-            "attributes": {}
-        }]
-    }, {
-        "id": "cl-react-sfp-taxonomy",
-        "tags": {
-            "team": "revolistion",
-            "stack": "classified-list",
-            "services": "classified-list"
-        },
-        "activations": [{
-            "attributes": {},
-            "rollout": {
-                "percentage": 100
-            }
-        }]
-    }, {
-        "id": "cl-shadow-traffic",
-        "tags": {
-            "team": "revolistion"
-        },
-        "activations": [{
-            "attributes": {},
-            "rollout": {
-                "percentage": 100
-            }
-        }]
-    }, {
-        "id": "cl-ssr-cache",
-        "tags": {
-            "team": "revolistion"
-        },
-        "activations": [{
-            "attributes": {},
-            "rollout": {
-                "percentage": 100
-            }
-        }]
-    }, {
-        "id": "cl-ssr-render-list-page",
-        "tags": {
-            "team": "revolistion"
-        },
-        "activations": [{
-            "attributes": {},
-            "rollout": {
-                "percentage": 100
-            }
-        }]
-    }, {
-        "id": "cl-wrong-total-count",
-        "tags": {
-            "team": "revolistion",
-            "stack": "classified-list",
-            "services": "classified-list"
-        },
-        "activations": [{
-            "attributes": {
-                "culture": ["de-AT", "AT"]
-            },
-            "rollout": {
-                "percentage": 100
-            }
-        }]
-    }, {
-        "id": "classified-gateway-processor-latency",
-        "tags": {
-            "team": "gecloud",
-            "stack": "classified-gateway",
-            "services": "classified-gateway"
-        },
-        "activations": [{
-            "attributes": {},
-            "rollout": {
-                "percentage": 100
-            }
-        }]
-    }, {
-        "id": "classified-search-autotrader-facet",
-        "tags": {
-            "team": "revolistion"
-        },
-        "activations": []
-    }, {
-        "id": "classified-search-shadow-lu",
-        "tags": {
-            "team": "Revolistion"
-        },
-        "activations": [{
-            "attributes": {}
-        }]
-    }, {
-        "id": "classified-search-shadow-pt",
-        "tags": {
-            "team": "revolistion",
-            "stack": "classified-search",
-            "services": "classified-search"
-        },
-        "activations": [{
-            "attributes": {}
-        }]
-    }, {
-        "id": "classified-search-shadow-ye",
-        "tags": {
-            "team": "revolistion",
-            "stack": "classified-search",
-            "services": "classified-search"
-        },
-        "activations": [{
-            "attributes": {}
-        }]
-    }, {
-        "id": "classified-search-traffic-to-backup",
-        "tags": {
-            "team": "revolistion"
-        },
-        "activations": [{
-            "attributes": {}
-        }]
-    }, {
-        "id": "classified-search-traffic-to-yellow",
-        "tags": {
-            "team": "revolistion"
-        },
-        "activations": [{
-            "attributes": {}
-        }]
-    }, {
-        "id": "condition-test",
-        "tags": {
-            "team": "ConMon"
-        },
-        "activations": [{
-            "attributes": {
-                "culture": ["de-DE", "DE"]
-            }
-        }]
-    }, {
-        "id": "conmon-ads-replacement",
-        "tags": {
-            "team": "conmon",
-            "fragment": "financeslice-detail"
-        },
-        "activations": [{
-            "attributes": {},
-            "rollout": {
-                "percentage": 50
-            }
-        }]
-    }, {
-        "id": "conmon-ads-replacement-italy",
-        "tags": {
-            "team": "fed",
-            "fragment": "financeslice-detail"
-        },
-        "activations": [{
-            "attributes": {
-                "culture": ["it-IT", "IT"]
-            },
-            "rollout": {
-                "percentage": 50
-            }
-        }]
-    }, {
-        "id": "conmon-ads-replacement-netherlands",
-        "tags": {
-            "team": "fed",
-            "fragment": "financeslice-detail"
-        },
-        "activations": [{
-            "attributes": {
-                "culture": ["nl-NL", "NL"]
-            },
-            "rollout": {
-                "percentage": 100
-            }
-        }]
-    }, {
-        "id": "conmon-ads-replacement-spain",
-        "tags": {
-            "team": "fed",
-            "fragment": "financeslice-detail"
-        },
-        "activations": [{
-            "attributes": {
-                "culture": ["es-ES", "ES"]
-            },
-            "rollout": {
-                "percentage": 100
-            }
-        }]
-    }, {
-        "id": "conmon-finance-german-widget-adjustment",
-        "tags": {
-            "team": "conmon",
-            "fragment": "financeslice-detail"
-        },
-        "activations": [{
-            "attributes": {}
-        }]
-    }, {
-        "id": "conmon-finance-mobile-uncollapse",
-        "tags": {
-            "team": "conmon",
-            "fragment": "financeslice-detail"
-        },
-        "activations": [{
-            "attributes": {},
-            "rollout": {
-                "percentage": 100
-            }
-        }]
-    }, {
-        "id": "conmon-financeslice-calculator-mercedes-benz-bank",
-        "tags": {
-            "team": "conmon",
-            "fragment": "financeslice-detail"
-        },
-        "activations": [{
-            "attributes": {},
-            "rollout": {
-                "percentage": 100
-            }
-        }]
-    }, {
-        "id": "conmon-financeslice-run-tests",
-        "tags": {
-            "service": "financeslice-detail",
-            "team": "ConMon"
-        },
-        "activations": []
-    }, {
-        "id": "conmon-finren-widget",
-        "tags": {
-            "team": "ConMon",
-            "fragment": "financeslice-detail"
-        },
-        "activations": [{
-            "attributes": {},
-            "rollout": {
-                "percentage": 100
-            }
-        }]
-    }, {
-        "id": "conmon-leasing-ag-test",
-        "tags": {
-            "team": "conmon",
-            "fragment": "financeslice-detail"
-        },
-        "activations": [{
-            "attributes": {},
-            "rollout": {
-                "percentage": 100
-            }
-        }]
-    }, {
-        "id": "conmon-navigation-finance",
-        "tags": {
-            "team": "conmon",
-            "fragment": "financeslice-detail"
-        },
-        "activations": [{
-            "attributes": {}
-        }]
-    }, {
-        "id": "conmon-ops-financeslice-ads",
-        "tags": {
-            "team": "conmon",
-            "fragment": "financeslice-detail"
-        },
-        "activations": [{
-            "attributes": {},
-            "rollout": {
-                "percentage": 100
-            }
-        }]
-    }, {
-        "id": "conmon-remove-slice-when-no-ads",
-        "tags": {
-            "team": "FED",
-            "fragment": "financeslice-detail"
-        },
-        "activations": [{
-            "attributes": {},
-            "rollout": {
-                "percentage": 100
-            }
-        }]
-    }, {
-        "id": "conmon-verti-test",
-        "tags": {
-            "team": "FED",
-            "fragment": "financeslice-detail"
-        },
-        "activations": [{
-            "attributes": {}
-        }]
-    }, {
-        "id": "corrado-express-sale-vin",
-        "tags": {
-            "team": "corrado"
-        },
-        "activations": [{
-            "attributes": {},
-            "rollout": {
-                "percentage": 100
-            }
-        }]
-    }, {
-        "id": "corrado-new-express-sale-funnel",
-        "tags": {
-            "team": "corrado"
-        },
-        "activations": [{
-            "attributes": {},
-            "rollout": {
-                "percentage": 100
-            }
-        }]
-    }, {
-        "id": "cxp-new-list-item",
-        "tags": {
-            "team": "cxp",
-            "services": "classified-detail"
-        },
-        "activations": [{
-            "attributes": {},
-            "rollout": {
-                "percentage": 100
-            }
-        }]
-    }, {
-        "id": "cxp-price-authority-nl",
-        "tags": {
-            "team": "gecloud,kondor,revolistion",
-            "stack": "classified-detail",
-            "services": "classified-detail,classified-list,priceevaluation"
-        },
-        "activations": [{
-            "attributes": {
-                "culture": ["de-DE", "DE", "de-AT", "AT", "it-IT", "IT"]
-            },
-            "rollout": {
-                "percentage": 100
-            }
-        }]
-    }, {
-        "id": "dealer-info-migration",
-        "tags": {
-            "team": "webx",
-            "services": "classified-detail,vendor-contact-data"
-        },
-        "activations": [{
-            "attributes": {
-                "culture": ["AT", "de-AT", "ES", "es-ES", "FR", "fr-FR", "NL", "nl-NL", "BE", "fr-BE", "BE", "nl-BE", "LU", "fr-LU"]
-            },
-            "rollout": {
-                "percentage": 100
-            }
-        }]
-    }, {
-        "id": "dealer-info-rating",
-        "tags": {
-            "team": "Acquisition"
-        },
-        "activations": [{
-            "attributes": {}
-        }]
-    }, {
-        "id": "dlm-new-dealer-info-link",
-        "tags": {
-            "team": "DLM"
-        },
-        "activations": [{
-            "attributes": {
-                "culture": ["de-AT"]
-            }
-        }]
-    }, {
-        "id": "dlr-360-delete",
-        "tags": {
-            "team": "DLR team "
-        },
-        "activations": [{
-            "attributes": {
-                "culture": ["de-DE", "DE", "it-IT", "IT", "fr-BE", "BE", "nl-BE", "BE"]
-            },
-            "rollout": {
-                "percentage": 100
-            }
-        }]
-    }, {
-        "id": "dlr-delete-360-inside",
-        "tags": {
-            "team": "DLR team"
-        },
-        "activations": [{
-            "attributes": {
-                "culture": ["it-IT", "IT", "fr-BE", "BE", "nl-BE", "BE"]
-            },
-            "rollout": {
-                "percentage": 100
-            }
-        }]
-    }, {
-        "id": "dlr-price-evaluation",
-        "tags": {
-            "team": "DLR Team"
-        },
-        "activations": [{
-            "attributes": {
-                "culture": ["de-DE", "DE"]
-            },
-            "rollout": {
-                "percentage": 100
-            }
-        }]
-    }, {
-        "id": "dlr-price-evaluation-fragment",
-        "tags": {
-            "team": "DLR team"
-        },
-        "activations": [{
-            "attributes": {
-                "culture": ["de-DE", "DE"]
-            },
-            "rollout": {
-                "percentage": 100
-            }
-        }]
-    }, {
-        "id": "dmm-ld-oem-integration",
-        "tags": {
-            "team": "dmm",
-            "service": "local-dominance"
-        },
-        "activations": [{
-            "attributes": {},
-            "rollout": {
-                "percentage": 100
-            }
-        }]
-    }, {
-        "id": "dmm-vsb-show-custom-link",
-        "tags": {
-            "team": "dmm",
-            "service": "vip-showroom-branding"
-        },
-        "activations": [{
-            "attributes": {},
-            "rollout": {
-                "percentage": 100
-            }
-        }]
-    }, {
-        "id": "editable-basic-info",
-        "tags": {
-            "team": "Private Seller Listings"
-        },
-        "activations": [{
-            "attributes": {
-                "culture": ["de-DE", "DE"]
-            },
-            "rollout": {
-                "percentage": 100
-            }
-        }]
-    }, {
-        "id": "editable-car-state",
-        "tags": {
-            "team": "Private Seller Listings"
-        },
-        "activations": [{
-            "attributes": {
-                "culture": ["de-DE", "DE"]
-            },
-            "rollout": {
-                "percentage": 100
-            }
-        }]
-    }, {
-        "id": "editable-description",
-        "tags": {
-            "team": "Private Seller Listings"
-        },
-        "activations": [{
-            "attributes": {},
-            "rollout": {
-                "percentage": 100
-            }
-        }]
-    }, {
-        "id": "editable-equipment",
-        "tags": {
-            "team": "Private Seller Listings"
-        },
-        "activations": [{
-            "attributes": {
-                "culture": ["de-DE", "DE"]
-            },
-            "rollout": {
-                "percentage": 100
-            }
-        }]
-    }, {
-        "id": "emergency_action_message",
-        "tags": {
-            "team": "Revolisiton thatsclassified"
-        },
-        "activations": [{
-            "attributes": {}
-        }]
-    }, {
-        "id": "expresso-express-sale-new-funnel-individual-sales-page",
-        "tags": {
-            "team": "expresso"
-        },
-        "activations": []
-    }, {
-        "id": "expresso-new-funnel-in-progress",
-        "tags": {
-            "team": "Expresso"
-        },
-        "activations": []
-    }, {
-        "id": "fed-alp-de-ad",
-        "tags": {
-            "team": "fed",
-            "service": "finance-afterlead"
-        },
-        "activations": []
-    }, {
-        "id": "fed-belgium-cofidis-toggle",
-        "tags": {
-            "team": "gecloud",
-            "stack": "classified-detail",
-            "services": "classified-detail"
-        },
-        "activations": [{
-            "attributes": {
-                "culture": ["fr-BE", "nl-BE", "BE"]
-            },
-            "rollout": {
-                "percentage": 50
-            }
-        }]
-    }, {
-        "id": "fed-classified-list-item-finance-rate",
-        "tags": {
-            "team": "FED",
-            "fragment": "financeslice-detail",
-            "services": "classified-detail"
-        },
-        "activations": [{
-            "attributes": {
-                "culture": ["de-DE"]
-            },
-            "rollout": {
-                "percentage": 50
-            }
-        }]
-    }, {
-        "id": "fed-compass-widget",
-        "tags": {
-            "team": "fed",
-            "fragment": "financeslice-detail"
-        },
-        "activations": [{
-            "attributes": {
-                "culture": ["it-IT", "IT"]
-            },
-            "rollout": {
-                "percentage": 100
-            }
-        }]
-    }, {
-        "id": "fed-deutsche-bank-quick",
-        "tags": {
-            "team": "conmon",
-            "fragment": "financeslice-detail"
-        },
-        "activations": [{
-            "attributes": {},
-            "rollout": {
-                "percentage": 50
-            }
-        }]
-    }, {
-        "id": "fed-dyn-fc-high",
-        "tags": {
-            "team": "FED",
-            "fragment": "financeslice-detail"
-        },
-        "activations": [{
-            "attributes": {
-                "culture": ["de-DE", "DE"]
-            },
-            "rollout": {
-                "percentage": 40
-            }
-        }]
-    }, {
-        "id": "fed-dyn-fc-low",
-        "tags": {
-            "team": "FED",
-            "fragment": "financeslice-detail"
-        },
-        "activations": [{
-            "attributes": {
-                "culture": ["de-DE", "DE"]
-            },
-            "rollout": {
-                "percentage": 20
-            }
-        }]
-    }, {
-        "id": "fed-dyn-fc-mid",
-        "tags": {
-            "team": "FED",
-            "fragment": "financeslice-detail"
-        },
-        "activations": [{
-            "attributes": {
-                "culture": ["de-DE", "DE"]
-            },
-            "rollout": {
-                "percentage": 30
-            }
-        }]
-    }, {
-        "id": "fed-es-twice",
-        "tags": {
-            "team": "FED",
-            "fragment": "financeslice-detail"
-        },
-        "activations": []
-    }, {
-        "id": "fed-financeslice-debug",
-        "tags": {
-            "team": "FED",
-            "fragment": "financeslice-detail"
-        },
-        "activations": [{
-            "attributes": {}
-        }]
-    }, {
-        "id": "fed-financeslice-ng",
-        "tags": {
-            "team": "FED",
-            "fragment": "financeslice-detail"
-        },
-        "activations": []
-    }, {
-        "id": "fed-findomestic-test",
-        "tags": {
-            "team": "FED",
-            "fragment": "financeslice-detail"
-        },
-        "activations": [{
-            "attributes": {
-                "culture": ["it-IT"]
-            },
-            "rollout": {
-                "percentage": 100
-            }
-        }]
-    }, {
-        "id": "fed-integration-iautofinance",
-        "tags": {
-            "team": "FED",
-            "fragment": "financeslice-detail"
-        },
-        "activations": [{
-            "attributes": {
-                "culture": ["de-DE"]
-            },
-            "rollout": {
-                "percentage": 7
-            }
-        }]
-    }, {
-        "id": "fed-italy-remove-agos",
-        "tags": {
-            "team": "fed",
-            "fragment": "financeslice-detail"
-        },
-        "activations": [{
-            "attributes": {}
-        }]
-    }, {
-        "id": "fed-mercedes-it-widget",
-        "tags": {
-            "team": "fed",
-            "fragment": "financeslice-detail"
-        },
-        "activations": [{
-            "attributes": {
-                "culture": ["it-IT", "IT"]
-            }
-        }]
-    }, {
-        "id": "fed-move-financeslice-above",
-        "tags": {
-            "team": "fed",
-            "fragment": "financeslice-detail"
-        },
-        "activations": [{
-            "attributes": {
-                "culture": ["de-DE"]
-            }
-        }]
-    }, {
-        "id": "fed-move-financeslice-above-group",
-        "tags": {
-            "team": "fed",
-            "fragment": "financeslice-detail"
-        },
-        "activations": [{
-            "attributes": {
-                "buckets": ["B:5001-7500", "A:7501-9999"]
-            }
-        }]
-    }, {
-        "id": "fed-ops-adblocker-test",
-        "tags": {
-            "team": "FED",
-            "fragment": "financeslice-detail",
-            "service": "financeslice-detail"
-        },
-        "activations": [{
-            "attributes": {}
-        }]
-    }, {
-        "id": "fed-ops-adblocker-test-italy",
-        "tags": {
-            "team": "fed",
-            "fragment": "financeslice-detail"
-        },
-        "activations": [{
-            "attributes": {
-                "culture": ["it-IT", "IT"]
-            },
-            "rollout": {
-                "percentage": 20
-            }
-        }]
-    }, {
-        "id": "fed-ops-adblocker-test-netherlands",
-        "tags": {
-            "team": "fed",
-            "fragment": "financeslice-detail"
-        },
-        "activations": [{
-            "attributes": {
-                "culture": ["nl-NL", "NL"]
-            }
-        }]
-    }, {
-        "id": "fed-ops-adblocker-test-spain",
-        "tags": {
-            "team": "fed",
-            "fragment": "financeslice-detail"
-        },
-        "activations": [{
-            "attributes": {
-                "culture": ["es-ES", "ES"]
-            },
-            "rollout": {
-                "percentage": 100
-            }
-        }]
-    }, {
-        "id": "fed-ops-deutsche-bank",
-        "tags": {
-            "team": "conmon",
-            "fragment": "financeslice-detail"
-        },
-        "activations": [{
-            "attributes": {},
-            "rollout": {
-                "percentage": 100
-            }
-        }]
-    }, {
-        "id": "fed-ops-dyn-fc",
-        "tags": {
-            "team": "FED",
-            "fragment": "financeslice-detail"
-        },
-        "activations": [{
-            "attributes": {
-                "culture": ["de-DE", "DE"]
-            }
-        }]
-    }, {
-        "id": "fed-ops-kafka-edf",
-        "tags": {
-            "team": "FED",
-            "service": "financeslice-detail"
-        },
-        "activations": [{
-            "attributes": {},
-            "rollout": {
-                "percentage": 100
-            }
-        }]
-    }, {
-        "id": "fed-test-group-custom-dimension",
-        "tags": {
-            "team": "FED",
-            "fragment": "financeslice-detail"
-        },
-        "activations": [{
-            "attributes": {},
-            "rollout": {
-                "percentage": 100
-            }
-        }]
-    }, {
-        "id": "fed-use-kafka-listings",
-        "tags": {
-            "team": "FED",
-            "fragment": "financeslice-detail"
-        },
-        "activations": [{
-            "attributes": {
-                "culture": ["de-DE"]
-            },
-            "rollout": {
-                "percentage": 100
-            }
-        }]
-    }, {
-        "id": "finance-pages-classified-data",
-        "tags": {
-            "team": "ConMon",
-            "service": "finance-pages"
-        },
-        "activations": [{
-            "attributes": {
-                "culture": ["de-DE", "de", "DE"]
-            },
-            "rollout": {
-                "percentage": 100
-            }
-        }]
-    }, {
-        "id": "gecloud-ad-blocker-stats",
-        "tags": {
-            "team": "gecloud",
-            "stack": "classified-detail",
-            "services": "classified-detail"
-        },
-        "activations": [{
-            "attributes": {}
-        }]
-    }, {
-        "id": "gecloud-api-state-id",
-        "tags": {
-            "team": "gecloud",
-            "stack": "classified-detail",
-            "services": "classified-detail"
-        },
-        "activations": [{
-            "attributes": {},
-            "rollout": {
-                "percentage": 100
-            }
-        }]
-    }, {
-        "id": "gecloud-async-convert-to-json",
-        "tags": {
-            "team": "gecloud",
-            "stack": "classified-detail",
-            "services": "classified-detail"
-        },
-        "activations": [{
-            "attributes": {},
-            "rollout": {
-                "percentage": 100
-            }
-        }]
-    }, {
-        "id": "gecloud-autotrader-api-seals",
-        "tags": {
-            "team": "gecloud",
-            "stack": "listing-composer"
-        },
-        "activations": [{
-            "attributes": {},
-            "rollout": {
-                "percentage": 100
-            }
-        }]
-    }, {
-        "id": "gecloud-detail-multiline-headline",
-        "tags": {
-            "team": "gecloud",
-            "stack": "classified-detail",
-            "services": "classified-detail"
-        },
-        "activations": [{
-            "attributes": {},
-            "rollout": {
-                "percentage": 100
-            }
-        }]
-    }, {
-        "id": "gecloud-extended-ads-international",
-        "tags": {
-            "team": "gecloud",
-            "stack": "classified-detail"
-        },
-        "activations": [{
-            "attributes": {},
-            "rollout": {
-                "percentage": 100
-            }
-        }]
-    }, {
-        "id": "gecloud-extract-listing-summary-main",
-        "tags": {
-            "team": "gecloud",
-            "stack": "classified-detail",
-            "services": "classified-detail"
-        },
-        "activations": [{
-            "attributes": {},
-            "rollout": {
-                "percentage": 100
-            }
-        }]
-    }, {
-        "id": "gecloud-fed-afterlead-integration",
-        "tags": {
-            "team": "gecloud",
-            "stack": "classified-detail",
-            "services": "classified-detail"
-        },
-        "activations": [{
-            "attributes": {
-                "culture": ["de-DE", "DE"]
-            },
-            "rollout": {
-                "percentage": 100
-            }
-        }]
-    }, {
-        "id": "gecloud-fed-afterlead-integration-be",
-        "tags": {
-            "team": "gecloud",
-            "stack": "classified-detail",
-            "services": "classified-detail"
-        },
-        "activations": [{
-            "attributes": {
-                "culture": ["fr-BE", "nl-BE", "BE"]
-            },
-            "rollout": {
-                "percentage": 50
-            }
-        }]
-    }, {
-        "id": "gecloud-fed-afterlead-integration-be-ab",
-        "tags": {
-            "team": "gecloud",
-            "stack": "classified-detail",
-            "services": "classified-detail"
-        },
-        "activations": [{
-            "attributes": {
-                "culture": ["fr-BE", "nl-BE", "BE"]
-            },
-            "rollout": {
-                "percentage": 50
-            }
-        }]
-    }, {
-        "id": "gecloud-fed-afterlead-integration-it",
-        "tags": {
-            "team": "gecloud",
-            "stack": "classified-detail",
-            "services": "classified-detail"
-        },
-        "activations": [{
-            "attributes": {
-                "culture": ["it-IT", "IT"]
-            },
-            "rollout": {
-                "percentage": 100
-            }
-        }]
-    }, {
-        "id": "gecloud-fed-afterlead-integration-nl",
-        "tags": {
-            "team": "gecloud",
-            "stack": "classified-detail",
-            "services": "classified-detail"
-        },
-        "activations": [{
-            "attributes": {
-                "culture": ["nl-NL", "NL"]
-            },
-            "rollout": {
-                "percentage": 100
-            }
-        }]
-    }, {
-        "id": "gecloud-fed-afterlead-integration-nl-ab",
-        "tags": {
-            "team": "gecloud",
-            "stack": "classified-detail",
-            "services": "classified-detail"
-        },
-        "activations": [{
-            "attributes": {
-                "culture": ["nl-NL", "NL"]
-            },
-            "rollout": {
-                "percentage": 50
-            }
-        }]
-    }, {
-        "id": "gecloud-fed-afterlead-split",
-        "tags": {
-            "team": "gecloud",
-            "stack": "classified-detail",
-            "services": "classified-detail"
-        },
-        "activations": [{
-            "attributes": {
-                "culture": ["de-DE", "DE"]
-            },
-            "rollout": {
-                "percentage": 100
-            }
-        }]
-    }, {
-        "id": "gecloud-fed-afterlead-split-be",
-        "tags": {
-            "team": "gecloud",
-            "stack": "classified-detail",
-            "services": "classified-detail"
-        },
-        "activations": [{
-            "attributes": {
-                "culture": ["fr-BE", "nl-BE", "BE"]
-            },
-            "rollout": {
-                "percentage": 50
-            }
-        }]
-    }, {
-        "id": "gecloud-fed-afterlead-split-it",
-        "tags": {
-            "team": "gecloud",
-            "stack": "classified-detail",
-            "services": "classified-detail"
-        },
-        "activations": [{
-            "attributes": {
-                "culture": ["it-IT", "IT"]
-            },
-            "rollout": {
-                "percentage": 100
-            }
-        }]
-    }, {
-        "id": "gecloud-fed-afterlead-split-nl",
-        "tags": {
-            "team": "gecloud",
-            "stack": "classified-detail",
-            "services": "classified-detail"
-        },
-        "activations": [{
-            "attributes": {
-                "culture": ["nl-NL", "NL"]
-            },
-            "rollout": {
-                "percentage": 50
-            }
-        }]
-    }, {
-        "id": "gecloud-final-price-spain",
-        "tags": {
-            "team": "gecloud",
-            "stack": "classified-detail",
-            "services": "classified-detail"
-        },
-        "activations": [{
-            "attributes": {},
-            "rollout": {
-                "percentage": 100
-            }
-        }]
-    }, {
-        "id": "gecloud-gzip-json-responses",
-        "tags": {
-            "team": "gecloud",
-            "stack": "classified-detail",
-            "services": "classified-detail"
-        },
-        "activations": [{
-            "attributes": {},
-            "rollout": {
-                "percentage": 100
-            }
-        }]
-    }, {
-        "id": "gecloud-image-fragment",
-        "tags": {
-            "team": "gecloud",
-            "stack": "classified-detail",
-            "services": "classified-detail"
-        },
-        "activations": [{
-            "attributes": {}
-        }]
-    }, {
-        "id": "gecloud-image-fragments-race-get-item",
-        "tags": {
-            "team": "gecloud",
-            "stack": "image-fragments-ui",
-            "services": "image-fragments-ui"
-        },
-        "activations": [{
-            "attributes": {},
-            "rollout": {
-                "percentage": 100
-            }
-        }]
-    }, {
-        "id": "gecloud-list-rate-fragment",
-        "tags": {
-            "team": "gecloud",
-            "stack": "classified-detail",
-            "services": "classified-detail"
-        },
-        "activations": [{
-            "attributes": {
-                "culture": ["de-DE"]
-            }
-        }]
-    }, {
-        "id": "gecloud-listing-summary-image-fragment",
-        "tags": {
-            "team": "gecloud",
-            "stack": "classified-detail",
-            "services": "classified-detail"
-        },
-        "activations": [{
-            "attributes": {}
-        }]
-    }, {
-        "id": "gecloud-listing-summary-vat-deductable",
-        "tags": {
-            "team": "gecloud",
-            "stack": "classified-detail",
-            "services": "classified-detail"
-        },
-        "activations": [{
-            "attributes": {}
-        }]
-    }, {
-        "id": "gecloud-mobile-api-ios-raw-environment-data",
-        "tags": {
-            "team": "gecloud"
-        },
-        "activations": [{
-            "attributes": {}
-        }]
-    }, {
-        "id": "gecloud-new-inspection-boolean",
-        "tags": {
-            "team": "gecloud",
-            "stack": "classified-detail",
-            "services": "classified-detail"
-        },
-        "activations": [{
-            "attributes": {},
-            "rollout": {
-                "percentage": 100
-            }
-        }]
-    }, {
-        "id": "gecloud-new-list-item-price-label",
-        "tags": {
-            "team": "gecloud",
-            "stack": "classified-detail",
-            "services": "classified-detail"
-        },
-        "activations": [{
-            "attributes": {
-                "culture": ["de-DE", "DE", "it-IT", "IT", "de-AT", "AT"]
-            },
-            "rollout": {
-                "percentage": 100
-            }
-        }]
-    }, {
-        "id": "gecloud-no-optimizely-baseline",
-        "tags": {
-            "team": "gecloud",
-            "stack": "classified-detail",
-            "services": "classified-detail",
-            "group": "optimizely-test"
-        },
-        "activations": [{
-            "attributes": {
-                "culture": ["de-DE", "DE"]
-            }
-        }]
-    }, {
-        "id": "gecloud-no-optimizely-version-one",
-        "tags": {
-            "team": "gecloud",
-            "stack": "classified-detail",
-            "services": "classified-detail",
-            "group": "optimizely-test"
-        },
-        "activations": [{
-            "attributes": {
-                "culture": ["de-DE", "DE"]
-            }
-        }]
-    }, {
-        "id": "gecloud-ops-dealer-watchlist-special-offer",
-        "tags": {
-            "team": "gecloud"
-        },
-        "activations": [{
-            "attributes": {
-                "culture": ["de-DE", "DE"]
-            },
-            "rollout": {
-                "percentage": 100
-            }
-        }]
-    }, {
-        "id": "gecloud-ops-event-publisher",
-        "tags": {
-            "team": "gecloud",
-            "stack": "classified-detail",
-            "services": "classified-detail"
-        },
-        "activations": [{
-            "attributes": {},
-            "rollout": {
-                "percentage": 100
-            }
-        }]
-    }, {
-        "id": "gecloud-ops-financeslice-service",
-        "tags": {
-            "team": "gecloud",
-            "stack": "classified-detail",
-            "fragment": "cldt_fragment_financeslice"
-        },
-        "activations": [{
-            "attributes": {},
-            "rollout": {
-                "percentage": 100
-            }
-        }]
-    }, {
-        "id": "gecloud-ops-financing-example-fragment",
-        "tags": {
-            "team": "gecloud",
-            "service": "classified-detail",
-            "fragment": "financeslice-detail"
-        },
-        "activations": [{
-            "attributes": {
-                "culture": ["de-DE"]
-            },
-            "rollout": {
-                "percentage": 100
-            }
-        }]
-    }, {
-        "id": "gecloud-ops-gallery-edf-ad",
-        "tags": {
-            "team": "gecloud",
-            "stack": "classified-detail",
-            "services": "classified-detail"
-        },
-        "activations": [{
-            "attributes": {
-                "culture": ["de-DE"]
-            },
-            "rollout": {
-                "percentage": 100
-            }
-        }]
-    }, {
-        "id": "gecloud-ops-gateway-rate-limit",
-        "tags": {
-            "team": "gecloud",
-            "stack": "classified-gateway",
-            "services": "classified-gateway"
-        },
-        "activations": [{
-            "attributes": {},
-            "rollout": {
-                "percentage": 100
-            }
-        }]
-    }, {
-        "id": "gecloud-ops-list-rate-overlay",
-        "tags": {
-            "team": "gecloud",
-            "stack": "classified-detail",
-            "services": "classified-detail"
-        },
-        "activations": [{
-            "attributes": {
-                "culture": ["de-DE"]
-            },
-            "rollout": {
-                "percentage": 50
-            }
-        }]
-    }, {
-        "id": "gecloud-ops-optimizely",
-        "tags": {
-            "team": "gecloud",
-            "stack": "classified-detail",
-            "services": "classified-detail"
-        },
-        "activations": [{
-            "attributes": {}
-        }]
-    }, {
-        "id": "gecloud-ops-price-depreciation-fragment",
-        "tags": {
-            "team": "Kondor",
-            "services": "priceevaluation"
-        },
-        "activations": [{
-            "attributes": {
-                "culture": ["de-DE", "de"]
-            },
-            "rollout": {
-                "percentage": 100
-            }
-        }]
-    }, {
-        "id": "gecloud-ops-price-evaluation-fragment",
-        "tags": {
-            "Team": "gecloud"
-        },
-        "activations": [{
-            "attributes": {},
-            "rollout": {
-                "percentage": 100
-            }
-        }]
-    }, {
-        "id": "gecloud-ops-seals",
-        "tags": {
-            "team": "GeCloud"
-        },
-        "activations": [{
-            "attributes": {},
-            "rollout": {
-                "percentage": 100
-            }
-        }]
-    }, {
-        "id": "gecloud-ops-xscout-recomender",
-        "tags": {
-            "team": "gecloud"
-        },
-        "activations": [{
-            "attributes": {},
-            "rollout": {
-                "percentage": 100
-            }
-        }]
-    }, {
-        "id": "gecloud-optimizely-async-load",
-        "tags": {
-            "team": "gecloud",
-            "stack": "classified-detail",
-            "services": "classified-detail",
-            "group": "optimizely-test"
-        },
-        "activations": [{
-            "attributes": {
-                "culture": ["de-DE", "DE"]
-            }
-        }]
-    }, {
-        "id": "gecloud-optimizely-sync-load",
-        "tags": {
-            "team": "gecloud",
-            "stack": "classified-detail",
-            "services": "classified-detail",
-            "group": "optimizely-test"
-        },
-        "activations": [{
-            "attributes": {
-                "culture": ["de-DE", "DE"]
-            }
-        }]
-    }, {
-        "id": "gecloud-price-authority-it",
-        "tags": {
-            "team": "gecloud",
-            "stack": "classified-detail",
-            "services": "classified-detail"
-        },
-        "activations": [{
-            "attributes": {},
-            "rollout": {
-                "percentage": 100
-            }
-        }]
-    }, {
-        "id": "gecloud-privacy-agreement-italy",
-        "tags": {
-            "team": "gecloud",
-            "stack": "classified-detail",
-            "services": "classified-detail"
-        },
-        "activations": [{
-            "attributes": {
-                "culture": ["it-IT", "IT"]
-            },
-            "rollout": {
-                "percentage": 100
-            }
-        }]
-    }, {
-        "id": "gecloud-removed-financeslice-listing-parameters",
-        "tags": {
-            "team": "gecloud",
-            "stack": "classified-detail",
-            "services": "classified-detail"
-        },
-        "activations": [{
-            "attributes": {},
-            "rollout": {
-                "percentage": 100
-            }
-        }]
-    }, {
-        "id": "gecloud-test-list-item-assets",
-        "tags": {
-            "team": "gecloud",
-            "stack": "classified-list",
-            "services": "classified-list"
-        },
-        "activations": [{
-            "attributes": {},
-            "rollout": {
-                "percentage": 100
-            }
-        }]
-    }, {
-        "id": "gecloud-translate-make-others",
-        "tags": {
-            "team": "gecloud",
-            "stack": "classified-detail",
-            "services": "classified-detail"
-        },
-        "activations": [{
-            "attributes": {}
-        }]
-    }, {
-        "id": "gecloud-use-classified-detail-alb",
-        "tags": {
-            "team": "gecloud",
-            "stack": "listing-composer",
-            "services": "listing-composer"
-        },
-        "activations": [{
-            "attributes": {},
-            "rollout": {
-                "percentage": 100
-            }
-        }]
-    }, {
-        "id": "gecloud-use-image-api",
-        "tags": {
-            "team": "gecloud",
-            "stack": "listing-composer",
-            "services": "listing-composer"
-        },
-        "activations": [{
-            "attributes": {}
-        }]
-    }, {
-        "id": "gecloud-vendor-data-detail-fragment",
-        "tags": {
-            "team": "gecloud",
-            "stack": "classified-detail",
-            "services": "classified-detail"
-        },
-        "activations": []
-    }, {
-        "id": "gecloud-watchlist-ab-test",
-        "tags": {
-            "team": "gecloud",
-            "stack": "watchlist",
-            "services": "watchlist"
-        },
-        "activations": [{
-            "attributes": {
-                "culture": ["de-DE", "DE"]
-            },
-            "rollout": {
-                "percentage": 100
-            }
-        }]
-    }, {
-        "id": "gecloud-watchlist-favorites-url",
-        "tags": {
-            "team": "gecloud",
-            "stack": "classified-detail",
-            "services": "classified-detail, watchlist"
-        },
-        "activations": [{
-            "attributes": {}
-        }]
-    }, {
-        "id": "hackweek-communicationform",
-        "tags": {
-            "team": "thatsclassified"
-        },
-        "activations": [{
-            "attributes": {}
-        }]
-    }, {
-        "id": "home-showcar-ads",
-        "tags": {
-            "team": "thatsclassified"
-        },
-        "activations": []
-    }, {
-        "id": "identityandroid",
-        "tags": {
-            "team": "Mobile Apps Android"
-        },
-        "activations": [{
-            "attributes": {},
-            "rollout": {
-                "percentage": 100
-            }
-        }]
-    }, {
-        "id": "kondor-bluewhale-shadow-traffic",
-        "tags": {
-            "team": "kondor",
-            "services": "priceevaluation"
-        },
-        "activations": [{
-            "attributes": {},
-            "rollout": {
-                "percentage": 10
-            }
-        }]
-    }, {
-        "id": "kondor-expensive-price-category",
-        "tags": {
-            "team": "kondor",
-            "services": "priceevaluation"
-        },
-        "activations": [{
-            "attributes": {
-                "culture": ["de-DE", "de"]
-            },
-            "rollout": {
-                "percentage": 100
-            }
-        }]
-    }, {
-        "id": "kondor-explanation-v2",
-        "tags": {
-            "team": "kondor",
-            "services": "priceevaluation"
-        },
-        "activations": [{
-            "attributes": {
-                "culture": ["de-DE", "de", "de-AT"]
-            },
-            "rollout": {
-                "percentage": 100
-            }
-        }]
-    }, {
-        "id": "lc-test",
-        "tags": {
-            "team": "dealer listings and reputation team"
-        },
-        "activations": [{
-            "attributes": {},
-            "rollout": {
-                "percentage": 100
-            }
-        }]
-    }, {
-        "id": "lf-test",
-        "tags": {
-            "team": "DLR"
-        },
-        "activations": [{
-            "attributes": {},
-            "rollout": {
-                "percentage": 100
-            }
-        }]
-    }, {
-        "id": "listing-form-one-page",
-        "tags": {
-            "team": "DLR team"
-        },
-        "activations": [{
-            "attributes": {},
-            "rollout": {
-                "percentage": 100
-            }
-        }]
-    }, {
-        "id": "listing-images-graphql-endpoint",
-        "tags": {
-            "team": "Foundation Services"
-        },
-        "activations": []
-    }, {
-        "id": "local-dominance",
-        "tags": {
-            "team": "revolistion"
-        },
-        "activations": [{
-            "attributes": {
-                "culture": ["de-DE"]
-            },
-            "rollout": {
-                "percentage": 100
-            }
-        }]
-    }, {
-        "id": "log-classified-search-es-queries",
-        "tags": {
-            "team": "revolistion"
-        },
-        "activations": [{
-            "attributes": {}
-        }]
-    }, {
-        "id": "log-wcf-requests",
-        "tags": {
-            "team": "Revolistion"
-        },
-        "activations": [{
-            "attributes": {}
-        }]
-    }, {
-        "id": "new-database",
-        "tags": {
-            "team": "Private Seller Listings"
-        },
-        "activations": [{
-            "attributes": {
-                "culture": ["de-DE", "DE"]
-            },
-            "rollout": {
-                "percentage": 100
-            }
-        }]
-    }, {
-        "id": "new-listing-creation-funnel",
-        "tags": {
-            "team": "Private Seller Listings"
-        },
-        "activations": [{
-            "attributes": {
-                "culture": ["de-DE", "DE"]
-            },
-            "rollout": {
-                "percentage": 10
-            }
-        }]
-    }, {
-        "id": "new-listing-creation-funnel-test-variant",
-        "tags": {
-            "team": "Private Seller Listings"
-        },
-        "activations": [{
-            "attributes": {
-                "culture": ["de-DE", "DE"]
-            },
-            "rollout": {
-                "percentage": 5
-            }
-        }]
-    }, {
-        "id": "oem-ignite-listpage-distribution",
-        "tags": {
-            "team": "OEM"
-        },
-        "activations": []
-    }, {
-        "id": "oem-ignite-listpage-integration",
-        "tags": {
-            "team": "OEM"
-        },
-        "activations": []
-    }, {
-        "id": "oem-ignite-show-electric-and-hybrid",
-        "tags": {
-            "team": "OEM"
-        },
-        "activations": [{
-            "attributes": {}
-        }]
-    }, {
-        "id": "oem-meta-google-site-verification",
-        "tags": {
-            "team": "OEM"
-        },
-        "activations": [{
-            "attributes": {
-                "culture": ["de-DE", "DE"]
-            },
-            "rollout": {
-                "percentage": 100
-            }
-        }]
-    }, {
-        "id": "oem-ncd-elastic-dealer-search",
-        "tags": {
-            "team": "OEM"
-        },
-        "activations": [{
-            "attributes": {},
-            "rollout": {
-                "percentage": 100
-            }
-        }]
-    }, {
-        "id": "oem-ncd-fragment-integration",
-        "tags": {
-            "team": "OEM"
-        },
-        "activations": [{
-            "attributes": {},
-            "rollout": {
-                "percentage": 100
-            }
-        }]
-    }, {
-        "id": "oem-ncd-fragment-mock",
-        "tags": {
-            "team": "OEM"
-        },
-        "activations": [{
-            "attributes": {}
-        }]
-    }, {
-        "id": "oem-ncd-new-price-slider",
-        "tags": {
-            "team": "OEM"
-        },
-        "activations": [{
-            "attributes": {},
-            "rollout": {
-                "percentage": 100
-            }
-        }]
-    }, {
-        "id": "oem-ncd-price-label",
-        "tags": {
-            "team": "Smaug"
-        },
-        "activations": [{
-            "attributes": {},
-            "rollout": {
-                "percentage": 50
-            }
-        }]
-    }, {
-        "id": "oem-ncd-rating",
-        "tags": {
-            "team": "OEM"
-        },
-        "activations": [{
-            "attributes": {},
-            "rollout": {
-                "percentage": 100
-            }
-        }]
-    }, {
-        "id": "oem-ncd-real-email",
-        "tags": {
-            "team": "OEM"
-        },
-        "activations": [{
-            "attributes": {},
-            "rollout": {
-                "percentage": 100
-            }
-        }]
-    }, {
-        "id": "oem-new-car-double-opt-in",
-        "tags": {
-            "team": "OEM"
-        },
-        "activations": [{
-            "attributes": {},
-            "rollout": {
-                "percentage": 100
-            }
-        }]
-    }, {
-        "id": "optimizely_cxp",
-        "tags": {
-            "team": "webexperience",
-            "services": "optimizely"
-        },
-        "activations": [{
-            "attributes": {},
-            "rollout": {
-                "percentage": 100
-            }
-        }]
-    }, {
-        "id": "photo-upload-delete-photo",
-        "tags": {
-            "team": "Private Seller Listings"
-        },
-        "activations": [{
-            "attributes": {}
-        }]
-    }, {
-        "id": "playlists",
-        "tags": {
-            "team": "Mobile Apps Android"
-        },
-        "activations": [{
-            "attributes": {
-                "culture": ["de-de", "de-at"]
-            },
-            "rollout": {
-                "percentage": 100
-            }
-        }]
-    }, {
-        "id": "price-evaluation-filters",
-        "tags": {
-            "team": "revolistion"
-        },
-        "activations": [{
-            "attributes": {
-                "culture": ["de-DE", "DE", "de-AT", "AT", "it-IT", "IT"]
-            },
-            "rollout": {
-                "percentage": 100
-            }
-        }]
-    }, {
-        "id": "process-wcf-requests",
-        "tags": {
-            "team": "revolistion"
-        },
-        "activations": [{
-            "attributes": {},
-            "rollout": {
-                "percentage": 100
-            }
-        }]
-    }, {
-        "id": "s24-media-osa-rollout",
-        "tags": {
-            "team": "OEM",
-            "fragment": "financeslice-detail",
-            "services": "classified-detail"
-        },
-        "activations": [{
-            "attributes": {
-                "culture": ["de-DE"]
-            }
-        }]
-    }, {
-        "id": "saved-searches-unsubscribe-page",
-        "tags": {
-            "team": "Personalization"
-        },
-        "activations": [{
-            "attributes": {
-                "culture": ["de-DE", "DE"]
-            },
-            "rollout": {
-                "percentage": 100
-            }
-        }]
-    }, {
-        "id": "sc_develop",
-        "tags": {
-            "team": "webx",
-            "stack": "showcar-ui",
-            "services": "showcar-ui"
-        },
-        "activations": []
-    }, {
-        "id": "sce-bypass-price-estimation-topic",
-        "tags": {
-            "team": "revolistion"
-        },
-        "activations": []
-    }, {
-        "id": "seo-hugo-at",
-        "tags": {
-            "team": "ThatsClassified"
-        },
-        "activations": [{
-            "attributes": {},
-            "rollout": {
-                "percentage": 100
-            }
-        }]
-    }, {
-        "id": "seo-hugo-de",
-        "tags": {
-            "team": "ThatsClassified"
-        },
-        "activations": [{
-            "attributes": {},
-            "rollout": {
-                "percentage": 100
-            }
-        }]
-    }, {
-        "id": "seo-hugo-es",
-        "tags": {
-            "team": "ThatsClassified"
-        },
-        "activations": [{
-            "attributes": {},
-            "rollout": {
-                "percentage": 100
-            }
-        }]
-    }, {
-        "id": "seo-hugo-fr",
-        "tags": {
-            "team": "ThatsClassified"
-        },
-        "activations": [{
-            "attributes": {}
-        }]
-    }, {
-        "id": "seo-hugo-it",
-        "tags": {
-            "team": "ThatsClassified"
-        },
-        "activations": [{
-            "attributes": {},
-            "rollout": {
-                "percentage": 100
-            }
-        }]
-    }, {
-        "id": "sfp-disabled",
-        "tags": {
-            "team": "revolistion"
-        },
-        "activations": [{
-            "attributes": {}
-        }]
-    }, {
-        "id": "sfp-empty-query",
-        "tags": {
-            "team": "revolistion"
-        },
-        "activations": [{
-            "attributes": {}
-        }]
-    }, {
-        "id": "sfp-parse-disabled",
-        "tags": {
-            "team": "revolistion"
-        },
-        "activations": [{
-            "attributes": {},
-            "rollout": {
-                "percentage": 100
-            }
-        }]
-    }, {
-        "id": "sfp-taxonomy",
-        "tags": {
-            "team": "Revolistion"
-        },
-        "activations": [{
-            "attributes": {}
-        }]
-    }, {
-        "id": "sla-enable-stock-metrics",
-        "tags": {
-            "team": "revolistion",
-            "stack": "search-listings-aggregator",
-            "services": "search-listings-aggregator"
-        },
-        "activations": [{
-            "attributes": {}
-        }]
-    }, {
-        "id": "sla-log-input-listings",
-        "tags": {
-            "team": "revolistion",
-            "stack": "search-listings-aggregator",
-            "services": "search-listings-aggregator"
-        },
-        "activations": [{
-            "attributes": {}
-        }]
-    }, {
-        "id": "sla-log-invalid-input-records",
-        "tags": {
-            "team": "revolistion",
-            "stack": "search-listings-aggregator",
-            "services": "search-listings-aggregator"
-        },
-        "activations": [{
-            "attributes": {}
-        }]
-    }, {
-        "id": "sla-log-missing-input-enrichment",
-        "tags": {
-            "team": "revolistion",
-            "stack": "search-listings-aggregator",
-            "services": "search-listings-aggregator"
-        },
-        "activations": []
-    }, {
-        "id": "sla-log-output-listings",
-        "tags": {
-            "team": "revolistion",
-            "stack": "search-listings-aggregator",
-            "services": "search-listings-aggregator"
-        },
-        "activations": [{
-            "attributes": {}
-        }]
-    }, {
-        "id": "slc-api-log-errors",
-        "tags": {
-            "team": "Revolistion"
-        },
-        "activations": [{
-            "attributes": {}
-        }]
-    }, {
-        "id": "slc-local-dominance",
-        "tags": {
-            "team": "Revolistion"
-        },
-        "activations": []
-    }, {
-        "id": "test",
-        "tags": {},
-        "activations": [{
-            "attributes": {
-                "culture": ["de-DE", "DE", "de-AT", "AT", "en-GB", "GB", "en-US", "US"]
-            }
-        }]
-    }, {
-        "id": "threesixtyandroid",
-        "tags": {
-            "team": "mobile-android"
-        },
-        "activations": [{
-            "attributes": {
-                "culture": ["de-de", "de-at"]
-            },
-            "rollout": {
-                "percentage": 100
-            }
-        }]
-    }, {
-        "id": "time-to-interactive-optimization",
-        "tags": {
-            "team": "gecloud",
-            "stack": "classified-detail",
-            "services": "classified-detail"
-        },
-        "activations": []
-    }, {
-        "id": "vendor-contact-async",
-        "tags": {
-            "team": "thatsclassified"
-        },
-        "activations": [{
-            "attributes": {}
-        }]
-    }, {
-        "id": "verify-wcf-requests",
-        "tags": {
-            "team": "revolistion"
-        },
-        "activations": [{
-            "attributes": {}
-        }]
-    }]
+    "toggles": [
+        {
+            "id": "arvato-carinfo-fake-data",
+            "tags": {
+                "team": "ConMon"
+            },
+            "activations": [
+                {
+                    "attributes": {},
+                    "rollout": {
+                        "percentage": 100
+                    }
+                }
+            ]
+        },
+        {
+            "id": "as24-23505-search-mask-as-fragment",
+            "tags": {
+                "team": "Revolistion thatsclassified"
+            },
+            "activations": [
+                {
+                    "attributes": {},
+                    "rollout": {
+                        "percentage": 100
+                    }
+                }
+            ]
+        },
+        {
+            "id": "as24-25496-price-evaulation-promo",
+            "tags": {
+                "team": "thatsclassified"
+            },
+            "activations": [
+                {
+                    "attributes": {},
+                    "rollout": {
+                        "percentage": 100
+                    }
+                }
+            ]
+        },
+        {
+            "id": "as24-26303-price-auhority-nl",
+            "tags": {
+                "team": "thatsclassified"
+            },
+            "activations": [
+                {
+                    "attributes": {}
+                }
+            ]
+        },
+        {
+            "id": "as24-26704_app_brandbox",
+            "tags": {
+                "team": "thatsclassified"
+            },
+            "activations": [
+                {
+                    "attributes": {}
+                }
+            ]
+        },
+        {
+            "id": "as24-30780-brandbox-de",
+            "tags": {
+                "team": "thatsclassified"
+            },
+            "activations": [
+                {
+                    "attributes": {
+                        "culture": ["de-DE", "DE"]
+                    },
+                    "rollout": {
+                        "percentage": 100
+                    }
+                }
+            ]
+        },
+        {
+            "id": "as24-30936-360-communication",
+            "tags": {
+                "team": "thatsclassified"
+            },
+            "activations": [
+                {
+                    "attributes": {
+                        "culture": ["de-DE", "DE"]
+                    },
+                    "rollout": {
+                        "percentage": 100
+                    }
+                }
+            ]
+        },
+        {
+            "id": "awsdetailandroid",
+            "tags": {
+                "team": "Mobile Android"
+            },
+            "activations": [
+                {
+                    "attributes": {},
+                    "rollout": {
+                        "percentage": 100
+                    }
+                }
+            ]
+        },
+        {
+            "id": "awssearchandroid",
+            "tags": {
+                "team": "Mobile Android"
+            },
+            "activations": [
+                {
+                    "attributes": {},
+                    "rollout": {
+                        "percentage": 100
+                    }
+                }
+            ]
+        },
+        {
+            "id": "carhistory-reporter-pass-owner",
+            "tags": {
+                "team": "ConMon"
+            },
+            "activations": [
+                {
+                    "attributes": {}
+                }
+            ]
+        },
+        {
+            "id": "cats-categorizer-detailed-metrics",
+            "tags": {
+                "team": "AS24_FoundationServices",
+                "type": "OpsToggle"
+            },
+            "activations": [
+                {
+                    "attributes": {}
+                }
+            ]
+        },
+        {
+            "id": "cl-ads-inpager-test",
+            "tags": {
+                "team": "revolistion",
+                "stack": "classified-list",
+                "services": "classified-list"
+            },
+            "activations": [
+                {
+                    "attributes": {
+                        "culture": ["de-DE", "DE"]
+                    }
+                }
+            ]
+        },
+        {
+            "id": "cl-anonymous-search-subscriptions-in-tatsu",
+            "tags": {
+                "team": "as24-personalization"
+            },
+            "activations": [
+                {
+                    "attributes": {
+                        "culture": ["nl-NL", "NL", "fr-LU", "LU", "fr-BE", "BE", "nl-BE"]
+                    },
+                    "rollout": {
+                        "percentage": 100
+                    }
+                }
+            ]
+        },
+        {
+            "id": "cl-anonymous-search-subscriptions-in-tatsu-de",
+            "tags": {
+                "team": "as24-personalization"
+            },
+            "activations": [
+                {
+                    "attributes": {
+                        "culture": ["de-DE", "DE"]
+                    },
+                    "rollout": {
+                        "percentage": 100
+                    }
+                }
+            ]
+        },
+        {
+            "id": "cl-anonymous-search-subscriptions-in-tatsu-it",
+            "tags": {
+                "team": "Personalization"
+            },
+            "activations": [
+                {
+                    "attributes": {
+                        "culture": ["it-IT", "IT"]
+                    },
+                    "rollout": {
+                        "percentage": 100
+                    }
+                }
+            ]
+        },
+        {
+            "id": "cl-anonymous-search-subscriptions-in-tatsu-privacy-consent",
+            "tags": {
+                "team": "as24-personalization"
+            },
+            "activations": [
+                {
+                    "attributes": {
+                        "culture": ["de-DE", "DE", "nl-NL", "NL"]
+                    },
+                    "rollout": {
+                        "percentage": 100
+                    }
+                }
+            ]
+        },
+        {
+            "id": "cl-crossborder-home",
+            "tags": {
+                "team": "revolistion",
+                "stack": "classified-list",
+                "services": "classified-list"
+            },
+            "activations": [
+                {
+                    "attributes": {
+                        "culture": [
+                            "de-DE",
+                            "DE",
+                            "de-AT",
+                            "AT",
+                            "it-IT",
+                            "IT",
+                            "es-ES",
+                            "ES",
+                            "en-GB",
+                            "GB",
+                            "en-US",
+                            "US",
+                            "ro-RO",
+                            "RO",
+                            "bg-BG",
+                            "BG",
+                            "cs-CZ",
+                            "CZ",
+                            "pl-PL",
+                            "PL",
+                            "hu-HU",
+                            "HU",
+                            "ru-RU",
+                            "RU",
+                            "hr-HR",
+                            "HR",
+                            "sv-SE",
+                            "SE",
+                            "tr-TR",
+                            "TR",
+                            "ua-UA",
+                            "UA"
+                        ]
+                    },
+                    "rollout": {
+                        "percentage": 100
+                    }
+                }
+            ]
+        },
+        {
+            "id": "cl-crossborder-listpage",
+            "tags": {
+                "team": "revolistion",
+                "stack": "classified-list",
+                "services": "classified-list"
+            },
+            "activations": [
+                {
+                    "attributes": {
+                        "culture": [
+                            "de-DE",
+                            "DE",
+                            "de-AT",
+                            "AT",
+                            "it-IT",
+                            "IT",
+                            "es-ES",
+                            "ES",
+                            "en-GB",
+                            "GB",
+                            "en-US",
+                            "US"
+                        ]
+                    },
+                    "rollout": {
+                        "percentage": 100
+                    }
+                }
+            ]
+        },
+        {
+            "id": "cl-finance-rate-filter",
+            "tags": {
+                "team": "revolistion",
+                "stack": "classified-list",
+                "services": "classified-list"
+            },
+            "activations": [
+                {
+                    "attributes": {
+                        "culture": ["de-DE"]
+                    },
+                    "rollout": {
+                        "percentage": 50
+                    }
+                }
+            ]
+        },
+        {
+            "id": "cl-finance-rate-filter-experiment",
+            "tags": {
+                "team": "revolistion",
+                "stack": "classified-list",
+                "services": "classified-list"
+            },
+            "activations": [
+                {
+                    "attributes": {
+                        "culture": ["de-DE"]
+                    },
+                    "rollout": {
+                        "percentage": 100
+                    }
+                }
+            ]
+        },
+        {
+            "id": "cl-full-culture-fragment-on-home",
+            "tags": {
+                "team": "revolistion",
+                "stack": "classified-list",
+                "services": "classified-list"
+            },
+            "activations": [
+                {
+                    "attributes": {},
+                    "rollout": {
+                        "percentage": 100
+                    }
+                }
+            ]
+        },
+        {
+            "id": "cl-home-tld-as-default-country",
+            "tags": {
+                "team": "revolistion",
+                "stack": "classified-list",
+                "services": "classified-list"
+            },
+            "activations": [
+                {
+                    "attributes": {
+                        "culture": [
+                            "de-AT",
+                            "AT",
+                            "it-IT",
+                            "IT",
+                            "es-ES",
+                            "ES",
+                            "fr-BE",
+                            "nl-BE",
+                            "BE",
+                            "fr-FR",
+                            "FR",
+                            "fr-LU",
+                            "LU",
+                            "nl-NL",
+                            "NL"
+                        ]
+                    },
+                    "rollout": {
+                        "percentage": 100
+                    }
+                }
+            ]
+        },
+        {
+            "id": "cl-react-bike-search-box-on-home",
+            "tags": {
+                "team": "Revolistion"
+            },
+            "activations": [
+                {
+                    "attributes": {},
+                    "rollout": {
+                        "percentage": 100
+                    }
+                }
+            ]
+        },
+        {
+            "id": "cl-react-disabled-local-storage",
+            "tags": {
+                "team": "revolistion",
+                "stack": "classified-list",
+                "services": "classified-list"
+            },
+            "activations": [
+                {
+                    "attributes": {}
+                }
+            ]
+        },
+        {
+            "id": "cl-react-list-page",
+            "tags": {
+                "team": "revolistion",
+                "stack": "classified-list",
+                "services": "classified-list"
+            },
+            "activations": [
+                {
+                    "attributes": {
+                        "culture": [
+                            "en-GB",
+                            "GB",
+                            "en-US",
+                            "US",
+                            "ro-RO",
+                            "RO",
+                            "bg-BG",
+                            "BG",
+                            "cs-CZ",
+                            "CZ",
+                            "pl-PL",
+                            "PL",
+                            "hu-HU",
+                            "HU",
+                            "ru-RU",
+                            "RU",
+                            "hr-HR",
+                            "HR",
+                            "sv-SE",
+                            "SE",
+                            "tr-TR",
+                            "TR",
+                            "uk-UA",
+                            "UA",
+                            "fr-BE",
+                            "nl-BE",
+                            "BE",
+                            "DE",
+                            "de-DE",
+                            "nl-NL",
+                            "NL",
+                            "IT",
+                            "it-IT",
+                            "FR",
+                            "fr-FR",
+                            "de-AT",
+                            "AT",
+                            "fr-LU",
+                            "LU",
+                            "es-ES",
+                            "ES"
+                        ]
+                    },
+                    "rollout": {
+                        "percentage": 100
+                    }
+                }
+            ]
+        },
+        {
+            "id": "cl-react-refine-search-page",
+            "tags": {
+                "team": "revolistion",
+                "stack": "classified-list",
+                "services": "classified-list"
+            },
+            "activations": [
+                {
+                    "attributes": {},
+                    "rollout": {
+                        "percentage": 100
+                    }
+                }
+            ]
+        },
+        {
+            "id": "cl-react-search-box-on-home",
+            "tags": {
+                "team": "revolistion",
+                "stack": "classified-list",
+                "services": "classified-list"
+            },
+            "activations": [
+                {
+                    "attributes": {},
+                    "rollout": {
+                        "percentage": 100
+                    }
+                }
+            ]
+        },
+        {
+            "id": "cl-react-sfp-shadowtraffic",
+            "tags": {
+                "team": "revolistion",
+                "stack": "classified-list",
+                "services": "classified-list"
+            },
+            "activations": [
+                {
+                    "attributes": {}
+                }
+            ]
+        },
+        {
+            "id": "cl-react-sfp-taxonomy",
+            "tags": {
+                "team": "revolistion",
+                "stack": "classified-list",
+                "services": "classified-list"
+            },
+            "activations": [
+                {
+                    "attributes": {},
+                    "rollout": {
+                        "percentage": 100
+                    }
+                }
+            ]
+        },
+        {
+            "id": "cl-shadow-traffic",
+            "tags": {
+                "team": "revolistion"
+            },
+            "activations": [
+                {
+                    "attributes": {},
+                    "rollout": {
+                        "percentage": 100
+                    }
+                }
+            ]
+        },
+        {
+            "id": "cl-ssr-cache",
+            "tags": {
+                "team": "revolistion"
+            },
+            "activations": [
+                {
+                    "attributes": {},
+                    "rollout": {
+                        "percentage": 100
+                    }
+                }
+            ]
+        },
+        {
+            "id": "cl-ssr-render-list-page",
+            "tags": {
+                "team": "revolistion"
+            },
+            "activations": [
+                {
+                    "attributes": {},
+                    "rollout": {
+                        "percentage": 100
+                    }
+                }
+            ]
+        },
+        {
+            "id": "cl-wrong-total-count",
+            "tags": {
+                "team": "revolistion",
+                "stack": "classified-list",
+                "services": "classified-list"
+            },
+            "activations": [
+                {
+                    "attributes": {
+                        "culture": ["de-AT", "AT"]
+                    },
+                    "rollout": {
+                        "percentage": 100
+                    }
+                }
+            ]
+        },
+        {
+            "id": "classified-gateway-processor-latency",
+            "tags": {
+                "team": "gecloud",
+                "stack": "classified-gateway",
+                "services": "classified-gateway"
+            },
+            "activations": [
+                {
+                    "attributes": {},
+                    "rollout": {
+                        "percentage": 100
+                    }
+                }
+            ]
+        },
+        {
+            "id": "classified-search-autotrader-facet",
+            "tags": {
+                "team": "revolistion"
+            },
+            "activations": []
+        },
+        {
+            "id": "classified-search-shadow-lu",
+            "tags": {
+                "team": "Revolistion"
+            },
+            "activations": [
+                {
+                    "attributes": {}
+                }
+            ]
+        },
+        {
+            "id": "classified-search-shadow-pt",
+            "tags": {
+                "team": "revolistion",
+                "stack": "classified-search",
+                "services": "classified-search"
+            },
+            "activations": [
+                {
+                    "attributes": {}
+                }
+            ]
+        },
+        {
+            "id": "classified-search-shadow-ye",
+            "tags": {
+                "team": "revolistion",
+                "stack": "classified-search",
+                "services": "classified-search"
+            },
+            "activations": [
+                {
+                    "attributes": {}
+                }
+            ]
+        },
+        {
+            "id": "classified-search-traffic-to-backup",
+            "tags": {
+                "team": "revolistion"
+            },
+            "activations": [
+                {
+                    "attributes": {}
+                }
+            ]
+        },
+        {
+            "id": "classified-search-traffic-to-yellow",
+            "tags": {
+                "team": "revolistion"
+            },
+            "activations": [
+                {
+                    "attributes": {}
+                }
+            ]
+        },
+        {
+            "id": "condition-test",
+            "tags": {
+                "team": "ConMon"
+            },
+            "activations": [
+                {
+                    "attributes": {
+                        "culture": ["de-DE", "DE"]
+                    }
+                }
+            ]
+        },
+        {
+            "id": "conmon-ads-replacement",
+            "tags": {
+                "team": "conmon",
+                "fragment": "financeslice-detail"
+            },
+            "activations": [
+                {
+                    "attributes": {},
+                    "rollout": {
+                        "percentage": 50
+                    }
+                }
+            ]
+        },
+        {
+            "id": "conmon-ads-replacement-italy",
+            "tags": {
+                "team": "fed",
+                "fragment": "financeslice-detail"
+            },
+            "activations": [
+                {
+                    "attributes": {
+                        "culture": ["it-IT", "IT"]
+                    },
+                    "rollout": {
+                        "percentage": 50
+                    }
+                }
+            ]
+        },
+        {
+            "id": "conmon-ads-replacement-netherlands",
+            "tags": {
+                "team": "fed",
+                "fragment": "financeslice-detail"
+            },
+            "activations": [
+                {
+                    "attributes": {
+                        "culture": ["nl-NL", "NL"]
+                    },
+                    "rollout": {
+                        "percentage": 100
+                    }
+                }
+            ]
+        },
+        {
+            "id": "conmon-ads-replacement-spain",
+            "tags": {
+                "team": "fed",
+                "fragment": "financeslice-detail"
+            },
+            "activations": [
+                {
+                    "attributes": {
+                        "culture": ["es-ES", "ES"]
+                    },
+                    "rollout": {
+                        "percentage": 100
+                    }
+                }
+            ]
+        },
+        {
+            "id": "conmon-finance-german-widget-adjustment",
+            "tags": {
+                "team": "conmon",
+                "fragment": "financeslice-detail"
+            },
+            "activations": [
+                {
+                    "attributes": {}
+                }
+            ]
+        },
+        {
+            "id": "conmon-finance-mobile-uncollapse",
+            "tags": {
+                "team": "conmon",
+                "fragment": "financeslice-detail"
+            },
+            "activations": [
+                {
+                    "attributes": {},
+                    "rollout": {
+                        "percentage": 100
+                    }
+                }
+            ]
+        },
+        {
+            "id": "conmon-financeslice-calculator-mercedes-benz-bank",
+            "tags": {
+                "team": "conmon",
+                "fragment": "financeslice-detail"
+            },
+            "activations": [
+                {
+                    "attributes": {},
+                    "rollout": {
+                        "percentage": 100
+                    }
+                }
+            ]
+        },
+        {
+            "id": "conmon-financeslice-run-tests",
+            "tags": {
+                "service": "financeslice-detail",
+                "team": "ConMon"
+            },
+            "activations": []
+        },
+        {
+            "id": "conmon-finren-widget",
+            "tags": {
+                "team": "ConMon",
+                "fragment": "financeslice-detail"
+            },
+            "activations": [
+                {
+                    "attributes": {},
+                    "rollout": {
+                        "percentage": 100
+                    }
+                }
+            ]
+        },
+        {
+            "id": "conmon-leasing-ag-test",
+            "tags": {
+                "team": "conmon",
+                "fragment": "financeslice-detail"
+            },
+            "activations": [
+                {
+                    "attributes": {},
+                    "rollout": {
+                        "percentage": 100
+                    }
+                }
+            ]
+        },
+        {
+            "id": "conmon-navigation-finance",
+            "tags": {
+                "team": "conmon",
+                "fragment": "financeslice-detail"
+            },
+            "activations": [
+                {
+                    "attributes": {}
+                }
+            ]
+        },
+        {
+            "id": "conmon-ops-financeslice-ads",
+            "tags": {
+                "team": "conmon",
+                "fragment": "financeslice-detail"
+            },
+            "activations": [
+                {
+                    "attributes": {},
+                    "rollout": {
+                        "percentage": 100
+                    }
+                }
+            ]
+        },
+        {
+            "id": "conmon-remove-slice-when-no-ads",
+            "tags": {
+                "team": "FED",
+                "fragment": "financeslice-detail"
+            },
+            "activations": [
+                {
+                    "attributes": {},
+                    "rollout": {
+                        "percentage": 100
+                    }
+                }
+            ]
+        },
+        {
+            "id": "conmon-verti-test",
+            "tags": {
+                "team": "FED",
+                "fragment": "financeslice-detail"
+            },
+            "activations": [
+                {
+                    "attributes": {}
+                }
+            ]
+        },
+        {
+            "id": "corrado-express-sale-vin",
+            "tags": {
+                "team": "corrado"
+            },
+            "activations": [
+                {
+                    "attributes": {},
+                    "rollout": {
+                        "percentage": 100
+                    }
+                }
+            ]
+        },
+        {
+            "id": "corrado-new-express-sale-funnel",
+            "tags": {
+                "team": "corrado"
+            },
+            "activations": [
+                {
+                    "attributes": {},
+                    "rollout": {
+                        "percentage": 100
+                    }
+                }
+            ]
+        },
+        {
+            "id": "cxp-new-list-item",
+            "tags": {
+                "team": "cxp",
+                "services": "classified-detail"
+            },
+            "activations": [
+                {
+                    "attributes": {},
+                    "rollout": {
+                        "percentage": 100
+                    }
+                }
+            ]
+        },
+        {
+            "id": "cxp-price-authority-nl",
+            "tags": {
+                "team": "gecloud,kondor,revolistion",
+                "stack": "classified-detail",
+                "services": "classified-detail,classified-list,priceevaluation"
+            },
+            "activations": [
+                {
+                    "attributes": {
+                        "culture": ["de-DE", "DE", "de-AT", "AT", "it-IT", "IT"]
+                    },
+                    "rollout": {
+                        "percentage": 100
+                    }
+                }
+            ]
+        },
+        {
+            "id": "dealer-info-migration",
+            "tags": {
+                "team": "webx",
+                "services": "classified-detail,vendor-contact-data"
+            },
+            "activations": [
+                {
+                    "attributes": {
+                        "culture": [
+                            "AT",
+                            "de-AT",
+                            "ES",
+                            "es-ES",
+                            "FR",
+                            "fr-FR",
+                            "NL",
+                            "nl-NL",
+                            "BE",
+                            "fr-BE",
+                            "BE",
+                            "nl-BE",
+                            "LU",
+                            "fr-LU"
+                        ]
+                    },
+                    "rollout": {
+                        "percentage": 100
+                    }
+                }
+            ]
+        },
+        {
+            "id": "dealer-info-rating",
+            "tags": {
+                "team": "Acquisition"
+            },
+            "activations": [
+                {
+                    "attributes": {}
+                }
+            ]
+        },
+        {
+            "id": "dlm-new-dealer-info-link",
+            "tags": {
+                "team": "DLM"
+            },
+            "activations": [
+                {
+                    "attributes": {
+                        "culture": ["de-AT"]
+                    }
+                }
+            ]
+        },
+        {
+            "id": "dlr-360-delete",
+            "tags": {
+                "team": "DLR team "
+            },
+            "activations": [
+                {
+                    "attributes": {
+                        "culture": ["de-DE", "DE", "it-IT", "IT", "fr-BE", "BE", "nl-BE", "BE"]
+                    },
+                    "rollout": {
+                        "percentage": 100
+                    }
+                }
+            ]
+        },
+        {
+            "id": "dlr-delete-360-inside",
+            "tags": {
+                "team": "DLR team"
+            },
+            "activations": [
+                {
+                    "attributes": {
+                        "culture": ["it-IT", "IT", "fr-BE", "BE", "nl-BE", "BE"]
+                    },
+                    "rollout": {
+                        "percentage": 100
+                    }
+                }
+            ]
+        },
+        {
+            "id": "dlr-price-evaluation",
+            "tags": {
+                "team": "DLR Team"
+            },
+            "activations": [
+                {
+                    "attributes": {
+                        "culture": ["de-DE", "DE"]
+                    },
+                    "rollout": {
+                        "percentage": 100
+                    }
+                }
+            ]
+        },
+        {
+            "id": "dlr-price-evaluation-fragment",
+            "tags": {
+                "team": "DLR team"
+            },
+            "activations": [
+                {
+                    "attributes": {
+                        "culture": ["de-DE", "DE"]
+                    },
+                    "rollout": {
+                        "percentage": 100
+                    }
+                }
+            ]
+        },
+        {
+            "id": "dmm-ld-oem-integration",
+            "tags": {
+                "team": "dmm",
+                "service": "local-dominance"
+            },
+            "activations": [
+                {
+                    "attributes": {},
+                    "rollout": {
+                        "percentage": 100
+                    }
+                }
+            ]
+        },
+        {
+            "id": "dmm-vsb-show-custom-link",
+            "tags": {
+                "team": "dmm",
+                "service": "vip-showroom-branding"
+            },
+            "activations": [
+                {
+                    "attributes": {},
+                    "rollout": {
+                        "percentage": 100
+                    }
+                }
+            ]
+        },
+        {
+            "id": "editable-basic-info",
+            "tags": {
+                "team": "Private Seller Listings"
+            },
+            "activations": [
+                {
+                    "attributes": {
+                        "culture": ["de-DE", "DE"]
+                    },
+                    "rollout": {
+                        "percentage": 100
+                    }
+                }
+            ]
+        },
+        {
+            "id": "editable-car-state",
+            "tags": {
+                "team": "Private Seller Listings"
+            },
+            "activations": [
+                {
+                    "attributes": {
+                        "culture": ["de-DE", "DE"]
+                    },
+                    "rollout": {
+                        "percentage": 100
+                    }
+                }
+            ]
+        },
+        {
+            "id": "editable-description",
+            "tags": {
+                "team": "Private Seller Listings"
+            },
+            "activations": [
+                {
+                    "attributes": {},
+                    "rollout": {
+                        "percentage": 100
+                    }
+                }
+            ]
+        },
+        {
+            "id": "editable-equipment",
+            "tags": {
+                "team": "Private Seller Listings"
+            },
+            "activations": [
+                {
+                    "attributes": {
+                        "culture": ["de-DE", "DE"]
+                    },
+                    "rollout": {
+                        "percentage": 100
+                    }
+                }
+            ]
+        },
+        {
+            "id": "emergency_action_message",
+            "tags": {
+                "team": "Revolisiton thatsclassified"
+            },
+            "activations": [
+                {
+                    "attributes": {}
+                }
+            ]
+        },
+        {
+            "id": "expresso-express-sale-new-funnel-individual-sales-page",
+            "tags": {
+                "team": "expresso"
+            },
+            "activations": []
+        },
+        {
+            "id": "expresso-new-funnel-in-progress",
+            "tags": {
+                "team": "Expresso"
+            },
+            "activations": []
+        },
+        {
+            "id": "fed-alp-de-ad",
+            "tags": {
+                "team": "fed",
+                "service": "finance-afterlead"
+            },
+            "activations": []
+        },
+        {
+            "id": "fed-belgium-cofidis-toggle",
+            "tags": {
+                "team": "gecloud",
+                "stack": "classified-detail",
+                "services": "classified-detail"
+            },
+            "activations": [
+                {
+                    "attributes": {
+                        "culture": ["fr-BE", "nl-BE", "BE"]
+                    },
+                    "rollout": {
+                        "percentage": 50
+                    }
+                }
+            ]
+        },
+        {
+            "id": "fed-classified-list-item-finance-rate",
+            "tags": {
+                "team": "FED",
+                "fragment": "financeslice-detail",
+                "services": "classified-detail"
+            },
+            "activations": [
+                {
+                    "attributes": {
+                        "culture": ["de-DE"]
+                    },
+                    "rollout": {
+                        "percentage": 50
+                    }
+                }
+            ]
+        },
+        {
+            "id": "fed-compass-widget",
+            "tags": {
+                "team": "fed",
+                "fragment": "financeslice-detail"
+            },
+            "activations": [
+                {
+                    "attributes": {
+                        "culture": ["it-IT", "IT"]
+                    },
+                    "rollout": {
+                        "percentage": 100
+                    }
+                }
+            ]
+        },
+        {
+            "id": "fed-deutsche-bank-quick",
+            "tags": {
+                "team": "conmon",
+                "fragment": "financeslice-detail"
+            },
+            "activations": [
+                {
+                    "attributes": {},
+                    "rollout": {
+                        "percentage": 50
+                    }
+                }
+            ]
+        },
+        {
+            "id": "fed-dyn-fc-high",
+            "tags": {
+                "team": "FED",
+                "fragment": "financeslice-detail"
+            },
+            "activations": [
+                {
+                    "attributes": {
+                        "culture": ["de-DE", "DE"]
+                    },
+                    "rollout": {
+                        "percentage": 40
+                    }
+                }
+            ]
+        },
+        {
+            "id": "fed-dyn-fc-low",
+            "tags": {
+                "team": "FED",
+                "fragment": "financeslice-detail"
+            },
+            "activations": [
+                {
+                    "attributes": {
+                        "culture": ["de-DE", "DE"]
+                    },
+                    "rollout": {
+                        "percentage": 20
+                    }
+                }
+            ]
+        },
+        {
+            "id": "fed-dyn-fc-mid",
+            "tags": {
+                "team": "FED",
+                "fragment": "financeslice-detail"
+            },
+            "activations": [
+                {
+                    "attributes": {
+                        "culture": ["de-DE", "DE"]
+                    },
+                    "rollout": {
+                        "percentage": 30
+                    }
+                }
+            ]
+        },
+        {
+            "id": "fed-es-twice",
+            "tags": {
+                "team": "FED",
+                "fragment": "financeslice-detail"
+            },
+            "activations": []
+        },
+        {
+            "id": "fed-financeslice-debug",
+            "tags": {
+                "team": "FED",
+                "fragment": "financeslice-detail"
+            },
+            "activations": [
+                {
+                    "attributes": {}
+                }
+            ]
+        },
+        {
+            "id": "fed-financeslice-ng",
+            "tags": {
+                "team": "FED",
+                "fragment": "financeslice-detail"
+            },
+            "activations": []
+        },
+        {
+            "id": "fed-findomestic-test",
+            "tags": {
+                "team": "FED",
+                "fragment": "financeslice-detail"
+            },
+            "activations": [
+                {
+                    "attributes": {
+                        "culture": ["it-IT"]
+                    },
+                    "rollout": {
+                        "percentage": 100
+                    }
+                }
+            ]
+        },
+        {
+            "id": "fed-integration-iautofinance",
+            "tags": {
+                "team": "FED",
+                "fragment": "financeslice-detail"
+            },
+            "activations": [
+                {
+                    "attributes": {
+                        "culture": ["de-DE"]
+                    },
+                    "rollout": {
+                        "percentage": 7
+                    }
+                }
+            ]
+        },
+        {
+            "id": "fed-italy-remove-agos",
+            "tags": {
+                "team": "fed",
+                "fragment": "financeslice-detail"
+            },
+            "activations": [
+                {
+                    "attributes": {}
+                }
+            ]
+        },
+        {
+            "id": "fed-mercedes-it-widget",
+            "tags": {
+                "team": "fed",
+                "fragment": "financeslice-detail"
+            },
+            "activations": [
+                {
+                    "attributes": {
+                        "culture": ["it-IT", "IT"]
+                    }
+                }
+            ]
+        },
+        {
+            "id": "fed-move-financeslice-above",
+            "tags": {
+                "team": "fed",
+                "fragment": "financeslice-detail"
+            },
+            "activations": [
+                {
+                    "attributes": {
+                        "culture": ["de-DE"]
+                    }
+                }
+            ]
+        },
+        {
+            "id": "fed-move-financeslice-above-group",
+            "tags": {
+                "team": "fed",
+                "fragment": "financeslice-detail"
+            },
+            "activations": [
+                {
+                    "attributes": {
+                        "buckets": ["B:5001-7500", "A:7501-9999"]
+                    }
+                }
+            ]
+        },
+        {
+            "id": "fed-ops-adblocker-test",
+            "tags": {
+                "team": "FED",
+                "fragment": "financeslice-detail",
+                "service": "financeslice-detail"
+            },
+            "activations": [
+                {
+                    "attributes": {}
+                }
+            ]
+        },
+        {
+            "id": "fed-ops-adblocker-test-italy",
+            "tags": {
+                "team": "fed",
+                "fragment": "financeslice-detail"
+            },
+            "activations": [
+                {
+                    "attributes": {
+                        "culture": ["it-IT", "IT"]
+                    },
+                    "rollout": {
+                        "percentage": 20
+                    }
+                }
+            ]
+        },
+        {
+            "id": "fed-ops-adblocker-test-netherlands",
+            "tags": {
+                "team": "fed",
+                "fragment": "financeslice-detail"
+            },
+            "activations": [
+                {
+                    "attributes": {
+                        "culture": ["nl-NL", "NL"]
+                    }
+                }
+            ]
+        },
+        {
+            "id": "fed-ops-adblocker-test-spain",
+            "tags": {
+                "team": "fed",
+                "fragment": "financeslice-detail"
+            },
+            "activations": [
+                {
+                    "attributes": {
+                        "culture": ["es-ES", "ES"]
+                    },
+                    "rollout": {
+                        "percentage": 100
+                    }
+                }
+            ]
+        },
+        {
+            "id": "fed-ops-deutsche-bank",
+            "tags": {
+                "team": "conmon",
+                "fragment": "financeslice-detail"
+            },
+            "activations": [
+                {
+                    "attributes": {},
+                    "rollout": {
+                        "percentage": 100
+                    }
+                }
+            ]
+        },
+        {
+            "id": "fed-ops-dyn-fc",
+            "tags": {
+                "team": "FED",
+                "fragment": "financeslice-detail"
+            },
+            "activations": [
+                {
+                    "attributes": {
+                        "culture": ["de-DE", "DE"]
+                    }
+                }
+            ]
+        },
+        {
+            "id": "fed-ops-kafka-edf",
+            "tags": {
+                "team": "FED",
+                "service": "financeslice-detail"
+            },
+            "activations": [
+                {
+                    "attributes": {},
+                    "rollout": {
+                        "percentage": 100
+                    }
+                }
+            ]
+        },
+        {
+            "id": "fed-test-group-custom-dimension",
+            "tags": {
+                "team": "FED",
+                "fragment": "financeslice-detail"
+            },
+            "activations": [
+                {
+                    "attributes": {},
+                    "rollout": {
+                        "percentage": 100
+                    }
+                }
+            ]
+        },
+        {
+            "id": "fed-use-kafka-listings",
+            "tags": {
+                "team": "FED",
+                "fragment": "financeslice-detail"
+            },
+            "activations": [
+                {
+                    "attributes": {
+                        "culture": ["de-DE"]
+                    },
+                    "rollout": {
+                        "percentage": 100
+                    }
+                }
+            ]
+        },
+        {
+            "id": "finance-pages-classified-data",
+            "tags": {
+                "team": "ConMon",
+                "service": "finance-pages"
+            },
+            "activations": [
+                {
+                    "attributes": {
+                        "culture": ["de-DE", "de", "DE"]
+                    },
+                    "rollout": {
+                        "percentage": 100
+                    }
+                }
+            ]
+        },
+        {
+            "id": "gecloud-ad-blocker-stats",
+            "tags": {
+                "team": "gecloud",
+                "stack": "classified-detail",
+                "services": "classified-detail"
+            },
+            "activations": [
+                {
+                    "attributes": {}
+                }
+            ]
+        },
+        {
+            "id": "gecloud-api-state-id",
+            "tags": {
+                "team": "gecloud",
+                "stack": "classified-detail",
+                "services": "classified-detail"
+            },
+            "activations": [
+                {
+                    "attributes": {},
+                    "rollout": {
+                        "percentage": 100
+                    }
+                }
+            ]
+        },
+        {
+            "id": "gecloud-async-convert-to-json",
+            "tags": {
+                "team": "gecloud",
+                "stack": "classified-detail",
+                "services": "classified-detail"
+            },
+            "activations": [
+                {
+                    "attributes": {},
+                    "rollout": {
+                        "percentage": 100
+                    }
+                }
+            ]
+        },
+        {
+            "id": "gecloud-autotrader-api-seals",
+            "tags": {
+                "team": "gecloud",
+                "stack": "listing-composer"
+            },
+            "activations": [
+                {
+                    "attributes": {},
+                    "rollout": {
+                        "percentage": 100
+                    }
+                }
+            ]
+        },
+        {
+            "id": "gecloud-detail-multiline-headline",
+            "tags": {
+                "team": "gecloud",
+                "stack": "classified-detail",
+                "services": "classified-detail"
+            },
+            "activations": [
+                {
+                    "attributes": {},
+                    "rollout": {
+                        "percentage": 100
+                    }
+                }
+            ]
+        },
+        {
+            "id": "gecloud-extended-ads-international",
+            "tags": {
+                "team": "gecloud",
+                "stack": "classified-detail"
+            },
+            "activations": [
+                {
+                    "attributes": {},
+                    "rollout": {
+                        "percentage": 100
+                    }
+                }
+            ]
+        },
+        {
+            "id": "gecloud-extract-listing-summary-main",
+            "tags": {
+                "team": "gecloud",
+                "stack": "classified-detail",
+                "services": "classified-detail"
+            },
+            "activations": [
+                {
+                    "attributes": {},
+                    "rollout": {
+                        "percentage": 100
+                    }
+                }
+            ]
+        },
+        {
+            "id": "gecloud-fed-afterlead-integration",
+            "tags": {
+                "team": "gecloud",
+                "stack": "classified-detail",
+                "services": "classified-detail"
+            },
+            "activations": [
+                {
+                    "attributes": {
+                        "culture": ["de-DE", "DE"]
+                    },
+                    "rollout": {
+                        "percentage": 100
+                    }
+                }
+            ]
+        },
+        {
+            "id": "gecloud-fed-afterlead-integration-be",
+            "tags": {
+                "team": "gecloud",
+                "stack": "classified-detail",
+                "services": "classified-detail"
+            },
+            "activations": [
+                {
+                    "attributes": {
+                        "culture": ["fr-BE", "nl-BE", "BE"]
+                    },
+                    "rollout": {
+                        "percentage": 50
+                    }
+                }
+            ]
+        },
+        {
+            "id": "gecloud-fed-afterlead-integration-be-ab",
+            "tags": {
+                "team": "gecloud",
+                "stack": "classified-detail",
+                "services": "classified-detail"
+            },
+            "activations": [
+                {
+                    "attributes": {
+                        "culture": ["fr-BE", "nl-BE", "BE"]
+                    },
+                    "rollout": {
+                        "percentage": 50
+                    }
+                }
+            ]
+        },
+        {
+            "id": "gecloud-fed-afterlead-integration-it",
+            "tags": {
+                "team": "gecloud",
+                "stack": "classified-detail",
+                "services": "classified-detail"
+            },
+            "activations": [
+                {
+                    "attributes": {
+                        "culture": ["it-IT", "IT"]
+                    },
+                    "rollout": {
+                        "percentage": 100
+                    }
+                }
+            ]
+        },
+        {
+            "id": "gecloud-fed-afterlead-integration-nl",
+            "tags": {
+                "team": "gecloud",
+                "stack": "classified-detail",
+                "services": "classified-detail"
+            },
+            "activations": [
+                {
+                    "attributes": {
+                        "culture": ["nl-NL", "NL"]
+                    },
+                    "rollout": {
+                        "percentage": 100
+                    }
+                }
+            ]
+        },
+        {
+            "id": "gecloud-fed-afterlead-integration-nl-ab",
+            "tags": {
+                "team": "gecloud",
+                "stack": "classified-detail",
+                "services": "classified-detail"
+            },
+            "activations": [
+                {
+                    "attributes": {
+                        "culture": ["nl-NL", "NL"]
+                    },
+                    "rollout": {
+                        "percentage": 50
+                    }
+                }
+            ]
+        },
+        {
+            "id": "gecloud-fed-afterlead-split",
+            "tags": {
+                "team": "gecloud",
+                "stack": "classified-detail",
+                "services": "classified-detail"
+            },
+            "activations": [
+                {
+                    "attributes": {
+                        "culture": ["de-DE", "DE"]
+                    },
+                    "rollout": {
+                        "percentage": 100
+                    }
+                }
+            ]
+        },
+        {
+            "id": "gecloud-fed-afterlead-split-be",
+            "tags": {
+                "team": "gecloud",
+                "stack": "classified-detail",
+                "services": "classified-detail"
+            },
+            "activations": [
+                {
+                    "attributes": {
+                        "culture": ["fr-BE", "nl-BE", "BE"]
+                    },
+                    "rollout": {
+                        "percentage": 50
+                    }
+                }
+            ]
+        },
+        {
+            "id": "gecloud-fed-afterlead-split-it",
+            "tags": {
+                "team": "gecloud",
+                "stack": "classified-detail",
+                "services": "classified-detail"
+            },
+            "activations": [
+                {
+                    "attributes": {
+                        "culture": ["it-IT", "IT"]
+                    },
+                    "rollout": {
+                        "percentage": 100
+                    }
+                }
+            ]
+        },
+        {
+            "id": "gecloud-fed-afterlead-split-nl",
+            "tags": {
+                "team": "gecloud",
+                "stack": "classified-detail",
+                "services": "classified-detail"
+            },
+            "activations": [
+                {
+                    "attributes": {
+                        "culture": ["nl-NL", "NL"]
+                    },
+                    "rollout": {
+                        "percentage": 50
+                    }
+                }
+            ]
+        },
+        {
+            "id": "gecloud-final-price-spain",
+            "tags": {
+                "team": "gecloud",
+                "stack": "classified-detail",
+                "services": "classified-detail"
+            },
+            "activations": [
+                {
+                    "attributes": {},
+                    "rollout": {
+                        "percentage": 100
+                    }
+                }
+            ]
+        },
+        {
+            "id": "gecloud-gzip-json-responses",
+            "tags": {
+                "team": "gecloud",
+                "stack": "classified-detail",
+                "services": "classified-detail"
+            },
+            "activations": [
+                {
+                    "attributes": {},
+                    "rollout": {
+                        "percentage": 100
+                    }
+                }
+            ]
+        },
+        {
+            "id": "gecloud-image-fragment",
+            "tags": {
+                "team": "gecloud",
+                "stack": "classified-detail",
+                "services": "classified-detail"
+            },
+            "activations": [
+                {
+                    "attributes": {}
+                }
+            ]
+        },
+        {
+            "id": "gecloud-image-fragments-race-get-item",
+            "tags": {
+                "team": "gecloud",
+                "stack": "image-fragments-ui",
+                "services": "image-fragments-ui"
+            },
+            "activations": [
+                {
+                    "attributes": {},
+                    "rollout": {
+                        "percentage": 100
+                    }
+                }
+            ]
+        },
+        {
+            "id": "gecloud-list-rate-fragment",
+            "tags": {
+                "team": "gecloud",
+                "stack": "classified-detail",
+                "services": "classified-detail"
+            },
+            "activations": [
+                {
+                    "attributes": {
+                        "culture": ["de-DE"]
+                    }
+                }
+            ]
+        },
+        {
+            "id": "gecloud-listing-summary-image-fragment",
+            "tags": {
+                "team": "gecloud",
+                "stack": "classified-detail",
+                "services": "classified-detail"
+            },
+            "activations": [
+                {
+                    "attributes": {}
+                }
+            ]
+        },
+        {
+            "id": "gecloud-listing-summary-vat-deductable",
+            "tags": {
+                "team": "gecloud",
+                "stack": "classified-detail",
+                "services": "classified-detail"
+            },
+            "activations": [
+                {
+                    "attributes": {}
+                }
+            ]
+        },
+        {
+            "id": "gecloud-mobile-api-ios-raw-environment-data",
+            "tags": {
+                "team": "gecloud"
+            },
+            "activations": [
+                {
+                    "attributes": {}
+                }
+            ]
+        },
+        {
+            "id": "gecloud-new-inspection-boolean",
+            "tags": {
+                "team": "gecloud",
+                "stack": "classified-detail",
+                "services": "classified-detail"
+            },
+            "activations": [
+                {
+                    "attributes": {},
+                    "rollout": {
+                        "percentage": 100
+                    }
+                }
+            ]
+        },
+        {
+            "id": "gecloud-new-list-item-price-label",
+            "tags": {
+                "team": "gecloud",
+                "stack": "classified-detail",
+                "services": "classified-detail"
+            },
+            "activations": [
+                {
+                    "attributes": {
+                        "culture": ["de-DE", "DE", "it-IT", "IT", "de-AT", "AT"]
+                    },
+                    "rollout": {
+                        "percentage": 100
+                    }
+                }
+            ]
+        },
+        {
+            "id": "gecloud-no-optimizely-baseline",
+            "tags": {
+                "team": "gecloud",
+                "stack": "classified-detail",
+                "services": "classified-detail",
+                "group": "optimizely-test"
+            },
+            "activations": [
+                {
+                    "attributes": {
+                        "culture": ["de-DE", "DE"]
+                    }
+                }
+            ]
+        },
+        {
+            "id": "gecloud-no-optimizely-version-one",
+            "tags": {
+                "team": "gecloud",
+                "stack": "classified-detail",
+                "services": "classified-detail",
+                "group": "optimizely-test"
+            },
+            "activations": [
+                {
+                    "attributes": {
+                        "culture": ["de-DE", "DE"]
+                    }
+                }
+            ]
+        },
+        {
+            "id": "gecloud-ops-dealer-watchlist-special-offer",
+            "tags": {
+                "team": "gecloud"
+            },
+            "activations": [
+                {
+                    "attributes": {
+                        "culture": ["de-DE", "DE"]
+                    },
+                    "rollout": {
+                        "percentage": 100
+                    }
+                }
+            ]
+        },
+        {
+            "id": "gecloud-ops-event-publisher",
+            "tags": {
+                "team": "gecloud",
+                "stack": "classified-detail",
+                "services": "classified-detail"
+            },
+            "activations": [
+                {
+                    "attributes": {},
+                    "rollout": {
+                        "percentage": 100
+                    }
+                }
+            ]
+        },
+        {
+            "id": "gecloud-ops-financeslice-service",
+            "tags": {
+                "team": "gecloud",
+                "stack": "classified-detail",
+                "fragment": "cldt_fragment_financeslice"
+            },
+            "activations": [
+                {
+                    "attributes": {},
+                    "rollout": {
+                        "percentage": 100
+                    }
+                }
+            ]
+        },
+        {
+            "id": "gecloud-ops-financing-example-fragment",
+            "tags": {
+                "team": "gecloud",
+                "service": "classified-detail",
+                "fragment": "financeslice-detail"
+            },
+            "activations": [
+                {
+                    "attributes": {
+                        "culture": ["de-DE"]
+                    },
+                    "rollout": {
+                        "percentage": 100
+                    }
+                }
+            ]
+        },
+        {
+            "id": "gecloud-ops-gallery-edf-ad",
+            "tags": {
+                "team": "gecloud",
+                "stack": "classified-detail",
+                "services": "classified-detail"
+            },
+            "activations": [
+                {
+                    "attributes": {
+                        "culture": ["de-DE"]
+                    },
+                    "rollout": {
+                        "percentage": 100
+                    }
+                }
+            ]
+        },
+        {
+            "id": "gecloud-ops-gateway-rate-limit",
+            "tags": {
+                "team": "gecloud",
+                "stack": "classified-gateway",
+                "services": "classified-gateway"
+            },
+            "activations": [
+                {
+                    "attributes": {},
+                    "rollout": {
+                        "percentage": 100
+                    }
+                }
+            ]
+        },
+        {
+            "id": "gecloud-ops-list-rate-overlay",
+            "tags": {
+                "team": "gecloud",
+                "stack": "classified-detail",
+                "services": "classified-detail"
+            },
+            "activations": [
+                {
+                    "attributes": {
+                        "culture": ["de-DE"]
+                    },
+                    "rollout": {
+                        "percentage": 50
+                    }
+                }
+            ]
+        },
+        {
+            "id": "gecloud-ops-optimizely",
+            "tags": {
+                "team": "gecloud",
+                "stack": "classified-detail",
+                "services": "classified-detail"
+            },
+            "activations": [
+                {
+                    "attributes": {}
+                }
+            ]
+        },
+        {
+            "id": "gecloud-ops-price-depreciation-fragment",
+            "tags": {
+                "team": "Kondor",
+                "services": "priceevaluation"
+            },
+            "activations": [
+                {
+                    "attributes": {
+                        "culture": ["de-DE", "de"]
+                    },
+                    "rollout": {
+                        "percentage": 100
+                    }
+                }
+            ]
+        },
+        {
+            "id": "gecloud-ops-price-evaluation-fragment",
+            "tags": {
+                "Team": "gecloud"
+            },
+            "activations": [
+                {
+                    "attributes": {},
+                    "rollout": {
+                        "percentage": 100
+                    }
+                }
+            ]
+        },
+        {
+            "id": "gecloud-ops-seals",
+            "tags": {
+                "team": "GeCloud"
+            },
+            "activations": [
+                {
+                    "attributes": {},
+                    "rollout": {
+                        "percentage": 100
+                    }
+                }
+            ]
+        },
+        {
+            "id": "gecloud-ops-xscout-recomender",
+            "tags": {
+                "team": "gecloud"
+            },
+            "activations": [
+                {
+                    "attributes": {},
+                    "rollout": {
+                        "percentage": 100
+                    }
+                }
+            ]
+        },
+        {
+            "id": "gecloud-optimizely-async-load",
+            "tags": {
+                "team": "gecloud",
+                "stack": "classified-detail",
+                "services": "classified-detail",
+                "group": "optimizely-test"
+            },
+            "activations": [
+                {
+                    "attributes": {
+                        "culture": ["de-DE", "DE"]
+                    }
+                }
+            ]
+        },
+        {
+            "id": "gecloud-optimizely-sync-load",
+            "tags": {
+                "team": "gecloud",
+                "stack": "classified-detail",
+                "services": "classified-detail",
+                "group": "optimizely-test"
+            },
+            "activations": [
+                {
+                    "attributes": {
+                        "culture": ["de-DE", "DE"]
+                    }
+                }
+            ]
+        },
+        {
+            "id": "gecloud-price-authority-it",
+            "tags": {
+                "team": "gecloud",
+                "stack": "classified-detail",
+                "services": "classified-detail"
+            },
+            "activations": [
+                {
+                    "attributes": {},
+                    "rollout": {
+                        "percentage": 100
+                    }
+                }
+            ]
+        },
+        {
+            "id": "gecloud-privacy-agreement-italy",
+            "tags": {
+                "team": "gecloud",
+                "stack": "classified-detail",
+                "services": "classified-detail"
+            },
+            "activations": [
+                {
+                    "attributes": {
+                        "culture": ["it-IT", "IT"]
+                    },
+                    "rollout": {
+                        "percentage": 100
+                    }
+                }
+            ]
+        },
+        {
+            "id": "gecloud-removed-financeslice-listing-parameters",
+            "tags": {
+                "team": "gecloud",
+                "stack": "classified-detail",
+                "services": "classified-detail"
+            },
+            "activations": [
+                {
+                    "attributes": {},
+                    "rollout": {
+                        "percentage": 100
+                    }
+                }
+            ]
+        },
+        {
+            "id": "gecloud-test-list-item-assets",
+            "tags": {
+                "team": "gecloud",
+                "stack": "classified-list",
+                "services": "classified-list"
+            },
+            "activations": [
+                {
+                    "attributes": {},
+                    "rollout": {
+                        "percentage": 100
+                    }
+                }
+            ]
+        },
+        {
+            "id": "gecloud-translate-make-others",
+            "tags": {
+                "team": "gecloud",
+                "stack": "classified-detail",
+                "services": "classified-detail"
+            },
+            "activations": [
+                {
+                    "attributes": {}
+                }
+            ]
+        },
+        {
+            "id": "gecloud-use-classified-detail-alb",
+            "tags": {
+                "team": "gecloud",
+                "stack": "listing-composer",
+                "services": "listing-composer"
+            },
+            "activations": [
+                {
+                    "attributes": {},
+                    "rollout": {
+                        "percentage": 100
+                    }
+                }
+            ]
+        },
+        {
+            "id": "gecloud-use-image-api",
+            "tags": {
+                "team": "gecloud",
+                "stack": "listing-composer",
+                "services": "listing-composer"
+            },
+            "activations": [
+                {
+                    "attributes": {}
+                }
+            ]
+        },
+        {
+            "id": "gecloud-vendor-data-detail-fragment",
+            "tags": {
+                "team": "gecloud",
+                "stack": "classified-detail",
+                "services": "classified-detail"
+            },
+            "activations": []
+        },
+        {
+            "id": "gecloud-watchlist-ab-test",
+            "tags": {
+                "team": "gecloud",
+                "stack": "watchlist",
+                "services": "watchlist"
+            },
+            "activations": [
+                {
+                    "attributes": {
+                        "culture": ["de-DE", "DE"]
+                    },
+                    "rollout": {
+                        "percentage": 100
+                    }
+                }
+            ]
+        },
+        {
+            "id": "gecloud-watchlist-favorites-url",
+            "tags": {
+                "team": "gecloud",
+                "stack": "classified-detail",
+                "services": "classified-detail, watchlist"
+            },
+            "activations": [
+                {
+                    "attributes": {}
+                }
+            ]
+        },
+        {
+            "id": "hackweek-communicationform",
+            "tags": {
+                "team": "thatsclassified"
+            },
+            "activations": [
+                {
+                    "attributes": {}
+                }
+            ]
+        },
+        {
+            "id": "home-showcar-ads",
+            "tags": {
+                "team": "thatsclassified"
+            },
+            "activations": []
+        },
+        {
+            "id": "identityandroid",
+            "tags": {
+                "team": "Mobile Apps Android"
+            },
+            "activations": [
+                {
+                    "attributes": {},
+                    "rollout": {
+                        "percentage": 100
+                    }
+                }
+            ]
+        },
+        {
+            "id": "kondor-bluewhale-shadow-traffic",
+            "tags": {
+                "team": "kondor",
+                "services": "priceevaluation"
+            },
+            "activations": [
+                {
+                    "attributes": {},
+                    "rollout": {
+                        "percentage": 10
+                    }
+                }
+            ]
+        },
+        {
+            "id": "kondor-expensive-price-category",
+            "tags": {
+                "team": "kondor",
+                "services": "priceevaluation"
+            },
+            "activations": [
+                {
+                    "attributes": {
+                        "culture": ["de-DE", "de"]
+                    },
+                    "rollout": {
+                        "percentage": 100
+                    }
+                }
+            ]
+        },
+        {
+            "id": "kondor-explanation-v2",
+            "tags": {
+                "team": "kondor",
+                "services": "priceevaluation"
+            },
+            "activations": [
+                {
+                    "attributes": {
+                        "culture": ["de-DE", "de", "de-AT"]
+                    },
+                    "rollout": {
+                        "percentage": 100
+                    }
+                }
+            ]
+        },
+        {
+            "id": "lc-test",
+            "tags": {
+                "team": "dealer listings and reputation team"
+            },
+            "activations": [
+                {
+                    "attributes": {},
+                    "rollout": {
+                        "percentage": 100
+                    }
+                }
+            ]
+        },
+        {
+            "id": "lf-test",
+            "tags": {
+                "team": "DLR"
+            },
+            "activations": [
+                {
+                    "attributes": {},
+                    "rollout": {
+                        "percentage": 100
+                    }
+                }
+            ]
+        },
+        {
+            "id": "listing-form-one-page",
+            "tags": {
+                "team": "DLR team"
+            },
+            "activations": [
+                {
+                    "attributes": {},
+                    "rollout": {
+                        "percentage": 100
+                    }
+                }
+            ]
+        },
+        {
+            "id": "listing-images-graphql-endpoint",
+            "tags": {
+                "team": "Foundation Services"
+            },
+            "activations": []
+        },
+        {
+            "id": "local-dominance",
+            "tags": {
+                "team": "revolistion"
+            },
+            "activations": [
+                {
+                    "attributes": {
+                        "culture": ["de-DE"]
+                    },
+                    "rollout": {
+                        "percentage": 100
+                    }
+                }
+            ]
+        },
+        {
+            "id": "log-classified-search-es-queries",
+            "tags": {
+                "team": "revolistion"
+            },
+            "activations": [
+                {
+                    "attributes": {}
+                }
+            ]
+        },
+        {
+            "id": "log-wcf-requests",
+            "tags": {
+                "team": "Revolistion"
+            },
+            "activations": [
+                {
+                    "attributes": {}
+                }
+            ]
+        },
+        {
+            "id": "new-database",
+            "tags": {
+                "team": "Private Seller Listings"
+            },
+            "activations": [
+                {
+                    "attributes": {
+                        "culture": ["de-DE", "DE"]
+                    },
+                    "rollout": {
+                        "percentage": 100
+                    }
+                }
+            ]
+        },
+        {
+            "id": "new-listing-creation-funnel",
+            "tags": {
+                "team": "Private Seller Listings"
+            },
+            "activations": [
+                {
+                    "attributes": {
+                        "culture": ["de-DE", "DE"]
+                    },
+                    "rollout": {
+                        "percentage": 10
+                    }
+                }
+            ]
+        },
+        {
+            "id": "new-listing-creation-funnel-test-variant",
+            "tags": {
+                "team": "Private Seller Listings"
+            },
+            "activations": [
+                {
+                    "attributes": {
+                        "culture": ["de-DE", "DE"]
+                    },
+                    "rollout": {
+                        "percentage": 5
+                    }
+                }
+            ]
+        },
+        {
+            "id": "oem-ignite-listpage-distribution",
+            "tags": {
+                "team": "OEM"
+            },
+            "activations": []
+        },
+        {
+            "id": "oem-ignite-listpage-integration",
+            "tags": {
+                "team": "OEM"
+            },
+            "activations": []
+        },
+        {
+            "id": "oem-ignite-show-electric-and-hybrid",
+            "tags": {
+                "team": "OEM"
+            },
+            "activations": [
+                {
+                    "attributes": {}
+                }
+            ]
+        },
+        {
+            "id": "oem-meta-google-site-verification",
+            "tags": {
+                "team": "OEM"
+            },
+            "activations": [
+                {
+                    "attributes": {
+                        "culture": ["de-DE", "DE"]
+                    },
+                    "rollout": {
+                        "percentage": 100
+                    }
+                }
+            ]
+        },
+        {
+            "id": "oem-ncd-elastic-dealer-search",
+            "tags": {
+                "team": "OEM"
+            },
+            "activations": [
+                {
+                    "attributes": {},
+                    "rollout": {
+                        "percentage": 100
+                    }
+                }
+            ]
+        },
+        {
+            "id": "oem-ncd-fragment-integration",
+            "tags": {
+                "team": "OEM"
+            },
+            "activations": [
+                {
+                    "attributes": {},
+                    "rollout": {
+                        "percentage": 100
+                    }
+                }
+            ]
+        },
+        {
+            "id": "oem-ncd-fragment-mock",
+            "tags": {
+                "team": "OEM"
+            },
+            "activations": [
+                {
+                    "attributes": {}
+                }
+            ]
+        },
+        {
+            "id": "oem-ncd-new-price-slider",
+            "tags": {
+                "team": "OEM"
+            },
+            "activations": [
+                {
+                    "attributes": {},
+                    "rollout": {
+                        "percentage": 100
+                    }
+                }
+            ]
+        },
+        {
+            "id": "oem-ncd-price-label",
+            "tags": {
+                "team": "Smaug"
+            },
+            "activations": [
+                {
+                    "attributes": {},
+                    "rollout": {
+                        "percentage": 50
+                    }
+                }
+            ]
+        },
+        {
+            "id": "oem-ncd-rating",
+            "tags": {
+                "team": "OEM"
+            },
+            "activations": [
+                {
+                    "attributes": {},
+                    "rollout": {
+                        "percentage": 100
+                    }
+                }
+            ]
+        },
+        {
+            "id": "oem-ncd-real-email",
+            "tags": {
+                "team": "OEM"
+            },
+            "activations": [
+                {
+                    "attributes": {},
+                    "rollout": {
+                        "percentage": 100
+                    }
+                }
+            ]
+        },
+        {
+            "id": "oem-new-car-double-opt-in",
+            "tags": {
+                "team": "OEM"
+            },
+            "activations": [
+                {
+                    "attributes": {},
+                    "rollout": {
+                        "percentage": 100
+                    }
+                }
+            ]
+        },
+        {
+            "id": "optimizely_cxp",
+            "tags": {
+                "team": "webexperience",
+                "services": "optimizely"
+            },
+            "activations": [
+                {
+                    "attributes": {},
+                    "rollout": {
+                        "percentage": 100
+                    }
+                }
+            ]
+        },
+        {
+            "id": "photo-upload-delete-photo",
+            "tags": {
+                "team": "Private Seller Listings"
+            },
+            "activations": [
+                {
+                    "attributes": {}
+                }
+            ]
+        },
+        {
+            "id": "playlists",
+            "tags": {
+                "team": "Mobile Apps Android"
+            },
+            "activations": [
+                {
+                    "attributes": {
+                        "culture": ["de-de", "de-at"]
+                    },
+                    "rollout": {
+                        "percentage": 100
+                    }
+                }
+            ]
+        },
+        {
+            "id": "price-evaluation-filters",
+            "tags": {
+                "team": "revolistion"
+            },
+            "activations": [
+                {
+                    "attributes": {
+                        "culture": ["de-DE", "DE", "de-AT", "AT", "it-IT", "IT"]
+                    },
+                    "rollout": {
+                        "percentage": 100
+                    }
+                }
+            ]
+        },
+        {
+            "id": "process-wcf-requests",
+            "tags": {
+                "team": "revolistion"
+            },
+            "activations": [
+                {
+                    "attributes": {},
+                    "rollout": {
+                        "percentage": 100
+                    }
+                }
+            ]
+        },
+        {
+            "id": "s24-media-osa-rollout",
+            "tags": {
+                "team": "OEM",
+                "fragment": "financeslice-detail",
+                "services": "classified-detail"
+            },
+            "activations": [
+                {
+                    "attributes": {
+                        "culture": ["de-DE"]
+                    }
+                }
+            ]
+        },
+        {
+            "id": "saved-searches-unsubscribe-page",
+            "tags": {
+                "team": "Personalization"
+            },
+            "activations": [
+                {
+                    "attributes": {
+                        "culture": ["de-DE", "DE"]
+                    },
+                    "rollout": {
+                        "percentage": 100
+                    }
+                }
+            ]
+        },
+        {
+            "id": "sc_develop",
+            "tags": {
+                "team": "webx",
+                "stack": "showcar-ui",
+                "services": "showcar-ui"
+            },
+            "activations": []
+        },
+        {
+            "id": "sce-bypass-price-estimation-topic",
+            "tags": {
+                "team": "revolistion"
+            },
+            "activations": []
+        },
+        {
+            "id": "seo-hugo-at",
+            "tags": {
+                "team": "ThatsClassified"
+            },
+            "activations": [
+                {
+                    "attributes": {},
+                    "rollout": {
+                        "percentage": 100
+                    }
+                }
+            ]
+        },
+        {
+            "id": "seo-hugo-de",
+            "tags": {
+                "team": "ThatsClassified"
+            },
+            "activations": [
+                {
+                    "attributes": {},
+                    "rollout": {
+                        "percentage": 100
+                    }
+                }
+            ]
+        },
+        {
+            "id": "seo-hugo-es",
+            "tags": {
+                "team": "ThatsClassified"
+            },
+            "activations": [
+                {
+                    "attributes": {},
+                    "rollout": {
+                        "percentage": 100
+                    }
+                }
+            ]
+        },
+        {
+            "id": "seo-hugo-fr",
+            "tags": {
+                "team": "ThatsClassified"
+            },
+            "activations": [
+                {
+                    "attributes": {}
+                }
+            ]
+        },
+        {
+            "id": "seo-hugo-it",
+            "tags": {
+                "team": "ThatsClassified"
+            },
+            "activations": [
+                {
+                    "attributes": {},
+                    "rollout": {
+                        "percentage": 100
+                    }
+                }
+            ]
+        },
+        {
+            "id": "sfp-disabled",
+            "tags": {
+                "team": "revolistion"
+            },
+            "activations": [
+                {
+                    "attributes": {}
+                }
+            ]
+        },
+        {
+            "id": "sfp-empty-query",
+            "tags": {
+                "team": "revolistion"
+            },
+            "activations": [
+                {
+                    "attributes": {}
+                }
+            ]
+        },
+        {
+            "id": "sfp-parse-disabled",
+            "tags": {
+                "team": "revolistion"
+            },
+            "activations": [
+                {
+                    "attributes": {},
+                    "rollout": {
+                        "percentage": 100
+                    }
+                }
+            ]
+        },
+        {
+            "id": "sfp-taxonomy",
+            "tags": {
+                "team": "Revolistion"
+            },
+            "activations": [
+                {
+                    "attributes": {}
+                }
+            ]
+        },
+        {
+            "id": "sla-enable-stock-metrics",
+            "tags": {
+                "team": "revolistion",
+                "stack": "search-listings-aggregator",
+                "services": "search-listings-aggregator"
+            },
+            "activations": [
+                {
+                    "attributes": {}
+                }
+            ]
+        },
+        {
+            "id": "sla-log-input-listings",
+            "tags": {
+                "team": "revolistion",
+                "stack": "search-listings-aggregator",
+                "services": "search-listings-aggregator"
+            },
+            "activations": [
+                {
+                    "attributes": {}
+                }
+            ]
+        },
+        {
+            "id": "sla-log-invalid-input-records",
+            "tags": {
+                "team": "revolistion",
+                "stack": "search-listings-aggregator",
+                "services": "search-listings-aggregator"
+            },
+            "activations": [
+                {
+                    "attributes": {}
+                }
+            ]
+        },
+        {
+            "id": "sla-log-missing-input-enrichment",
+            "tags": {
+                "team": "revolistion",
+                "stack": "search-listings-aggregator",
+                "services": "search-listings-aggregator"
+            },
+            "activations": []
+        },
+        {
+            "id": "sla-log-output-listings",
+            "tags": {
+                "team": "revolistion",
+                "stack": "search-listings-aggregator",
+                "services": "search-listings-aggregator"
+            },
+            "activations": [
+                {
+                    "attributes": {}
+                }
+            ]
+        },
+        {
+            "id": "slc-api-log-errors",
+            "tags": {
+                "team": "Revolistion"
+            },
+            "activations": [
+                {
+                    "attributes": {}
+                }
+            ]
+        },
+        {
+            "id": "slc-local-dominance",
+            "tags": {
+                "team": "Revolistion"
+            },
+            "activations": []
+        },
+        {
+            "id": "test",
+            "tags": {},
+            "activations": [
+                {
+                    "attributes": {
+                        "culture": ["de-DE", "DE", "de-AT", "AT", "en-GB", "GB", "en-US", "US"]
+                    }
+                }
+            ]
+        },
+        {
+            "id": "threesixtyandroid",
+            "tags": {
+                "team": "mobile-android"
+            },
+            "activations": [
+                {
+                    "attributes": {
+                        "culture": ["de-de", "de-at"]
+                    },
+                    "rollout": {
+                        "percentage": 100
+                    }
+                }
+            ]
+        },
+        {
+            "id": "time-to-interactive-optimization",
+            "tags": {
+                "team": "gecloud",
+                "stack": "classified-detail",
+                "services": "classified-detail"
+            },
+            "activations": []
+        },
+        {
+            "id": "vendor-contact-async",
+            "tags": {
+                "team": "thatsclassified"
+            },
+            "activations": [
+                {
+                    "attributes": {}
+                }
+            ]
+        },
+        {
+            "id": "verify-wcf-requests",
+            "tags": {
+                "team": "revolistion"
+            },
+            "activations": [
+                {
+                    "attributes": {}
+                }
+            ]
+        }
+    ]
 }
