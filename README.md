@@ -2,7 +2,7 @@
 
 > A `TypeScript` client for integrating Toguru into a `Node.js` environment
 
-> [![Actions Status](https://github.com/Scout24/toguru-client-nodejs/workflows/Build/badge.svg)](https://github.com/Scout24/toguru-client-nodejs/actions) ![npm](https://img.shields.io/npm/v/@autoscout24/toguru-client)
+> [![Actions Status](https://github.com/AutoScout24/toguru-client-nodejs/workflows/Build/badge.svg)](https://github.com/AutoScout24/toguru-client-nodejs/actions) ![npm](https://img.shields.io/npm/v/@autoscout24/toguru-client)
 
 <!-- installing doctoc: https://github.com/thlorenz/doctoc#installation -->
 <!-- tocdoc command: doctoc ./README.md --maxlevel 3 --notitle -->
