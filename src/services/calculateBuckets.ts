@@ -4,7 +4,7 @@ export default (uuid: string, defaultValue = 0): number => {
     // This calculation is broken.
     // Normally we would calculate with new BN(x).mod(new BN(100)).toNumber() + 1;
     // BUT: the existing scala client is doing strange calculation.
-    // See thread here: https://github.com/Scout24/toguru-scala-client/pull/27
+    // See thread here: https://github.com/AutoScout24/toguru-scala-client/pull/27
 
     const strippedUUID = uuid.replace(/-/g, '')
     const isUUIDInvalid = strippedUUID.length !== 32
