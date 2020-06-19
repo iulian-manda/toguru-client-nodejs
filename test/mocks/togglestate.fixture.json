@@ -54,7 +54,7 @@
         },
         {
             "id": "rolled-out-only-in-it",
-            "tags": { },
+            "tags": {},
             "activations": [
                 {
                     "attributes": {
@@ -100,7 +100,7 @@
             ]
         },
         {
-            "id": "rolled-out-to-noone",
+            "id": "rolled-out-to-none",
             "tags": {
                 "team": "team7",
                 "service": "service2"
@@ -113,7 +113,7 @@
                     }
                 }
             ]
-        },    
+        },
         {
             "id": "rolled-out-to-99-percent",
             "tags": {},
@@ -137,6 +137,30 @@
                     },
                     "rollout": {
                         "percentage": 100
+                    }
+                }
+            ]
+        },
+        {
+            "id": "rolled-out-to-76-percent",
+            "tags": {},
+            "activations": [
+                {
+                    "attributes": {},
+                    "rollout": {
+                        "percentage": 76
+                    }
+                }
+            ]
+        },
+        {
+            "id": "rolled-out-to-75-percent",
+            "tags": {},
+            "activations": [
+                {
+                    "attributes": {},
+                    "rollout": {
+                        "percentage": 75
                     }
                 }
             ]
