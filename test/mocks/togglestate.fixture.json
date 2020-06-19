@@ -53,6 +53,20 @@
             ]
         },
         {
+            "id": "rolled-out-only-in-it",
+            "tags": { },
+            "activations": [
+                {
+                    "attributes": {
+                        "culture": ["it-IT", "IT"]
+                    },
+                    "rollout": {
+                        "percentage": 100
+                    }
+                }
+            ]
+        },
+        {
             "id": "rolled-out-to-none-not-even-in-de",
             "tags": {
                 "team": "team5",
@@ -96,6 +110,18 @@
                     "attributes": {},
                     "rollout": {
                         "percentage": 0
+                    }
+                }
+            ]
+        },    
+        {
+            "id": "rolled-out-to-99-percent",
+            "tags": {},
+            "activations": [
+                {
+                    "attributes": {},
+                    "rollout": {
+                        "percentage": 99
                     }
                 }
             ]
