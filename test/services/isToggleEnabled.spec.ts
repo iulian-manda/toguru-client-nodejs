@@ -41,7 +41,7 @@ const testToggleForUsers = (
     cases: { user: ActivationContext; expectedIsEnabled: boolean }[],
     forcedToggles: Record<string, boolean> = {},
 ) => {
-    test.each(cases)(`${toggle.id} for %o`,(c) => {
+    test.each(cases)(`${toggle.id} for %o`, (c) => {
         expect(isEnabled(toggleState, toggle, { ...c.user, forcedToggles })).toBe(c.expectedIsEnabled)
     })
 }
