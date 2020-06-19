@@ -125,6 +125,21 @@
                     }
                 }
             ]
+        },
+        {
+            "id": "rolled-out-to-user123-in-de",
+            "tags": {},
+            "activations": [
+                {
+                    "attributes": {
+                        "culture": ["de-DE"],
+                        "user": ["user123"]
+                    },
+                    "rollout": {
+                        "percentage": 100
+                    }
+                }
+            ]
         }
     ]
 }

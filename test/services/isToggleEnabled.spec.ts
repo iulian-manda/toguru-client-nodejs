@@ -18,8 +18,9 @@ const userInBucket76CultureIT: ActivationContext = {
     attributes: { culture: 'it-IT' },
     uuid: '721f87e2-cec9-4753-b3bb-d2ebe20dd317',
 } // bucket: 76
-const userWithoutUUID = { attributes: { culture: 'de-DE' } } // bucket: 100
+const userWithoutUUID = { attributes: { culture: 'de-DE' } }
 const userEmpty = {}
+const user123 = { attributes: { culture: 'de-DE' , user: 'user123'} }
 
 const emptyToguruData: ToguruData = { sequenceNo: 0, toggles: [] }
 
@@ -117,6 +118,16 @@ describe('Is Toggle Enabled', () => {
         expect(isEnabled(toggleState, toggle('rolled-out-to-99-percent'), userInBucket76CultureIT)).toBe(true)
         expect(isEnabled(toggleState, toggle('rolled-out-to-99-percent'), userWithoutUUID)).toBe(false)
         expect(isEnabled(toggleState, toggle('rolled-out-to-99-percent'), userEmpty)).toBe(false)
+    })
+    
+    it('rolled-out-to-user123-in-de', () => {
+        expect(isEnabled(toggleState, toggle('rolled-out-to-user123-in-de'), userInBucket22CultureDE)).toBe(false)
+        expect(isEnabled(toggleState, toggle('rolled-out-to-user123-in-de'), userInBucket76CultureDE)).toBe(false)
+        expect(isEnabled(toggleState, toggle('rolled-out-to-user123-in-de'), userInBucket22CultureIT)).toBe(false)
+        expect(isEnabled(toggleState, toggle('rolled-out-to-user123-in-de'), userInBucket76CultureIT)).toBe(false)
+        expect(isEnabled(toggleState, toggle('rolled-out-to-user123-in-de'), userWithoutUUID)).toBe(false)
+        expect(isEnabled(toggleState, toggle('rolled-out-to-user123-in-de'), userEmpty)).toBe(false)
+        expect(isEnabled(toggleState, toggle('rolled-out-to-user123-in-de'), user123)).toBe(true)
     })
 
     it('forced toggles', () => {
