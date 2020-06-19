@@ -1,6 +1,6 @@
 import BN from 'bn.js'
 
-export default (uuid: string, defaultValue = 0): number => {
+export default (uuid: string, defaultValue = 100): number => {
     // This calculation is broken.
     // Normally we would calculate with new BN(x).mod(new BN(100)).toNumber() + 1;
     // BUT: the existing scala client is doing strange calculation.
@@ -13,18 +13,13 @@ export default (uuid: string, defaultValue = 0): number => {
         return defaultValue
     }
 
-    const x = uuid.replace(/-/g, '')
+    const hi = new BN(strippedUUID.substr(0, 16), 16)
+    const lo = new BN(strippedUUID.substr(16, 16), 16)
 
-    const hi = new BN(x.substr(0, 16), 16)
-    const lo = new BN(x.substr(16, 16), 16)
-
-    const r =
-        lo
-            .shln(64)
-            .add(hi)
+    return lo
+            .ishln(64)
+            .iadd(hi)
             .fromTwos(128)
-            .mod(new BN(100))
+            .umod(new BN(100))
             .toNumber() + 1
-
-    return r < 0 ? 100 + r : r
 }
