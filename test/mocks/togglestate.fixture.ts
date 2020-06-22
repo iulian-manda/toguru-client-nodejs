@@ -1,4 +1,6 @@
-{
+import { ToguruData } from "../../src/models/toguru"
+
+export const toguruData: ToguruData = {
     "sequenceNo": 4141,
     "toggles": [
         {
@@ -54,7 +56,9 @@
         },
         {
             "id": "rolled-out-only-in-it",
-            "tags": {},
+            "tags": {
+                "team": "team4"
+            },
             "activations": [
                 {
                     "attributes": {
