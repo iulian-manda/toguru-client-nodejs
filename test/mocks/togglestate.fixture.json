@@ -53,6 +53,20 @@
             ]
         },
         {
+            "id": "rolled-out-only-in-it",
+            "tags": {},
+            "activations": [
+                {
+                    "attributes": {
+                        "culture": ["it-IT", "IT"]
+                    },
+                    "rollout": {
+                        "percentage": 100
+                    }
+                }
+            ]
+        },
+        {
             "id": "rolled-out-to-none-not-even-in-de",
             "tags": {
                 "team": "team5",
@@ -86,7 +100,7 @@
             ]
         },
         {
-            "id": "rolled-out-to-noone",
+            "id": "rolled-out-to-none",
             "tags": {
                 "team": "team7",
                 "service": "service2"
@@ -96,6 +110,57 @@
                     "attributes": {},
                     "rollout": {
                         "percentage": 0
+                    }
+                }
+            ]
+        },
+        {
+            "id": "rolled-out-to-99-percent",
+            "tags": {},
+            "activations": [
+                {
+                    "attributes": {},
+                    "rollout": {
+                        "percentage": 99
+                    }
+                }
+            ]
+        },
+        {
+            "id": "rolled-out-to-user123-in-de",
+            "tags": {},
+            "activations": [
+                {
+                    "attributes": {
+                        "culture": ["de-DE"],
+                        "user": ["user123"]
+                    },
+                    "rollout": {
+                        "percentage": 100
+                    }
+                }
+            ]
+        },
+        {
+            "id": "rolled-out-to-76-percent",
+            "tags": {},
+            "activations": [
+                {
+                    "attributes": {},
+                    "rollout": {
+                        "percentage": 76
+                    }
+                }
+            ]
+        },
+        {
+            "id": "rolled-out-to-75-percent",
+            "tags": {},
+            "activations": [
+                {
+                    "attributes": {},
+                    "rollout": {
+                        "percentage": 75
                     }
                 }
             ]

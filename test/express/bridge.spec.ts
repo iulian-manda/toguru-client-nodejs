@@ -57,7 +57,7 @@ const sendRequest = async ({
 const toggles: Record<string, Toggle> = {
     rolledOutToEveryone: { id: 'rolled-out-to-everyone', default: false },
     rolledOutToHalfInDeOnly: { id: 'rolled-out-to-half-in-de-only', default: false },
-    rolledOutToNone: { id: 'rolled-out-to-noone', default: false },
+    rolledOutToNone: { id: 'rolled-out-to-none', default: false },
 }
 
 const userInBucket22CultureDE = {
@@ -104,7 +104,7 @@ describe('Express middleware', () => {
                     enabled: true,
                 },
                 {
-                    id: 'rolled-out-to-noone',
+                    id: 'rolled-out-to-none',
                     enabled: false,
                 },
             ]),
@@ -121,7 +121,7 @@ describe('Express middleware', () => {
                     enabled: false,
                 },
                 {
-                    id: 'rolled-out-to-noone',
+                    id: 'rolled-out-to-none',
                     enabled: false,
                 },
             ]),
@@ -133,7 +133,7 @@ describe('Express middleware', () => {
 
         expect(req.toguru).toBeDefined()
         expect(req.toguru?.togglesForService('service2').queryString).toEqual(
-            'toguru=rolled-out-to-half-in-de-only%3Dfalse%7Crolled-out-to-noone%3Dfalse',
+            'toguru=rolled-out-to-half-in-de-only%3Dfalse%7Crolled-out-to-none%3Dfalse',
         )
     })
 
@@ -141,7 +141,7 @@ describe('Express middleware', () => {
         const req = await sendRequest({
             ...userInBucketb76CultureDE,
             query: {
-                toguru: 'rolled-out-to-noone=true|rolled-out-to-half-in-de-only=true',
+                toguru: 'rolled-out-to-none=true|rolled-out-to-half-in-de-only=true',
             },
         })
 

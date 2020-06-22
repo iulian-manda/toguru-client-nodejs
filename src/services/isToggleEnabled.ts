@@ -18,7 +18,7 @@ export default (
     // return default if the toggle is not set
     if (!toggleData) return toggle.default
     // if the uuid is not defined and the rollout is 100%, then the toggle activation depends only on the attributes
-    const bucket = uuid ? calculateBucket(uuid, toggle.default ? 100 : 0) : 100
+    const bucket = uuid ? calculateBucket(uuid, 100) : 100
     const rolloutAttributes: Record<string, string[]> = toggleData?.activations[0]?.attributes || {}
 
     // Attributes are present in the toggle toguru data, but not present in the activation context

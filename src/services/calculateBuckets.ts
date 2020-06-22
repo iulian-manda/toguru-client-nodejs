@@ -1,11 +1,7 @@
 import BN from 'bn.js'
 
-export default (uuid: string, defaultValue = 0): number => {
-    // This calculation is broken.
-    // Normally we would calculate with new BN(x).mod(new BN(100)).toNumber() + 1;
-    // BUT: the existing scala client is doing strange calculation.
-    // See thread here: https://github.com/AutoScout24/toguru-scala-client/pull/27
-
+export default (uuid: string, defaultValue = 100): number => {
+    // Bucket calculation aligned with https://github.com/AutoScout24/toguru-scala-client/pull/27
     const strippedUUID = uuid.replace(/-/g, '')
     const isUUIDInvalid = strippedUUID.length !== 32
 
@@ -13,18 +9,15 @@ export default (uuid: string, defaultValue = 0): number => {
         return defaultValue
     }
 
-    const x = uuid.replace(/-/g, '')
+    const hi = new BN(strippedUUID.substr(0, 16), 16)
+    const lo = new BN(strippedUUID.substr(16, 16), 16)
 
-    const hi = new BN(x.substr(0, 16), 16)
-    const lo = new BN(x.substr(16, 16), 16)
-
-    const r =
+    return (
         lo
-            .shln(64)
-            .add(hi)
+            .ishln(64)
+            .iadd(hi)
             .fromTwos(128)
-            .mod(new BN(100))
+            .umod(new BN(100))
             .toNumber() + 1
-
-    return r < 0 ? 100 + r : r
+    )
 }

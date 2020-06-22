@@ -1,139 +1,134 @@
 import isEnabled from '../../src/services/isToggleEnabled'
 import { ToguruData, ActivationContext } from '../../src/models/toguru'
 import toggleState from '../mocks/togglestate.fixture.json'
+import { Toggle } from '../../src/models/Toggle'
 
-const userInBucket22CultureDE = {
-    attributes: { culture: 'de-DE' },
-    uuid: '88248687-6dce-4759-a5c0-3945eedc2b48',
-} // bucket: 22
-const userInBucket76CultureDE = {
-    attributes: { culture: 'de-DE' },
-    uuid: '721f87e2-cec9-4753-b3bb-d2ebe20dd317',
-} // bucket: 76
-const userInBucket22CultureIT = {
-    attributes: { culture: 'it-IT' },
-    uuid: '88248687-6dce-4759-a5c0-3945eedc2b48',
-} // bucket: 22
-const userInBucket76CultureIT: ActivationContext = {
-    attributes: { culture: 'it-IT' },
-    uuid: '721f87e2-cec9-4753-b3bb-d2ebe20dd317',
-} // bucket: 76
-const userWithoutUUID = { attributes: { culture: 'de-DE' } } // bucket: 1
-const userEmpty = {}
+const users = {
+    bucket76: {
+        attributes: {},
+        uuid: '721f87e2-cec9-4753-b3bb-d2ebe20dd317',
+    },
+    bucket22CultureDE: {
+        attributes: { culture: 'de-DE' },
+        uuid: '88248687-6dce-4759-a5c0-3945eedc2b48',
+    },
+    bucket76CultureDE: {
+        attributes: { culture: 'de-DE' },
+        uuid: '721f87e2-cec9-4753-b3bb-d2ebe20dd317',
+    },
+    bucket22CultureIT: {
+        attributes: { culture: 'it-IT' },
+        uuid: '88248687-6dce-4759-a5c0-3945eedc2b48',
+    },
+    bucket76CultureIT: {
+        attributes: { culture: 'it-IT' },
+        uuid: '721f87e2-cec9-4753-b3bb-d2ebe20dd317',
+    },
+    withoutUUIDWithAttributes: { attributes: { culture: 'de-DE' } },
+    empty: {},
+    attributeUserId123: { attributes: { user: 'user123' } },
+}
 
 const emptyToguruData: ToguruData = { sequenceNo: 0, toggles: [] }
 
-const toggle = (id: string, defaultValue = false) => ({ id, default: defaultValue })
+const toggle = (id: string, defaultValue = false) => ({
+    id,
+    default: defaultValue,
+})
 
-describe('Is Toggle Enabled', () => {
-    it('empty toggles state', () => {
-        expect(isEnabled(emptyToguruData, toggle('doesnt-matter', true), userInBucket22CultureDE)).toBe(true)
-        expect(isEnabled(emptyToguruData, toggle('doesnt-matter', false), userInBucket22CultureDE)).toBe(false)
-        expect(isEnabled(emptyToguruData, toggle('doesnt-matter', true), userEmpty)).toBe(true)
-        expect(isEnabled(emptyToguruData, toggle('doesnt-matter', false), userEmpty)).toBe(false)
+const testToggleForUsers = (
+    toggle: Toggle,
+    cases: { user: ActivationContext; expectedIsEnabled: boolean }[],
+    forcedToggles: Record<string, boolean> = {},
+) => {
+    test.each(cases)(`${toggle.id} for %o`, (c) => {
+        expect(isEnabled(toggleState, toggle, { ...c.user, forcedToggles })).toBe(c.expectedIsEnabled)
+    })
+}
+
+describe('isToggleEnabled', () => {
+    it('when there is no toggles state should match the default condition', () => {
+        expect(isEnabled(emptyToguruData, toggle('doesnt-matter', true), users.bucket22CultureDE)).toBe(true)
+        expect(isEnabled(emptyToguruData, toggle('doesnt-matter', false), users.bucket22CultureDE)).toBe(false)
+        expect(isEnabled(emptyToguruData, toggle('doesnt-matter', true), users.empty)).toBe(true)
+        expect(isEnabled(emptyToguruData, toggle('doesnt-matter', false), users.empty)).toBe(false)
     })
 
-    it('rolled-out-to-noone', () => {
-        expect(isEnabled(toggleState, toggle('rolled-out-to-noone'), userInBucket22CultureDE)).toBe(false)
-        expect(isEnabled(toggleState, toggle('rolled-out-to-noone'), userInBucket76CultureDE)).toBe(false)
-        expect(isEnabled(toggleState, toggle('rolled-out-to-noone'), userInBucket22CultureIT)).toBe(false)
-        expect(isEnabled(toggleState, toggle('rolled-out-to-noone'), userInBucket76CultureIT)).toBe(false)
-        expect(isEnabled(toggleState, toggle('rolled-out-to-noone'), userWithoutUUID)).toBe(false)
-        expect(isEnabled(toggleState, toggle('rolled-out-to-noone'), userEmpty)).toBe(false)
+    it('should return true if the rollout percentage is bigger or equal to the bucket the user is in', () => {
+        expect(isEnabled(toggleState, toggle('rolled-out-to-76-percent', false), users.bucket76)).toBe(true)
+        expect(isEnabled(toggleState, toggle('rolled-out-to-75-percent', true), users.bucket76)).toBe(false)
     })
 
-    it('with-empty-activation', () => {
-        expect(isEnabled(toggleState, toggle('with-empty-activation'), userInBucket22CultureDE)).toBe(false)
-        expect(isEnabled(toggleState, toggle('with-empty-activation'), userInBucket76CultureDE)).toBe(false)
-        expect(isEnabled(toggleState, toggle('with-empty-activation'), userInBucket22CultureIT)).toBe(false)
-        expect(isEnabled(toggleState, toggle('with-empty-activation'), userInBucket76CultureIT)).toBe(false)
-        expect(isEnabled(toggleState, toggle('with-empty-activation'), userWithoutUUID)).toBe(false)
-        expect(isEnabled(toggleState, toggle('with-empty-activation'), userEmpty)).toBe(false)
-    })
+    testToggleForUsers(
+        toggle('rolled-out-to-none'),
+        Object.values(users).map((u) => ({ user: u, expectedIsEnabled: false })),
+    )
 
-    it('unknown toggle', () => {
-        expect(isEnabled(toggleState, toggle('unknown-toggle'), userInBucket22CultureDE)).toBe(false)
-        expect(isEnabled(toggleState, toggle('unknown-toggle'), userEmpty)).toBe(false)
-    })
+    testToggleForUsers(
+        toggle('with-empty-activation'),
+        Object.values(users).map((u) => ({ user: u, expectedIsEnabled: false })),
+    )
 
-    it('rolled-out-to-everyone', () => {
-        expect(isEnabled(toggleState, toggle('rolled-out-to-everyone'), userInBucket22CultureDE)).toBe(true)
-        expect(isEnabled(toggleState, toggle('rolled-out-to-everyone'), userInBucket76CultureDE)).toBe(true)
-        expect(isEnabled(toggleState, toggle('rolled-out-to-everyone'), userInBucket22CultureIT)).toBe(true)
-        expect(isEnabled(toggleState, toggle('rolled-out-to-everyone'), userInBucket76CultureIT)).toBe(true)
-        expect(isEnabled(toggleState, toggle('rolled-out-to-everyone'), userWithoutUUID)).toBe(true)
-        expect(isEnabled(toggleState, toggle('rolled-out-to-everyone'), userEmpty)).toBe(true)
-    })
+    testToggleForUsers(
+        toggle('unknown-toggle'),
+        Object.values(users).map((u) => ({ user: u, expectedIsEnabled: false })),
+    )
 
-    it('rolled-out-to-half-of-users', () => {
-        expect(isEnabled(toggleState, toggle('rolled-out-to-half-of-users'), userInBucket22CultureDE)).toBe(true)
-        expect(isEnabled(toggleState, toggle('rolled-out-to-half-of-users'), userInBucket76CultureDE)).toBe(false)
-        expect(isEnabled(toggleState, toggle('rolled-out-to-half-of-users'), userInBucket22CultureIT)).toBe(true)
-        expect(isEnabled(toggleState, toggle('rolled-out-to-half-of-users'), userInBucket76CultureIT)).toBe(false)
-        expect(isEnabled(toggleState, toggle('rolled-out-to-half-of-users'), userWithoutUUID)).toBe(false)
-        expect(isEnabled(toggleState, toggle('rolled-out-to-half-of-users'), userEmpty)).toBe(false)
-    })
+    testToggleForUsers(
+        toggle('rolled-out-to-everyone'),
+        Object.values(users).map((u) => ({ user: u, expectedIsEnabled: true })),
+    )
 
-    it('rolled-out-only-in-de', () => {
-        expect(isEnabled(toggleState, toggle('rolled-out-only-in-de'), userInBucket22CultureDE)).toBe(true)
-        expect(isEnabled(toggleState, toggle('rolled-out-only-in-de'), userInBucket76CultureDE)).toBe(true)
-        expect(isEnabled(toggleState, toggle('rolled-out-only-in-de'), userInBucket22CultureIT)).toBe(false)
-        expect(isEnabled(toggleState, toggle('rolled-out-only-in-de'), userInBucket76CultureIT)).toBe(false)
-        expect(isEnabled(toggleState, toggle('rolled-out-only-in-de'), userWithoutUUID)).toBe(true)
-        expect(isEnabled(toggleState, toggle('rolled-out-only-in-de'), userEmpty)).toBe(false)
-    })
+    testToggleForUsers(toggle('rolled-out-to-half-of-users'), [
+        { user: users.bucket22CultureDE, expectedIsEnabled: true },
+        { user: users.bucket76CultureDE, expectedIsEnabled: false },
+        { user: users.bucket22CultureIT, expectedIsEnabled: true },
+        { user: users.bucket76CultureIT, expectedIsEnabled: false },
+        { user: users.withoutUUIDWithAttributes, expectedIsEnabled: false },
+        { user: users.empty, expectedIsEnabled: false },
+    ])
 
-    it('rolled-out-to-none-not-even-in-de', () => {
-        expect(isEnabled(toggleState, toggle('rolled-out-to-none-not-even-in-de'), userInBucket22CultureDE)).toBe(false)
-        expect(isEnabled(toggleState, toggle('rolled-out-to-none-not-even-in-de'), userInBucket76CultureDE)).toBe(false)
-        expect(isEnabled(toggleState, toggle('rolled-out-to-none-not-even-in-de'), userInBucket22CultureIT)).toBe(false)
-        expect(isEnabled(toggleState, toggle('rolled-out-to-none-not-even-in-de'), userInBucket76CultureIT)).toBe(false)
-        expect(isEnabled(toggleState, toggle('rolled-out-to-none-not-even-in-de'), userWithoutUUID)).toBe(false)
-        expect(isEnabled(toggleState, toggle('rolled-out-to-none-not-even-in-de'), userEmpty)).toBe(false)
-    })
+    testToggleForUsers(
+        toggle('rolled-out-only-in-de'),
+        Object.values<ActivationContext>(users).map((u) => ({
+            user: u,
+            expectedIsEnabled:
+                (u.attributes && u.attributes.culture && u.attributes.culture.includes('de-DE')) || false,
+        })),
+    )
 
-    it('rolled-out-to-half-in-de-only', () => {
-        expect(isEnabled(toggleState, toggle('rolled-out-to-half-in-de-only'), userInBucket22CultureDE)).toBe(true)
-        expect(isEnabled(toggleState, toggle('rolled-out-to-half-in-de-only'), userInBucket76CultureDE)).toBe(false)
-        expect(isEnabled(toggleState, toggle('rolled-out-to-half-in-de-only'), userInBucket22CultureIT)).toBe(false)
-        expect(isEnabled(toggleState, toggle('rolled-out-to-half-in-de-only'), userInBucket76CultureIT)).toBe(false)
-        expect(isEnabled(toggleState, toggle('rolled-out-to-half-in-de-only'), userWithoutUUID)).toBe(false)
-        expect(isEnabled(toggleState, toggle('rolled-out-to-half-in-de-only'), userEmpty)).toBe(false)
-    })
+    testToggleForUsers(
+        toggle('rolled-out-only-in-it'),
+        Object.values<ActivationContext>(users).map((u) => ({
+            user: u,
+            expectedIsEnabled:
+                (u.attributes && u.attributes.culture && u.attributes.culture.includes('it-IT')) || false,
+        })),
+    )
 
-    it('forced toggles', () => {
-        const forcedToggles = { 'rolled-out-to-noone': true }
+    testToggleForUsers(toggle('rolled-out-to-half-in-de-only'), [
+        { user: users.bucket22CultureDE, expectedIsEnabled: true },
+        { user: users.bucket76CultureDE, expectedIsEnabled: false },
+        { user: users.bucket22CultureIT, expectedIsEnabled: false },
+        { user: users.bucket76CultureIT, expectedIsEnabled: false },
+        { user: users.withoutUUIDWithAttributes, expectedIsEnabled: false },
+        { user: users.empty, expectedIsEnabled: false },
+    ])
 
-        expect(
-            isEnabled(toggleState, toggle('rolled-out-to-noone'), {
-                ...userInBucket22CultureDE,
-                forcedToggles,
-            }),
-        ).toBe(true)
-        expect(
-            isEnabled(toggleState, toggle('rolled-out-to-noone'), {
-                ...userInBucket76CultureDE,
-                forcedToggles,
-            }),
-        ).toBe(true)
-        expect(
-            isEnabled(toggleState, toggle('rolled-out-to-noone'), {
-                ...userInBucket22CultureIT,
-                forcedToggles,
-            }),
-        ).toBe(true)
-        expect(
-            isEnabled(toggleState, toggle('rolled-out-to-noone'), {
-                ...userInBucket76CultureIT,
-                forcedToggles,
-            }),
-        ).toBe(true)
-        expect(
-            isEnabled(toggleState, toggle('rolled-out-to-noone'), {
-                ...userWithoutUUID,
-                forcedToggles,
-            }),
-        ).toBe(true)
-        expect(isEnabled(toggleState, toggle('rolled-out-to-noone'), { forcedToggles })).toBe(true)
-    })
+    testToggleForUsers(toggle('rolled-out-to-user123-in-de'), [
+        ...Object.values(users).map((u) => ({ user: u, expectedIsEnabled: false })),
+        {
+            user: {
+                ...users.attributeUserId123,
+                attributes: { ...users.attributeUserId123.attributes, culture: 'de-DE' },
+            },
+            expectedIsEnabled: true,
+        },
+    ])
+
+    testToggleForUsers(
+        toggle('rolled-out-to-none'),
+        Object.values(users).map((u) => ({ user: u, expectedIsEnabled: true })),
+        { 'rolled-out-to-none': true },
+    )
 })

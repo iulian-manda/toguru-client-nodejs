@@ -3,10 +3,7 @@ import calc from '../../src/services/calculateBuckets'
 describe('Calculate bucket from uuid', () => {
     it('Bucket is calculated correctly for ea', () => {
         // Test cases below taken from toguru scala client
-        // But they seem to be wrong
-        // Still under clarification whwat the scala code is doing
-        // https://github.com/andreas-schroeder/toguru-scala-client/blob/master/src/test/scala/toguru/impl/UuidDistributionConditionSpec.scala#L40
-
+        // https://github.com/Autoscout24/toguru-scala-client
         expect(calc('92cccc65-3ee8-4fa8-a663-632dd282f42f')).toEqual(1)
         expect(calc('ef4ff1f7-d0d6-4129-b823-818e39b8dc24')).toEqual(6)
         expect(calc('5f908fdb-e569-4a2e-973f-73fe51b8a337')).toEqual(11)
@@ -27,5 +24,8 @@ describe('Calculate bucket from uuid', () => {
         expect(calc('86bf949b-a75b-44b2-8e66-2f766fa43f48')).toEqual(91)
         expect(calc('476893d9-65cd-410d-a294-ac086c5fffa3')).toEqual(94)
         expect(calc('88d8bbd2-809f-4edf-a38e-7a98dddc06a3')).toEqual(96)
+        expect(calc('777baa8c-e289-4b46-8de7-3d904e041950')).toEqual(99)
+        expect(calc('b2d886c9-a7d8-469f-83e7-483a1ce97ac7')).toEqual(100)
+        expect(calc('c14280be-1659-464b-bbf7-4968a7513c76')).toEqual(100)
     })
 })

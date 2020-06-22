@@ -43,8 +43,8 @@ describe('Toguru Client', () => {
             expect(
                 client({
                     ...userInBucket22CultureDE,
-                    forcedToggles: { 'rolled-out-to-noone': true },
-                }).isToggleEnabled({ id: 'rolled-out-to-noone', default: false }),
+                    forcedToggles: { 'rolled-out-to-none': true },
+                }).isToggleEnabled({ id: 'rolled-out-to-none', default: false }),
             ).toBe(true)
         })
 
@@ -97,7 +97,7 @@ describe('Toguru Client', () => {
             expect(client(userInBucket22CultureDE).togglesForService('service2')).toEqual(
                 new Toggles([
                     { id: 'rolled-out-to-half-in-de-only', enabled: true },
-                    { id: 'rolled-out-to-noone', enabled: false },
+                    { id: 'rolled-out-to-none', enabled: false },
                 ]),
             )
         })
