@@ -1,6 +1,6 @@
 import isEnabled from '../../src/services/isToggleEnabled'
 import { ToguruData, ActivationContext } from '../../src/models/toguru'
-import toggleState from '../mocks/togglestate.fixture.json'
+import { toguruData } from '../mocks/togglestate.fixture'
 import { Toggle } from '../../src/models/Toggle'
 
 const users = {
@@ -42,7 +42,7 @@ const testToggleForUsers = (
     forcedToggles: Record<string, boolean> = {},
 ) => {
     test.each(cases)(`${toggle.id} for %o`, (c) => {
-        expect(isEnabled(toggleState, toggle, { ...c.user, forcedToggles })).toBe(c.expectedIsEnabled)
+        expect(isEnabled(toguruData, toggle, { ...c.user, forcedToggles })).toBe(c.expectedIsEnabled)
     })
 }
 
@@ -55,8 +55,8 @@ describe('isToggleEnabled', () => {
     })
 
     it('should return true if the rollout percentage is bigger or equal to the bucket the user is in', () => {
-        expect(isEnabled(toggleState, toggle('rolled-out-to-76-percent', false), users.bucket76)).toBe(true)
-        expect(isEnabled(toggleState, toggle('rolled-out-to-75-percent', true), users.bucket76)).toBe(false)
+        expect(isEnabled(toguruData, toggle('rolled-out-to-76-percent', false), users.bucket76)).toBe(true)
+        expect(isEnabled(toguruData, toggle('rolled-out-to-75-percent', true), users.bucket76)).toBe(false)
     })
 
     testToggleForUsers(

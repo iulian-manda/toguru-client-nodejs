@@ -1,7 +1,7 @@
 import { Request, NextFunction } from 'express'
 import { middleware as expressMiddleware } from '../../src/express/bridge'
 import client from '../../src/client'
-import mockedTogglestate from '../mocks/togglestate.fixture.json'
+import { toguruData } from '../mocks/togglestate.fixture'
 import { cookieValue, defaultForcedTogglesExtractor } from '../../src/express/extractors'
 import { Toggle } from '../../src/models/Toggle'
 import { Toggles } from '../../src/models/Toggles'
@@ -12,7 +12,7 @@ let clientRefreshRes: (_: void) => void
 jest.mock('axios', () =>
     jest.fn().mockImplementation(() => {
         clientRefreshRes()
-        return Promise.resolve({ data: mockedTogglestate })
+        return Promise.resolve({ data: toguruData })
     }),
 )
 

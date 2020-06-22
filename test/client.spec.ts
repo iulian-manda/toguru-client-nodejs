@@ -1,5 +1,5 @@
 import Client from '../src/client'
-import mockedTogglestate from './mocks/togglestate.fixture.json'
+import { toguruData } from './mocks/togglestate.fixture'
 import { Toggles } from '../src/models/Toggles'
 import { ActivationContext } from '../src/models/toguru'
 
@@ -19,7 +19,7 @@ const userInBucket22NoCulture: ActivationContext = {
     uuid: '88248687-6dce-4759-a5c0-3945eedc2b48',
 } // bucket: 22
 
-const promiseFetchInitialData = Promise.resolve({ data: mockedTogglestate })
+const promiseFetchInitialData = Promise.resolve({ data: toguruData })
 const waitForDataLoading = () => beforeAll(() => promiseFetchInitialData)
 jest.mock('axios', () => {
     return jest.fn().mockImplementation(() => promiseFetchInitialData)
