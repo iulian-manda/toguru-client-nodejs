@@ -1,5 +1,5 @@
 import { ToggleState } from '../models/ToggleState'
-import { Request, Response, NextFunction } from 'express'
+import { Request, Response, NextFunction } from 'express-serve-static-core'
 import { Toggle } from '../models/Toggle'
 import { Toggles } from '../models/Toggles'
 import { TogglingApi } from '../client'

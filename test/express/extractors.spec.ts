@@ -1,5 +1,5 @@
 import { fromCookie, fromHeader, defaultForcedTogglesExtractor } from '../../src/express/extractors'
-import { Request } from 'express'
+import { Request, Query, ParamsDictionary } from 'express-serve-static-core'
 import httpMocks from 'node-mocks-http'
 
 const fakeRequestWithCookie = (name: string, value: string): Request =>
@@ -91,7 +91,13 @@ describe('Extractors', () => {
         })
 
         it('combines overrides from different channels and prioritizes them according to `QueryParam -> Header -> Cookie`', () => {
-            const requestWithCookieHeaderAndQueryParamOverrides = httpMocks.createRequest({
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            const requestWithCookieHeaderAndQueryParamOverrides: Request<
+                ParamsDictionary,
+                any,
+                any,
+                Query
+            > = httpMocks.createRequest({
                 headers: {
                     cookie: `toguru=bar=true|foo=true`,
                     toguru: 'bar=false|j=true',

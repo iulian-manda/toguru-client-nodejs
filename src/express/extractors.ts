@@ -1,4 +1,4 @@
-import { Request } from 'express'
+import { Request } from 'express-serve-static-core'
 import cookie from 'cookie'
 
 export type Extractor<T> = (request: Request) => T | null

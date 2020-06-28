@@ -2,15 +2,11 @@ import calculateBucket from './calculateBuckets'
 import { ToguruData, ActivationContext } from '../models/toguru'
 import { Toggle } from '../models/Toggle'
 
-export default (
-    toguruData: ToguruData,
-    toggle: Toggle,
-    { uuid, attributes, forcedToggles }: ActivationContext,
-): boolean => {
+export default (toguruData: ToguruData, toggle: Toggle, context: ActivationContext): boolean => {
+    const { uuid, attributes, forcedToggles } = context
     if (forcedToggles && toggle.id in forcedToggles) {
         return forcedToggles[toggle.id]
     }
-
     const toggles = toguruData.toggles
     const toggleData = toggles.find((t) => t.id === toggle.id)
     const rolloutPercentage = toggleData?.activations[0]?.rollout?.percentage || 0
