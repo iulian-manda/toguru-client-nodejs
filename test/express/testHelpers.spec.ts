@@ -1,6 +1,6 @@
 import { stubMiddleware, stubClient } from '../../src/express/testHelpers'
 import httpMocks from 'node-mocks-http'
-import { Request, NextFunction } from 'express'
+import { Request, NextFunction } from 'express-serve-static-core'
 import { Toggle } from '../../src/models/Toggle'
 import { ToggleState } from '../../src/models/ToggleState'
 

@@ -1,5 +1,5 @@
 import { TogglingApi, TogglingApiByActivationContext } from '../client'
-import { Response, Request, NextFunction } from 'express'
+import { Response, Request, NextFunction } from 'express-serve-static-core'
 import { Toggle } from '../models/Toggle'
 import { ActivationContext } from '../models/toguru'
 import { Extractor, ForcedToggleExtractor, cookieValue, defaultForcedTogglesExtractor } from './extractors'

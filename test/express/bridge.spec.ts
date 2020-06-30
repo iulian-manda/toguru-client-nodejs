@@ -1,4 +1,4 @@
-import { Request, NextFunction } from 'express'
+import { Request, NextFunction } from 'express-serve-static-core'
 import { middleware as expressMiddleware } from '../../src/express/bridge'
 import client from '../../src/client'
 import { toguruData } from '../mocks/togglestate.fixture'
