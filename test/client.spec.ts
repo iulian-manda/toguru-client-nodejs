@@ -1,4 +1,4 @@
-import Client from '../src/client'
+import { defaultClient } from '../src/client'
 import { toguruData } from './mocks/togglestate.fixture'
 import { Toggles } from '../src/models/Toggles'
 import { ActivationContext } from '../src/models/toguru'
@@ -28,7 +28,7 @@ jest.mock('axios', () => {
 // TODO add edge cases
 describe('Toguru Client', () => {
     describe('Basic usage', () => {
-        const client = Client({
+        const client = defaultClient({
             endpoint: 'https://example.com/togglestate',
             refreshIntervalMs: 60 * 1000,
         })
@@ -86,7 +86,7 @@ describe('Toguru Client', () => {
     })
 
     describe('Advanced features', () => {
-        const client = Client({
+        const client = defaultClient({
             endpoint: 'https://example.com/togglestate',
             refreshIntervalMs: 60 * 1000,
         })
