@@ -1,4 +1,4 @@
-import _client, { TogglingApi } from './src/client'
+import { defaultClient, TogglingApi } from './src/client'
 import * as _expressBridge from './src/express/bridge'
 import * as extractors from './src/express/extractors'
 import { stubClient, stubMiddleware } from './src/express/testHelpers'
@@ -20,7 +20,7 @@ declare global {
     }
 }
 
-export const toguruClient = _client
+export const toguruClient = defaultClient
 
 export const toguruTestHelpers = {
     express: {

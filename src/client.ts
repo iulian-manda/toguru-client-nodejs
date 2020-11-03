@@ -33,32 +33,37 @@ export type TogglingApi = {
 
 export type TogglingApiByActivationContext = (context: ActivationContext) => TogglingApi
 
-export default (config: ToguruClientConfig): TogglingApiByActivationContext => {
-    const { endpoint, refreshIntervalMs = refreshIntervalMsDefault } = config
-    let toguruData: ToguruData = { sequenceNo: 0, toggles: [] }
+export type ToguruClientGeneratorConfig = { config: ToguruClientConfig, fetcher: (endpoint: string) => Promise<ToguruData> }
+export type ToguruClientGenerator = (generatorConfig: ToguruClientGeneratorConfig) => TogglingApiByActivationContext
+export const toguruClientGenerator: ToguruClientGenerator = ({ config, fetcher }) => {
+           const { endpoint, refreshIntervalMs = refreshIntervalMsDefault } = config
+           let toguruData: ToguruData = { sequenceNo: 0, toggles: [] }
 
-    const refreshToguruData = () =>
-        fetchToguruData(endpoint)
-            .then((td) => (toguruData = td))
-            .catch((e) => console.warn(`Unable to refresh toguru data: ${e}`))
+           const refreshToguruData = () =>
+               fetcher(endpoint)
+                   .then((td) => (toguruData = td))
+                   .catch((e) => console.warn(`Unable to refresh toguru data: ${e}`))
 
-    // Schedule refreshes
-    refreshToguruData()
-    setInterval(() => refreshToguruData(), refreshIntervalMs)
+           // Schedule refreshes
+           refreshToguruData()
+           setInterval(() => refreshToguruData(), refreshIntervalMs)
 
-    return (context) => ({
-        isToggleEnabled: (toggle) => isToggleEnabledForUser(toguruData, toggle, context),
-        togglesForService: (service) => {
-            const toggleIds = findToggleListForService(toguruData, service)
-            const togglesState = toggleIds.reduce<ToggleState[]>(
-                (toggles, id) => [
-                    ...toggles,
-                    { id, enabled: isToggleEnabledForUser(toguruData, { id, default: false }, context) },
-                ],
-                [],
-            )
+           return (context) => ({
+               isToggleEnabled: (toggle) => isToggleEnabledForUser(toguruData, toggle, context),
+               togglesForService: (service) => {
+                   const toggleIds = findToggleListForService(toguruData, service)
+                   const togglesState = toggleIds.reduce<ToggleState[]>(
+                       (toggles, id) => [
+                           ...toggles,
+                           { id, enabled: isToggleEnabledForUser(toguruData, { id, default: false }, context) },
+                       ],
+                       [],
+                   )
 
-            return new Toggles(togglesState)
-        },
-    })
-}
+                   return new Toggles(togglesState)
+               },
+           })
+       }   
+
+export const defaultClient = (config: ToguruClientConfig): TogglingApiByActivationContext =>
+    toguruClientGenerator({ config, fetcher: fetchToguruData })
