@@ -44,7 +44,10 @@ export const toguruClientGenerator: ToguruClientGenerator = ({ config, fetcher }
 
     const refreshToguruData = () =>
         fetcher(endpoint)
-            .then((td) => (toguruData = td))
+            .then((td) => {
+                toguruData = td
+                console.info(`Refreshed toguru data, seqNo: ${toguruData.sequenceNo}`)
+            })
             .catch((e) => console.warn(`Unable to refresh toguru data: ${e}`))
 
     // Schedule refreshes
