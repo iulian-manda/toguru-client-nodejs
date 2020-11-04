@@ -11,7 +11,7 @@ describe('The public API', () => {
             _5: index.ToguruClientConfig,
             _6: index.TogglingApi,
             _7: index.TogglingApiByActivationContext,
-        ) => {}
+        ) => ({})
 
         expect(typeof f === 'function').toBeTruthy()
     })

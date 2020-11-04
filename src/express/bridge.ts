@@ -43,15 +43,6 @@ const defaultExtractors: NonNullable<Required<ExpressConfig['extractors']>> = {
 }
 
 /**
- * An Express-middleware that provides toggle computation based on the Request information
- */
-export const middleware = (config: ExpressConfig) => (req: Request, _: Response, next: NextFunction) => {
-    req.toguru = expressClient(config)(req)
-
-    next()
-}
-
-/**
  * A refinement of the base toguru client that extracts activation information from the request
  */
 export const expressClient = (config: ExpressConfig) => (req: Request): TogglingApi => {
@@ -70,4 +61,13 @@ export const expressClient = (config: ExpressConfig) => (req: Request): Toggling
         isToggleEnabled: (toggle: Toggle) => config.client(context).isToggleEnabled(toggle),
         togglesForService: (service: string) => config.client(context).togglesForService(service),
     }
+}
+
+/**
+ * An Express-middleware that provides toggle computation based on the Request information
+ */
+export const middleware = (config: ExpressConfig) => (req: Request, _: Response, next: NextFunction) => {
+    req.toguru = expressClient(config)(req)
+
+    next()
 }
