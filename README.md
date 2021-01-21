@@ -9,13 +9,12 @@
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
-
-- [Installation](#installation)
-- [Usage](#usage)
-  - [Base Client](#base-client)
-  - [Express Bridge](#express-bridge)
-- [Testing](#testing)
-  - [Express](#express)
+-   [Installation](#installation)
+-   [Usage](#usage)
+    -   [Base Client](#base-client)
+    -   [Express Bridge](#express-bridge)
+-   [Testing](#testing)
+    -   [Express](#express)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -114,9 +113,38 @@ app.get('/some-route', toguruClientMiddleware, (req, res) => {
 
 In general, we recommend parametrizing your main application to take a toguru client interface, and instantiating the client itself at the very edge of your application (typically `index.ts`). This allows you to use different clients during tests that you can fully control without the need to introduce any mocking tools.
 
+Starting from version 2.2.0 it's possible to make use of the `ToguruClientGenerator` in order to be able to test more complex scenarios.
+For example we could add a test to check that the toggled code is executed only if the attribute `someAttribute` is `some-value`, allowing us to check that the activation context extraction is working as expected
+
+```
+const stubToguruClientByActivationContext = toguruClientGenerator({
+  config: { endpoint: '', refreshIntervalMs: 10000 },
+  fetcher: () =>
+    Promise.resolve({
+      toggles: [
+        {
+          id: 'some-toggle-id',
+          tags: {},
+          activations: [
+            {
+              attributes: {
+                someAttribute: ['some-value'],
+              },
+              rollout: {
+                percentage: 100,
+              },
+            },
+          ],
+        },
+      ],
+      sequenceNo: 0,
+    }),
+})
+```
+
 ### Express
 
-Following the pattern align above, a typical `Express` application will look like 
+Following the pattern align above, a typical `Express` application will look like
 
 ```ts
 const application = (
