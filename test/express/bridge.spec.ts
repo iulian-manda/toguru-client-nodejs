@@ -1,6 +1,6 @@
 import { Request, NextFunction } from 'express-serve-static-core'
 import { middleware as expressMiddleware } from '../../src/express/bridge'
-import client from '../../src/client'
+import { defaultClient } from '../../src/client'
 import { toguruData } from '../mocks/togglestate.fixture'
 import { cookieValue, defaultForcedTogglesExtractor } from '../../src/express/extractors'
 import { Toggle } from '../../src/models/Toggle'
@@ -39,7 +39,7 @@ const sendRequest = async ({
     })
 
     const middleware = expressMiddleware({
-        client: client({ endpoint: 'endpoint', refreshIntervalMs: 100000 }),
+        client: defaultClient({ endpoint: 'endpoint', refreshIntervalMs: 100000 }),
         extractors: {
             uuid: cookieValue('uid'),
             attributes: [{ attribute: 'culture', extractor: cookieValue('culture') }],

@@ -33,13 +33,21 @@ export type TogglingApi = {
 
 export type TogglingApiByActivationContext = (context: ActivationContext) => TogglingApi
 
-export default (config: ToguruClientConfig): TogglingApiByActivationContext => {
+export type ToguruClientGeneratorConfig = {
+    config: ToguruClientConfig
+    fetcher: (endpoint: string) => Promise<ToguruData>
+}
+export type ToguruClientGenerator = (generatorConfig: ToguruClientGeneratorConfig) => TogglingApiByActivationContext
+export const toguruClientGenerator: ToguruClientGenerator = ({ config, fetcher }) => {
     const { endpoint, refreshIntervalMs = refreshIntervalMsDefault } = config
     let toguruData: ToguruData = { sequenceNo: 0, toggles: [] }
 
     const refreshToguruData = () =>
-        fetchToguruData(endpoint)
-            .then((td) => (toguruData = td))
+        fetcher(endpoint)
+            .then((td) => {
+                toguruData = td
+                console.info(`Refreshed toguru data, seqNo: ${toguruData.sequenceNo}`)
+            })
             .catch((e) => console.warn(`Unable to refresh toguru data: ${e}`))
 
     // Schedule refreshes
@@ -62,3 +70,6 @@ export default (config: ToguruClientConfig): TogglingApiByActivationContext => {
         },
     })
 }
+
+export const defaultClient = (config: ToguruClientConfig): TogglingApiByActivationContext =>
+    toguruClientGenerator({ config, fetcher: fetchToguruData })
