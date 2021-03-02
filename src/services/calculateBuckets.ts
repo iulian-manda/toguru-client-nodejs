@@ -12,12 +12,5 @@ export default (uuid: string, defaultValue = 100): number => {
     const hi = new BN(strippedUUID.substr(0, 16), 16)
     const lo = new BN(strippedUUID.substr(16, 16), 16)
 
-    return (
-        lo
-            .ishln(64)
-            .iadd(hi)
-            .fromTwos(128)
-            .umod(new BN(100))
-            .toNumber() + 1
-    )
+    return lo.ishln(64).iadd(hi).fromTwos(128).umod(new BN(100)).toNumber() + 1
 }
