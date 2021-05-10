@@ -73,13 +73,13 @@ When working with a web application, it makes sense to compute toggle informatio
 We can create a client that will compute the activation context based on a `Request`.
 
 ```ts
-import { client, toguruExpressBridge } from '@autoscout24/toguru-client'
+import { toguruClient, toguruExpressBridge } from '@autoscout24/toguru-client'
 
 
-const client = client({...}) // instantiate the base toguru client
+const client = toguruClient({...}) // instantiate the base toguru client
 
 const toguruExpressClient = toguruExpressBridge.client({
-    client,
+    client: toguruClient,
     extractors: {
         uuid: toguruExpressBridge.requestExtractors.cookieValue('user-id') // will attempt to pull the user uuid from the `user-id` cookie
     }
