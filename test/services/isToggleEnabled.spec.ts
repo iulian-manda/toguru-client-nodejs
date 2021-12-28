@@ -29,7 +29,7 @@ const users = {
     attributeUserId123: { attributes: { user: 'user123' } },
 }
 
-const emptyToguruData: ToguruData = { sequenceNo: 0, toggles: [] }
+const emptyToguruData: ToguruData = { sequenceNo: 0, toggles: [], toggleIdsByService: new Map() }
 
 const toggle = (id: string, defaultValue = false) => ({
     id,

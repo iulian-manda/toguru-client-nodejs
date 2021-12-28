@@ -26,7 +26,11 @@ export type ToguruToggleData = {
     }>
 }
 
-export type ToguruData = {
+export type RawToguruData = {
     sequenceNo: number
     toggles: ToguruToggleData[]
+}
+
+export type ToguruData = RawToguruData & {
+    toggleIdsByService: Map<string, string[]>
 }

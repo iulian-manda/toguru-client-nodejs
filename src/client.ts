@@ -35,7 +35,7 @@ export type TogglingApiByActivationContext = (context: ActivationContext) => Tog
 
 export default (config: ToguruClientConfig): TogglingApiByActivationContext => {
     const { endpoint, refreshIntervalMs = refreshIntervalMsDefault } = config
-    let toguruData: ToguruData = { sequenceNo: 0, toggles: [] }
+    let toguruData: ToguruData = { sequenceNo: 0, toggles: [], toggleIdsByService: new Map() }
 
     const refreshToguruData = () =>
         fetchToguruData(endpoint)
