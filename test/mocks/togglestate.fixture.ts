@@ -1,6 +1,7 @@
 import { ToguruData } from '../../src/models/toguru'
+import { convertRawToguruDataToToguruData } from '../../src/services/fetchToguruData'
 
-export const toguruData: ToguruData = {
+export const toguruData: ToguruData = convertRawToguruDataToToguruData({
     sequenceNo: 4141,
     toggles: [
         {
@@ -170,4 +171,4 @@ export const toguruData: ToguruData = {
             ],
         },
     ],
-}
+})
