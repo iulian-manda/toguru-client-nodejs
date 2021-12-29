@@ -42,7 +42,7 @@ pipeline {
         failure {
             script {
                 if (env.BRANCH_NAME == 'master') {
-                    slackSend channel: '#showcar-future', color: 'danger',
+                    slackSend channel: '#as24-product-platform', color: 'danger',
                               message: "The pipeline <${env.BUILD_URL}|${currentBuild.fullDisplayName}> failed."
                 }
             }
