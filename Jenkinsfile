@@ -23,7 +23,6 @@ pipeline {
             agent { node { label 'build-docker' } }
             steps {
                 script {
-                    unstash 'publish'
                     dockerfile('Dockerfile.build').inside {
                         fast {
                             caching('/usr/local/share/.cache/yarn') {
