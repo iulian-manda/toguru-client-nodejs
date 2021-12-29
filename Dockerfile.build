@@ -1,0 +1,15 @@
+FROM 038571482621.dkr.ecr.eu-west-1.amazonaws.com/s24-base
+
+ENV LANG=C.UTF-8
+ENV LC_ALL=C.UTF-8
+
+RUN curl --silent --location https://rpm.nodesource.com/setup_16.x | bash - &&\
+    curl -sqL https://dl.yarnpkg.com/rpm/yarn.repo | tee /etc/yum.repos.d/yarn.repo &&\
+    yum install -y awscli \
+                   git\
+                   yarn \
+                   # for the "cache" step
+                   tar gzip \
+    &&\
+    amazon-linux-extras install -y docker &&\
+    yum clean all
